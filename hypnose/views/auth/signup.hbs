@@ -1,0 +1,39 @@
+
+Coucou, je suis un formulaire très basique pas du tout travaillé
+
+
+
+<div id="signup">
+  <h2>Signup</h2>
+  <form action="/signup" method="POST">
+    <label>
+      Prénom
+      <input type="text" name="name" placeholder="Nom" />
+    </label>
+
+    <label>
+      Nom de Famille
+      <input type="text" name="last_name" placeholder="Nom de famille" />
+    </label>
+
+    <label>
+      Email
+      <input type="text" name="email" placeholder="Email" />
+    </label>
+
+    <label>
+      Telephone
+      <input type="text" name="tel" placeholder="Telephone" />
+    </label>
+
+    <label>
+      Mot de Passe
+      <input type="password" name="password" id="input-password" placeholder="********" />
+    </label>
+
+    {{!-- 1. validation mdp (créer un nouveau champs)  --}}
+
+    <button>Créer un compte</button>
+
+  </form>
+</div>
