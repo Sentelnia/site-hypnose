@@ -1,0 +1,22 @@
+Coucou, je suis un formulaire très basique pas du tout travaillé
+
+<div id="form">
+  <h2>Login</h2>
+  <form action="/login" method="POST">
+    <label> Email
+      <input type="text" id="input-username" name="email" placeholder="Email" />
+    </label>
+
+ 
+    <label>Mot de Passe
+      <input type="password" name="password" id="input-password" placeholder="********" />
+    </label>
+    
+ 
+    <button type="submit">Connection</button>
+ 
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>

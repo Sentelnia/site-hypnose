@@ -5,15 +5,19 @@ const User = require('../models/User.js')
 const bcrypt = require('bcryptjs');
 const salt = bcrypt.genSaltSync(10)
 
+// Add passport
+const passport = require('passport');
+
+
 
 ////////////SIGNUP//////////////////////
 
-router.get('/inscription', (req, res) => res.render('auth/signup'));
+router.get('/inscription', (req, res) => res.render('auth/inscription'));
 
 
 //-----------1. créer la session -------------//
 //-----------2. validation mdp (créer un nouveau champs) ----------------//
-router.post('/signup', (req, res, next) => {
+router.post('/inscription', (req, res, next) => {
   const { name, last_name, email, tel, password } = req.body;
 
 
@@ -42,5 +46,27 @@ router.post('/signup', (req, res, next) => {
 });
 
 
+////////////LOGIN//////////////////////
+
+router.get('/login', (req, res) => res.render('auth/login'));
+
+
+//-----------2. attention mail en minuscule à configurer -------------//
+//-----------2. créer la session et les cookies -------------//
+router.post(
+  '/login',
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login'
+  })
+);
+
+
+////////////LOGOUT//////////////////////
+
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/login');
+});
 
 module.exports = router;
