@@ -9,6 +9,9 @@ const salt = bcrypt.genSaltSync(10);
 const passport = require("passport");
 const ensureLogin = require("connect-ensure-login");
 
+
+
+
 ////////////SIGNUP//////////////////////
 
 router.get("/inscription", (req, res) => res.render("auth/inscription"));
@@ -43,6 +46,9 @@ router.post("/inscription", (req, res, next) => {
     .catch((error) => next(error));
 });
 
+
+
+
 ////////////LOGIN//////////////////////
 
 router.get("/login", (req, res, next) => {
@@ -59,6 +65,10 @@ router.post(
   })
 );
 
+
+
+
+
 ////////////LOGOUT//////////////////////
 
 router.get("/logout", (req, res) => {
@@ -66,7 +76,11 @@ router.get("/logout", (req, res) => {
   res.redirect("/login");
 });
 
-////////////DASHBOARD//////////////////////
+
+
+
+
+////////////DASHBOARD - PRIVATE USER//////////////////////
 
 router.get("/dashboard", (req, res) => {
   console.log(req.user);
@@ -83,6 +97,7 @@ router.get("/dashboard", (req, res) => {
 router.post("/dashboard", (req, res, next) => {
   const password = req.body.password;
 
+  //si le mdp est ok
   if (bcrypt.compareSync(password, req.user.password)) {
     User.update(
       { _id: req.user.id },
@@ -97,9 +112,14 @@ router.post("/dashboard", (req, res, next) => {
     )
       .then(() => res.redirect("/dashboard"))
       .catch((err) => next(err));
+
+  //si mot de passe pas ok
   } else {
-    res.render("auth/dashboard", { errorMessage: 'Mot de passe non valid' })
+    res.render("auth/dashboard", { errorMessage: 'Mot de passe non valide', user: req.user })
   }
 });
+
+
+
 
 module.exports = router;
