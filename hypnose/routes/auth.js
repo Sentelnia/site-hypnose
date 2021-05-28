@@ -7,7 +7,7 @@ const salt = bcrypt.genSaltSync(10)
 
 // Add passport
 const passport = require('passport');
-
+const ensureLogin = require('connect-ensure-login');
 
 
 ////////////SIGNUP//////////////////////
@@ -39,7 +39,6 @@ router.post('/inscription', (req, res, next) => {
     })
       .then(userFromDB => {
         console.log('Newly created user is: ', userFromDB);
-        // req.session.currentUser = userFromDB;
         res.redirect('/')
       })
       .catch(error => next(error));
@@ -48,7 +47,9 @@ router.post('/inscription', (req, res, next) => {
 
 ////////////LOGIN//////////////////////
 
-router.get('/login', (req, res) => res.render('auth/login'));
+router.get('/login', (req, res, next) => {
+  res.render('auth/login', { errorMessage: req.flash('error') }); // !!!
+});
 
 
 //-----------2. attention mail en minuscule à configurer -------------//
@@ -57,7 +58,8 @@ router.post(
   '/login',
   passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/login'
+    failureRedirect: '/login',
+    failureFlash: true 
   })
 );
 

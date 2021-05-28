@@ -8,6 +8,8 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const flash = require('connect-flash');
+
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
  
@@ -17,15 +19,23 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const User = require('./models/User.js')
 
+
+mongoose
+.connect('mongodb://localhost/hypnose', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true
+})
+.then(x => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
+.catch(err => console.error('Error connecting to mongo', err));
+
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
+
 const app = express();
 
-// require database configuration
-require('./configs/db.config');
-
-
+app.use(flash())
 //session
 app.use(
   session({
@@ -46,28 +56,28 @@ passport.deserializeUser((id, cb) => {
     .catch(err => cb(err));
 });
  
-passport.use(
-  new LocalStrategy(
-    {
-      emailField: 'email', // by default
-      passwordField: 'password' // by default
-    },
-    (email, password, done) => {
-      User.findOne({ email : email })
-        .then(user => {
-          if (!email) {
-            return done(null, false, { message: 'mail incorrect' });
-          }
- 
-          if (!bcrypt.compareSync(password, user.password)) {
-            return done(null, false, { message: 'Mot de passe incorrect' });
-          }
- 
-          done(null, user);
-        })
-        .catch(err => done(err));
-    }
-  )
+passport.use(new LocalStrategy(
+  {
+    usernameField: 'username', 
+    passwordField: 'password' 
+  },
+   function(email, password, done) {
+    User.findOne({ email })
+    .then(user => {
+      console.log(user)
+      if (!user) {
+        return done(null, false, { message: 'Email incorrect' });
+      }
+
+      if (!bcrypt.compareSync(password, user.password)) {
+        return done(null, false, { message: 'Mot de passe incorrect' });
+      }
+
+      done(null, user);
+    })
+    .catch(err => done(err));
+}
+)
 );
 
 app.use(passport.initialize());
