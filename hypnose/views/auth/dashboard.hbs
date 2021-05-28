@@ -1,0 +1,43 @@
+<h1>Bienvenue sur le Dashboard {{user.name}}</h1>
+
+<div>
+<h2>Mes articles pref : </h2>
+<ul>
+  {{#each user.articles_like}}
+  <li>{{this}}</li>
+  {{/each}}
+</ul>
+</div>
+
+
+<div id="edit_profil">
+  <h2>Mes infos perso:</h2>
+  <form id='edit' action="/dashboard" method="POST">
+    <label>
+      Prénom
+      <input type="text" name="name" value="{{user.name}}" />
+    </label>
+
+    <label>
+      Nom de Famille
+      <input type="text" name="last_name" value="{{user.last_name}}" />
+    </label>
+
+    <label>
+      Email
+      <input type="email" name="email" value="{{user.email}}" />
+    </label>
+
+    <label>
+      Telephone
+      <input type="text" name="tel" value="{{user.tel}}" />
+    </label>
+
+  </form>
+  <button id='buttonEdit'>Editer mes infos perso</button>
+</div>
+
+
+{{#if errorMessage}}
+ <div class="error-message">{{errorMessage}}</div>
+ {{/if}}
