@@ -50,7 +50,6 @@ router.get("/prendre-rdv", (req, res) => {
 //-----------recupération du formulaire de rdv----------------//
 
 router.post("/prendre-rdv", (req, res, next) => {
-  console.log(req.user)
   transporter.sendMail({
     from: req.body.email, // sender address
     to: "alexandre.capaldi@hotmail.fr", // list of receivers

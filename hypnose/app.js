@@ -123,5 +123,9 @@ app.use('/', authRouter);
 const metierRouter = require('./routes/metiers');
 app.use('/', metierRouter);
 
+/////////////routes articles//////////////////////
+const articleRouter = require('./routes/articles');
+app.use('/', articleRouter);
+
 
 module.exports = app;

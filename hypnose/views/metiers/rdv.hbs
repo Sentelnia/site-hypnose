@@ -4,7 +4,7 @@ coucou, je suis le formulaire de prise de rdv
 
 <div id="rdv">
   <h2>Prendre rdv</h2>
-  <form action="/prendre-rdv" method="POST" enctype="text/plain" action='MAILTO:alexandre.capaldi@hotmail.fr '>
+  <form action="/prendre-rdv" method="POST">
     <label>
       Prénom
       <input type="text" name="name" {{#if user}} value="{{user.name}}" {{/if}}/>
@@ -41,7 +41,7 @@ coucou, je suis le formulaire de prise de rdv
     </label>
 
 
-    <button type="submit">Prendre rendez-vous</button>
+    <button>Prendre rendez-vous</button>
 
   </form>
 </div>
