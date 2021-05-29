@@ -1,0 +1,47 @@
+coucou, je suis le formulaire de prise de rdv
+
+
+
+<div id="rdv">
+  <h2>Prendre rdv</h2>
+  <form action="/prendre-rdv" method="POST">
+    <label>
+      Prénom
+      <input type="text" name="name" {{#if user}} value="{{user.name}}" {{/if}}/>
+    </label>
+
+    <label>
+      Nom de Famille
+      <input type="text" name="last_name" {{#if user}} value="{{user.last_name}}" {{/if}} />
+    </label>
+
+    <label>
+      Email
+      <input type="email" name="email" {{#if user}} value="{{user.email}}" {{/if}} />
+    </label>
+
+    <label>
+      Telephone
+      <input type="text" name="tel" {{#if user}} value="{{user.tel}}" {{/if}} />
+    </label>
+
+    <label>
+      Type de séance
+      <select name="type_seance" multiple>
+        <option >Hypnotherapie</option>
+        <option >Sophrologie</option>
+        <option >Magnétisme</option>
+      </select>
+
+    </label>
+
+    <label>
+      Message
+      <textarea type="text" name="message"></textarea>
+    </label>
+
+
+    <button>Prendre rendez-vous</button>
+
+  </form>
+</div>

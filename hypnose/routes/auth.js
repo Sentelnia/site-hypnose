@@ -83,7 +83,6 @@ router.get("/logout", (req, res) => {
 ////////////DASHBOARD - PRIVATE USER//////////////////////
 
 router.get("/dashboard", (req, res) => {
-  console.log(req.user);
   if (!req.user) {
     res.render("auth/login", {
       errorMessage: "vous devez vous identifier pour acceder à ce contenu",

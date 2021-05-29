@@ -1,0 +1,30 @@
+Coucou je suis le formulaire d'édition d'un article
+
+<div id="article-edit">
+  <h2>Editer l'article {{article.title}}</h2>
+  <form action="/articles/{{article.id}}/edit" method="POST" enctype="multipart/form-data">
+    <label>
+      Titre
+      <input type="text" name="title" value="{{article.title}}"/>
+    </label>
+
+    <label>
+      Image
+      <img src='{{article.imageUrl}}' width ='100px'/>
+      <input type="file" name="image"/>
+    </label>
+
+    <label>
+      Vidéo
+      <input type="text" name="video" value="{{article.video}}"/>
+    </label>
+
+    <label>
+      Description
+      <textarea type="text" name="description">{{article.description}}</textarea>
+    </label>
+
+    <button>Editer l'article</button>
+
+  </form>
+</div>
