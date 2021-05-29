@@ -26,11 +26,46 @@ router.get('/articles/create', (req, res) => {
 
 router.post('/articles/create', fileUploader.single('image'), (req, res, next) => {
   const { title, description, video } = req.body;
-  console.log(req.body)
 
   Article.create({title, description, video, imageUrl: req.file.path })
   .then(() => res.redirect('/articles'))
   .catch(err => next(err))
+})
+
+
+
+////////////EDITER UN ARTICLE////////////////////
+
+router.get('/articles/:articleId/edit', (req, res) =>{
+  const { articleId } = req.params;
+
+  Article.findById(articleId)
+  .then(articleToEdit => {
+    res.render('articles/edit',{article : articleToEdit})
+  })
+  .catch(err => next(err))
+})
+
+router.post('/articles/:articleId/edit', fileUploader.single('image'), (req, res,next) =>{
+  const { articleId } = req.params;
+  const { title, description, video } = req.body;
+  console.log(req.body)
+
+  Article.findByIdAndUpdate(articleId, {title, description, video, imageUrl: req.file.path }, { new: true })
+    .then(updatedArticle => res.redirect(`/articles/${updatedArticle.id}`))
+    .catch(err => next(err))
+})
+
+
+
+////////////SUPPRIMER UN ARTICLE////////////////////
+
+router.post('/articles/:articleId/delete', (req, res, next) => {
+  const { articleId } = req.params;
+
+  Article.findByIdAndDelete(articleId)
+    .then(() => res.redirect('/articles'))
+    .catch(err => next(err))
 })
 
 

@@ -127,5 +127,9 @@ app.use('/', metierRouter);
 const articleRouter = require('./routes/articles');
 app.use('/', articleRouter);
 
+/////////////routes articles//////////////////////
+const temoignageRouter = require('./routes/temoignages');
+app.use('/', temoignageRouter);
+
 
 module.exports = app;

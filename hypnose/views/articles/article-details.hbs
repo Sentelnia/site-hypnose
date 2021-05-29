@@ -13,3 +13,8 @@ Coucou , je suis la page de détail d'un articles
 {{/if}}
 
 <p>{{article.description}}</p>
+
+<a href="/articles/{{id}}/edit">Edit</a>
+<form action="/articles/{{id}}/delete" method="POST">
+  <button>Delete</button>
+</form>
