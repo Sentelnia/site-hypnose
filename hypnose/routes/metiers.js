@@ -1,6 +1,16 @@
 const { Router } = require("express");
 const router = new Router();
 
+/////////////////////NODEMAILER///////////////////
+
+const nodemailer = require('nodemailer');
+
+
+//---------transformer avec un if (pour prod ou mail dev)------------
+let transporter = nodemailer.createTransport({
+  port: 1025,
+  ignoreTLS: true,
+  },);
 
 ////////////HYPNOTHERAPIE//////////////////
 
@@ -18,10 +28,37 @@ router.get('/sophrologue', (req, res) =>{
 
 
 
-////////////HYPNOTHERAPIE//////////////////
+////////////MAGNETISME//////////////////
 
-router.get('/magnetiseur', (req, res) =>{
+router.get('/sophrologue', (req, res) =>{
   res.render('metiers/magne')
+})
+
+
+
+////////////FORMULAIRE DE RDV//////////////////
+
+router.get("/prendre-rdv", (req, res) => {
+  if (!req.user) {
+    res.render("metiers/rdv");
+    return;
+  }
+  res.render("metiers/rdv", { user: req.user });
+});
+
+
+//-----------recupération du formulaire de rdv----------------//
+
+router.post("/prendre-rdv", (req, res, next) => {
+  console.log(req.user)
+  transporter.sendMail({
+    from: req.body.email, // sender address
+    to: "alexandre.capaldi@hotmail.fr", // list of receivers
+    subject: req.body.type_seance, // Subject line
+    text: req.body.message
+  })
+  .then(()=> res.redirect('/'))
+  .catch( err => next(err))
 })
 
 
