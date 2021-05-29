@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,48 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
+
+  <header id="main-header">
+
+    <nav class="navbar">
+      <div class="menu-mobile">
+        <img id="logo-mobile" src="https://via.placeholder.com/100" alt="logo">
+        <a href="javascript:void 0;"><img src="./images/rdv.png" alt="Rendez-vous" /></a>
+        <a href="javascript:void 0;"><img src="./images/account.png" alt="Account"></a>
+        <a href="javascript:void 0;"><img src="./images/menu-burger.png" alt="Burger"></a>
+      </div>
+
+      <div class="menu-desktop">
+        <img id="logo-desktop" src="https://via.placeholder.com/100" alt="logo">
+        <a href="javascript:void 0;">LES SEANCES</a>
+        <a href="javascript:void 0;">VOTRE BIEN-ÊTRE</a>
+        <a href="javascript:void 0;">FABIENNE ILIC</a>
+        <div><img src="./images/rdv.png" alt="account">
+          <a href="javascript:void 0;">PRENDRE UN RENDEZ-VOUS</a></div>
+        <div><img src="./images/account.png" alt="account">
+          <a href="javascript:void 0;">MON COMPTE</a></div>
+
+      </div>
+
+
+      {{!-- <ul>
+        <li><a href="/"><img id="logo" src="https://via.placeholder.com/100" alt="logo-fabienne-ilic"></a></li>
+        <li class="line-menu"><a href="#">LES SEANCES</a></li>
+        <li><a href="#">VOTRE BIEN-ÊTRE</a></li>
+        <li><a href="#">FABIENNE ILIC</a></li>
+        <li><a href="#"><img src="" alt=""></a></li>
+        <li><a href="#"><img src="" alt="">MON COMPTE</a></li>
+
+      </ul> --}}
+    </nav>
+
+  </header>
 
   {{{body}}}
 
   <script src="/javascripts/script.js"></script>
 </body>
+
 </html>
