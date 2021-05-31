@@ -1,4 +1,6 @@
 body {
+  width: auto;
+
   margin: 0;
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -9,10 +11,55 @@ a {
   text-decoration: none;
 }
 
+
 h1 {
-  font-size: 54px;
+
+  font-size: 53px;
   font-weight: lighter;
+
   color: #707070;
+
+}
+
+
+
+
+/* fixer une largeur maximale de 100% aux éléments potentiellement problématiques */
+
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+iframe,
+object,
+embed,
+video {
+  max-width: 100%;
+}
+
+/* conserver le ratio des images */
+
+img {
+  height: auto;
+}
+
+textarea,
+table,
+td,
+th,
+code,
+pre,
+samp {
+  -webkit-hyphens: auto;
+  /* césure propre */
+  -moz-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  /* passage à la ligne forcé */
 }
 
 /* ////////// MENU PRINCIPAL /////////// */
@@ -21,10 +68,10 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 110px;
+  height: 86px;
 
   position: fixed;
-  width: 100vw;
+
   background-color: white;
   z-index: 99999;
 }
@@ -96,6 +143,12 @@ h1 {
 
   .navbar .menu-desktop a {
     margin-right: 3em;
+
+  }
+
+  .navbar .menu-desktop a:last-child {
+    font-weight: lighter;
+    color: #707070;
   }
 
   #video-hp {
@@ -110,6 +163,7 @@ h1 {
     width: 100vw;
 
   }
+
 
 
 }
@@ -135,7 +189,7 @@ h1 {
 
 
 #video-hp {
-  height: 482px;
+  height: 550px;
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -156,6 +210,7 @@ h1 {
   #video-hp {
 
     height: 800px;
+    order: 4;
 
 
   }
@@ -165,6 +220,12 @@ h1 {
     width: 100vw;
 
   }
+
+  .size-image-practicien {
+    order: 4;
+  }
+
+
 
 
 }
@@ -176,7 +237,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   display: flex;
-  padding: 0px 155px;
+
   flex-wrap: wrap;
 
 
@@ -184,11 +245,17 @@ h1 {
 
 .push {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-between;
+  width: 100vw;
+
 }
 
 .push p {
   text-align: left;
-  width: 573px;
+  width: 400px;
   line-height: 23px;
   margin-left: 49px;
 }
@@ -197,20 +264,54 @@ h1 {
   float: right;
   text-decoration: none;
   color: black;
-  margin-right: 65px;
+  margin-left: auto;
   margin-top: 21px;
 }
 
 .arrow-link {
   height: 15px;
-  position: absolute;
-  left: 575px;
+
 }
 
-.size-image-practicien {}
+
+
+@media (min-width: 1045px) {
+
+  .push p {
+
+    width: 573px;
+
+  }
+
+  .push {
+
+    flex-direction: row;
+    justify-content: space-around;
+
+  }
+
+  .container-presentation {
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .size-image-practicien>img {
+
+    max-width: 410px;
+  }
+
+}
+
+
+.size-image-practicien {
+  padding-top: 35px;
+}
 
 .size-image-practicien>img {
   height: 320px;
+  width: 100%;
+  height: auto;
 }
 
 @media (min-width: 1380px) {
@@ -219,9 +320,4 @@ h1 {
   }
 }
 
-@media (max-width: 1455px) {
-  .size-image-practicien>img {}
-
-
-
-}
+@media (max-width: 1455px) {}
