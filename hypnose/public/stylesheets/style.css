@@ -76,6 +76,9 @@ samp {
   z-index: 99999;
 }
 
+
+
+
 #logo-mobile {}
 
 #logo-desktop {
@@ -88,7 +91,7 @@ samp {
   width: 267px;
   justify-content: center;
   background-color: #cee4f7;
-  height: 66px;
+  height: 50px;
   border-radius: 22px;
 
 }
@@ -233,14 +236,11 @@ samp {
 /* CONTAINER PUSH A PROPOS */
 
 #container-push-about-hp {
-  height: 600px;
+  height: 832px;
   justify-content: space-between;
   align-items: center;
   display: flex;
-
   flex-wrap: wrap;
-
-
 }
 
 .push {
@@ -258,6 +258,8 @@ samp {
   width: 400px;
   line-height: 23px;
   margin-left: 49px;
+
+  color: #707070;
 }
 
 .push a {
@@ -277,9 +279,18 @@ samp {
 
 @media (min-width: 1045px) {
 
+  #container-push-about-hp {
+    height: 600px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .push p {
 
     width: 573px;
+    color: #707070;
 
   }
 
@@ -321,3 +332,130 @@ samp {
 }
 
 @media (max-width: 1455px) {}
+
+
+
+
+/* MODULE CITATION */
+
+.quote {
+
+  height: 600px;
+  background: #FAF1D6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.text-quote {
+  font-size: 35px;
+  font-style: italic;
+  color: #707070;
+}
+
+.author-quote {
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+  font-size: 25px;
+  color: #707070;
+}
+
+.guillemet-left {
+  position: absolute;
+  top: 148px;
+  left: 10px;
+}
+
+.guillemet-left>img {
+  height: 150px;
+
+}
+
+.guillemet-right {
+  position: absolute;
+  bottom: 69px;
+  right: -36px;
+}
+
+.guillemet-right>img {
+  height: 150px;
+}
+
+/* LES SEANCES */
+
+#seances {}
+
+.container-seance {
+  height: 120px;
+  width: auto;
+  background: #E9F4FD;
+  display: flex;
+  align-items: center;
+}
+
+.container-seance>h3 {
+  margin-left: 27px;
+  width: 100px;
+
+}
+
+#container-seances {
+  display: flex;
+  flex-direction: column;
+  height: 715px;
+  justify-content: space-evenly;
+}
+
+#container-seances>h2 {
+
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.container-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: 70px;
+  height: 66px;
+
+}
+
+
+@media (min-width: 1045px) {
+
+  #seances {
+    position: relative;
+  }
+
+  #container-seances {
+    display: flex;
+    flex-direction: row;
+    height: 715px;
+    justify-content: space-evenly;
+    margin-top: 265px;
+  }
+
+  #container-seances>h2 {
+    position: absolute;
+    top: -175px;
+    left: 31px;
+  }
+
+  .container-seance {
+    height: 120px;
+    width: 468px;
+    background: #E9F4FD;
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+  }
+
+
+}
