@@ -5,12 +5,9 @@ const {
 
 
 const temoignageSchema = new Schema({
-  name: String,
-  last_name: String,
-  email: String,
-  tel: String,
   type_seance: String,
-  message: String
+  message: String,
+  signature: String,
 }, {
   timestamps: true
 });
