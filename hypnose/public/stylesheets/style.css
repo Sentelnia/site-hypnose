@@ -29,6 +29,9 @@ h1 {
 
 h2 {
   color: #989898;
+  font-size: 28px;
+  font-weight: lighter;
+  letter-spacing: 0.5px;
 
 }
 
@@ -182,6 +185,12 @@ samp {
 
   }
 
+  .line-menu {
+
+    background: #707070;
+    height: 40px;
+    width: 1px;
+  }
 
 
 }
@@ -376,6 +385,7 @@ samp {
   justify-content: center;
   align-items: center;
   position: relative;
+  margin-top: 115px;
 }
 
 .text-quote {
@@ -541,14 +551,19 @@ samp {
   font-size: 25px;
 }
 
-#article-du-moment>h2 {
+.title-article {
 
-  top: -87px;
-  position: absolute;
+  text-align: center;
+  padding-top: 60px;
 }
 
 @media (min-width: 1045px) {
 
+  .title-article {
+    position: absolute;
+    left: 25px;
+    padding-top: 60px;
+  }
 
   .container-article-hp>a {
     margin-left: auto;
@@ -584,8 +599,77 @@ samp {
     left: 25px;
   }
 
+  #article-du-moment {
+
+    margin-top: 162px;
+
+  }
+
   .container-article-hp>p {
     width: 600px;
+  }
+
+}
+
+.link-articles {
+
+  position: absolute;
+  right: 25px;
+  margin-top: 9px;
+}
+
+
+.link-articles>a {
+  font-size: 18px;
+}
+
+/* SECTION TEMOIGNAGES */
+
+
+
+#temoignages {
+  height: 500px;
+  background: #D8EBFC;
+  margin-top: 130px;
+}
+
+.container-avis {
+
+  display: flex;
+  margin-top: 85px;
+  flex-direction: column;
+  width: auto;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title-avis {
+
+  color: #1F9BAC;
+  margin-left: 25px;
+}
+
+.author-avis {
+
+  margin-left: auto;
+  margin-right: 58px;
+  font-size: 20px;
+}
+
+@media (min-width: 1045px) {
+
+  #temoignages {
+    height: 385px;
+    background: #D8EBFC;
+    margin-top: 200px;
+  }
+
+  .container-avis {
+
+    width: 600px;
+
+
   }
 
 }
