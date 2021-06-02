@@ -837,8 +837,18 @@ select option {
 }
 
 #login {
-  margin-top: 124px;
   display: flex;
+  flex-direction: column;
+  padding-top: 85px;
+}
+#login h1 {
+  margin-left: 30px;
+  width: auto;
+}
+
+#login p {
+  margin-left: 30px;
+  width: auto;
 }
 
 #login h3 {
@@ -861,6 +871,10 @@ select option {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.container-form {
+  background: #f5e5b3;
 }
 
 /* //................................................................................................................................................................
@@ -921,4 +935,53 @@ select option {
 
 .form-rdv button {
   margin-top: 50px;
+}
+
+@media (min-width: 825px) {
+  #rdv p {
+    width: 625px;
+  }
+
+  .form-rdv {
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+  }
+}
+
+/* //...........................................................................................................................................................................................
+//..........................................................................iiiii............................................................................................................
+//..........................................................................iiiiii...........................................................................................................
+//...ttttt..................................................................iiiiii...........................................................................................................
+//...ttttt..................................................................iiiiii...........................................................................................................
+//...ttttt..................................................................iiiiii...........................................................................................................
+//...ttttt..................................................................iiiiii...........................................................................................................
+//.tttttttttt....eeeeeeee......mmmmm.mmmmmm...mmmmmmm........ooooooooo......iiiiii.....ggggggg.ggggg...nnnnn.nnnnnnn........aaaaaaaa........ggggggg.ggggg......eeeeeeee........sssssssss.....
+//.tttttttttt...eeeeeeeeeee....mmmmmmmmmmmmm.mmmmmmmmm......ooooooooooo.....iiiiii....gggggggggggggg...nnnnnnnnnnnnnn.....aaaaaaaaaaaa.....gggggggggggggg.....eeeeeeeeeee.....sssssssssss....
+//.tttttttttt..eeeeeeeeeeeee...mmmmmmmmmmmmmmmmmmmmmmm....oooooooooooooo....iiiiii...ggggggggggggggg...nnnnnnnnnnnnnnn...aaaaaaaaaaaaaa...ggggggggggggggg....eeeeeeeeeeeee...sssssssssssss...
+//.tttttttttt.eeeeeeeeeeeeee...mmmmmmmmmmmmmmmmmmmmmmmm...ooooooooooooooo...iiiiii...ggggggggggggggg...nnnnnnnnnnnnnnn...aaaaaaaaaaaaaa...ggggggggggggggg...eeeeeeeeeeeeee..sssssssssssssss..
+//.tttttttttt.eeeeeeeeeeeeeee..mmmmmmmmmmmmmmmmmmmmmmmm..oooooooooooooooo...iiiiii..gggggggggggggggg...nnnnnnnnnnnnnnn...aaaaaaaaaaaaaa..gggggggggggggggg..eeeeeeeeeeeeeee..sssssss.sssssss..
+//...ttttt...eeeeeee...eeeeee..mmmmmm...mmmmmmm..mmmmmm..ooooooo...ooooooo..iiiiii..gggggg...ggggggg...nnnnnn...nnnnnn..aaaaaa....aaaaa..ggggggg..ggggggg..eeeeee....eeeeee.ssssss...ssssss..
+//...ttttt...eeeeee....eeeeee..mmmmmm...mmmmmm...mmmmmm..oooooo.....oooooo..iiiiii..gggggg....gggggg...nnnnn.....nnnnn...aaaaa.aaaaaaaa..gggggg....gggggg..eeeeee....eeeeee.ssssssssss.......
+//...ttttt...eeeeeeeeeeeeeeee..mmmmmm...mmmmmm....mmmmm..ooooo......oooooo..iiiiii.iggggg.....gggggg...nnnnn.....nnnnn.....aaaaaaaaaaaa..gggggg.....ggggg..eeeeeeeeeeeeeeee.sssssssssssss....
+//...ttttt...eeeeeeeeeeeeeeee..mmmmmm...mmmmmm....mmmmm..ooooo......oooooo..iiiiii.iggggg......ggggg...nnnnn.....nnnnn...aaaaaaaaaaaaaa..ggggg......ggggg..eeeeeeeeeeeeeeee..sssssssssssss...
+//...ttttt...eeeeeeeeeeeeeeee..mmmmmm...mmmmmm....mmmmm..ooooo......oooooo..iiiiii.iggggg.....gggggg...nnnnn.....nnnnn...aaaaaaaaaaaaaa..ggggg......ggggg..eeeeeeeeeeeeeeee...sssssssssssss..
+//...ttttt...eeeeeeeeeeeeeeee..mmmmmm...mmmmmm....mmmmm..ooooo......oooooo..iiiiii.iggggg.....gggggg...nnnnn.....nnnnn..aaaaaaaaa.aaaaa..gggggg.....ggggg..eeeeeeeeeeeeeeee....ssssssssssss..
+//...ttttt...eeeeee.....eeeee..mmmmmm...mmmmmm....mmmmm..oooooo.....oooooo..iiiiii..gggggg....gggggg...nnnnn.....nnnnn..aaaaaa....aaaaa..gggggg....gggggg..eeeeee.....eeeee.sssss..ssssssss..
+//...ttttt...eeeeeee...eeeeee..mmmmmm...mmmmmm....mmmmm..ooooooo...ooooooo..iiiiii..ggggggg.gggggggg...nnnnn.....nnnnn..aaaaaa...aaaaaa..gggggggg.ggggggg..eeeeeee...eeeeee.ssssss...ssssss..
+//...tttttttt.eeeeeeeeeeeeeee..mmmmmm...mmmmmm....mmmmm..oooooooooooooooo...iiiiii..gggggggggggggggg...nnnnn.....nnnnn..aaaaaaaaaaaaaaa..gggggggggggggggg..eeeeeeeeeeeeeeee.sssssssssssssss..
+//...tttttttt.eeeeeeeeeeeeeee..mmmmmm...mmmmmm....mmmmm...ooooooooooooooo...iiiiii...ggggggggggggggg...nnnnn.....nnnnn..aaaaaaaaaaaaaaa...ggggggggggggggg...eeeeeeeeeeeeee..sssssssssssssss..
+//...tttttttt..eeeeeeeeeeeee...mmmmmm...mmmmmm....mmmmm....ooooooooooooo....iiiiii...ggggggggggggggg...nnnnn.....nnnnn...aaaaaaaaaaaaaaa...gggggggggggggg....eeeeeeeeeeeee...sssssssssssss...
+//....ttttttt...eeeeeeeeeee....mmmmmm...mmmmmm....mmmmm.....ooooooooooo.....iiiiii.....ggggggggggggg...nnnnn.....nnnnn...aaaaaaaaaaaaaaa....ggggggggggggg.....eeeeeeeeee......ssssssssssss...
+//.....tttttt.....eeeeeee.....................................ooooooo.....................gg..gggggg.......................aaaaa...............gg...ggggg.......eeeeeee........sssssssss.....
+//..................................................................................gggggg....gggggg.....................................gggggg....gggggg....................................
+//..................................................................................gggggggggggggggg.....................................gggggggggggggggg....................................
+//..................................................................................ggggggggggggggg......................................gggggggggggggggg....................................
+//...................................................................................gggggggggggggg.......................................gggggggggggggg.....................................
+//....................................................................................gggggggggggg.........................................gggggggggggg......................................
+//......................................................................................gggggggg.............................................gggggggg........................................
+//........................................................................................................................................................................................... */
+
+#form-avis {
+  padding-top: 85px;
 }

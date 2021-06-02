@@ -1,29 +1,27 @@
-Coucou, je suis le formulaire de création d'un témoignages
-
-<div id="temoignage">
-  <h2>Créer un témoignage</h2>
+<section id="form-avis">
+  <h1>Créer un témoignage</h1>
   <form action="/temoignages/create" method="POST">
 
     <label>
-      Type de séance
+      <h3>Type de séance</h3>
       <select name="type_seance" multiple>
-        <option >Hypnotherapie</option>
-        <option >Sophrologie</option>
-        <option >Magnétisme</option>
+        <option>Hypnotherapie</option>
+        <option>Sophrologie</option>
+        <option>Magnétisme</option>
       </select>
     </label>
 
     <label>
-      Message
+      <h3>Message </h3>
       <textarea type="text" name="message"></textarea>
     </label>
 
     <label>
-      Signature
-      <input type="text" name="signature"/>
+      <h3>Signature</h3>
+      <input type="text" name="signature" />
     </label>
 
     <button>Créer un témoignages</button>
 
   </form>
-</div>
+</section>
