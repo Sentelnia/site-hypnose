@@ -84,52 +84,14 @@
 <section id="temoignages">
 
 
-
+    {{#each temoignages}}
     <div class="container-avis">
-        <h3 class="title-avis">SEANCE DE SOPHROLOGIE</h3>
-        <blockquote> <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                invidunt
-                ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et
-                ea
-                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                ipsum
-            </p>
+        <h3 class="title-avis">{{this.type_seance}}</h3>
+        <blockquote> <p>{{this.message}}</p>
         </blockquote>
-        <div class="author-avis">Jean Dort</div>
+        <div class="author-avis">{{this.signature}}</div>
     </div>
-
-
-    <div class="container-avis">
-        <h3 class="title-avis">SEANCE DE SOPHROLOGIE</h3>
-        <blockquote> <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                invidunt
-                ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et
-                ea
-                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                ipsum
-            </p>
-        </blockquote>
-        <div class="author-avis">Jean Dort</div>
-    </div>
-
-    <div class="container-avis">
-        <h3 class="title-avis">SEANCE DE SOPHROLOGIE</h3>
-        <blockquote> <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                invidunt
-                ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et
-                ea
-                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                ipsum
-            </p>
-        </blockquote>
-        <div class="author-avis">Jean Dort</div>
-    </div>
+    {{/each}}
 
 </section>
 
