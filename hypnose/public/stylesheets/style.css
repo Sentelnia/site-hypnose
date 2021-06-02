@@ -25,6 +25,13 @@ h2 {
   letter-spacing: 0.5px;
 }
 
+h3 {
+  color: #989898;
+  font-size: 21px;
+  font-weight: lighter;
+  letter-spacing: 0.5px;
+}
+
 p {
   line-height: 22px;
   letter-spacing: 0.5px;
@@ -803,10 +810,17 @@ select option {
   margin: 10px;
 }
 
+.form-login input {
+  width: 100vw;
+
+  border: 2px solid #cee4f7;
+  font-size: 30px;
+}
+
 @media (min-width: 825px) {
   input {
     width: 739px;
-    height: 58px;
+    height: 40px;
     border: 2px solid #cee4f7;
     font-size: 20px;
     margin-left: 30px;
@@ -817,6 +831,9 @@ select option {
   select {
     font-size: 20px;
   }
+  .form-login input {
+    width: 739px;
+  }
 }
 
 #login {
@@ -824,15 +841,8 @@ select option {
   display: flex;
 }
 
-#login h2 {
+#login h3 {
   margin-left: 30px;
-}
-
-.form-login input {
-  width: 100vw;
-  height: 58px;
-  border: 2px solid #cee4f7;
-  font-size: 30px;
 }
 
 .form-login > div button {
@@ -893,7 +903,7 @@ select option {
   width: auto;
 }
 
-#rdv h2 {
+#rdv h3 {
   margin-left: 30px;
   padding-top: 35px;
 }
