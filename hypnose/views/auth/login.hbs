@@ -1,21 +1,25 @@
 Coucou, je suis un formulaire très basique pas du tout travaillé
 
-<form action="/login" method="POST">
- <div>
- <label for="username">Email:</label>
- <input type="email" name="username">
- </div>
- 
- <div>
- <label for="password">Password:</label>
- <input type="password" name="password">
- </div>
- 
- {{#if errorMessage}}
- <div class="error-message">{{errorMessage}}</div>
- {{/if}}
- 
- <div>
- <button>Log in</button>
- </div>
-</form>
+<section id="login">
+
+    <form class="form-login" action="/login" method="POST">
+        <div>
+            <h2><label for="username">Email</label></h2>
+            <input type="email" name="username">
+        </div>
+
+        <div>
+            <h2><label for="password">Mot de passe</label></h2>
+            <input type="password" name="password">
+        </div>
+
+        {{#if errorMessage}}
+        <div class="error-message">{{errorMessage}}</div>
+        {{/if}}
+
+        <div>
+            <button>Se connecter</button>
+        </div>
+    </form>
+
+</section>

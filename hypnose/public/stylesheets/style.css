@@ -650,6 +650,7 @@ samp {
 
 .links-footer {
   flex-direction: column;
+  margin-top: 45px;
 }
 
 .links-footer > ul {
@@ -688,6 +689,14 @@ samp {
   margin-left: 35px;
 }
 
+.mentions {
+  padding-left: 0px;
+}
+
+.container-bottom > span {
+  margin-top: 0px;
+}
+
 @media (min-width: 825px) {
   #global-footer {
     height: 350px;
@@ -713,4 +722,193 @@ samp {
   #global-footer a {
     margin-left: 0px;
   }
+
+  .mentions {
+    padding-left: 35px;
+  }
+
+  .container-bottom > img {
+    max-width: 90px;
+    margin-top: 134px;
+  }
+
+  .container-bottom > span {
+    margin-top: auto;
+    margin-bottom: 15px;
+  }
+}
+
+/* //...............................................................................................
+//.........................OOOOOOOO................GGGGGGGG......................................
+//.LLLLL.................OOOOOOOOOOOO............GGGGGGGGGGGG......GIIIII...INNNNN.......NNNNNN..
+//.LLLLL...............OOOOOOOOOOOOOOOO........GGGGGGGGGGGGGGG.....GIIIII...INNNNNN......NNNNNN..
+//.LLLLL...............OOOOOOOOOOOOOOOOO......GGGGGGGGGGGGGGGGG....GIIIII...INNNNNN......NNNNNN..
+//.LLLLL..............OOOOOOOOOOOOOOOOOO.....GGGGGGGGGGGGGGGGGGG...GIIIII...INNNNNNN.....NNNNNN..
+//.LLLLL.............LOOOOOOO....OOOOOOOO....GGGGGGGG...GGGGGGGG...GIIIII...INNNNNNNN....NNNNNN..
+//.LLLLL.............LOOOOOO......OOOOOOO...OGGGGGGG......GGGGGG...GIIIII...INNNNNNNN....NNNNNN..
+//.LLLLL.............LOOOOO........OOOOOOO..OGGGGGG.......GGGGGGG..GIIIII...INNNNNNNNN...NNNNNN..
+//.LLLLL............LLOOOOO........OOOOOOO..OGGGGG.........GGGGGG..GIIIII...INNNNNNNNN...NNNNNN..
+//.LLLLL............LLOOOO..........OOOOOO..OGGGGG.................GIIIII...INNNNNNNNNN..NNNNNN..
+//.LLLLL............LLOOOO..........OOOOOO..OGGGGG.................GIIIII...INNNNNNNNNN..NNNNNN..
+//.LLLLL............LLOOOO..........OOOOOO.OOGGGG.....GGGGGGGGGGG..GIIIII...INNNN.NNNNNN.NNNNNN..
+//.LLLLL............LLOOOO..........OOOOOO.OOGGGG.....GGGGGGGGGGG..GIIIII...INNNN..NNNNNNNNNNNN..
+//.LLLLL............LLOOOO..........OOOOOO.OOGGGGG....GGGGGGGGGGG..GIIIII...INNNN..NNNNNNNNNNNN..
+//.LLLLL............LLOOOO..........OOOOOO..OGGGGG....GGGGGGGGGGG..GIIIII...INNNN...NNNNNNNNNNN..
+//.LLLLL............LLOOOOO........OOOOOOO..OGGGGG.....GGGGGGGGGG..GIIIII...INNNN...NNNNNNNNNNN..
+//.LLLLL.............LOOOOO........OOOOOO...OGGGGGG........GGGGGG..GIIIII...INNNN....NNNNNNNNNN..
+//.LLLLL.............LOOOOOO......OOOOOOO...OGGGGGG.......GGGGGGG..GIIIII...INNNN....NNNNNNNNNN..
+//.LLLLLLLLLLLLLLLL..LOOOOOOO....OOOOOOOO....GGGGGGGG...GGGGGGGGG..GIIIII...INNNN.....NNNNNNNNN..
+//.LLLLLLLLLLLLLLLL...OOOOOOOOOOOOOOOOOO.....GGGGGGGGGGGGGGGGGGGG..GIIIII...INNNN......NNNNNNNN..
+//.LLLLLLLLLLLLLLLL....OOOOOOOOOOOOOOOO.......GGGGGGGGGGGGGGGGGGG..GIIIII...INNNN......NNNNNNNN..
+//.LLLLLLLLLLLLLLLL....OOOOOOOOOOOOOOOO........GGGGGGGGGGGGGGGGGG..GIIIII...INNNN.......NNNNNNN..
+//.LLLLLLLLLLLLLLLL......OOOOOOOOOOOO...........GGGGGGGGGGG.GGGGG..GIIIII...INNNN.......NNNNNNN..
+//.........................OOOOOOOO...............GGGGGGGG.......................................
+//............................................................................................... */
+
+input {
+  width: 100vw;
+  height: 58px;
+  border: 2px solid #cee4f7;
+  font-size: 30px;
+  padding-left: 15px;
+}
+
+button {
+  margin-left: auto;
+  margin-right: auto;
+  background: #f5e5b3;
+  border: none;
+  padding: 14px 85px;
+  font-size: 20px;
+  color: #989898;
+}
+
+select {
+  width: 100vw;
+  border: 2px solid #cee4f7;
+  font-size: 30px;
+  padding: 45px;
+}
+
+textarea {
+  width: 100vw;
+  border: 2px solid #cee4f7;
+  font-size: 30px;
+  height: 215px;
+}
+
+select option {
+  border: 1px solid #f5e5b3;
+  padding: 8px;
+  margin: 10px;
+}
+
+@media (min-width: 825px) {
+  input {
+    width: 739px;
+    height: 58px;
+    border: 2px solid #cee4f7;
+    font-size: 20px;
+    margin-left: 30px;
+  }
+  textarea {
+    font-size: 20px;
+  }
+  select {
+    font-size: 20px;
+  }
+}
+
+#login {
+  margin-top: 124px;
+  display: flex;
+}
+
+#login h2 {
+  margin-left: 30px;
+}
+
+.form-login input {
+  width: 100vw;
+  height: 58px;
+  border: 2px solid #cee4f7;
+  font-size: 30px;
+}
+
+.form-login > div button {
+  margin-left: auto;
+  margin-right: auto;
+  background: #f5e5b3;
+  border: none;
+  padding: 14px 85px;
+  font-size: 20px;
+  color: #989898;
+}
+
+.form-login {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* //................................................................................................................................................................
+//.........................OOOOOOOO...............................................................................................................................
+//.FFFFFFFFFFFFFFFF......OOOOOOOOOOOO.......ORRRRRRRRRRRRRRR......RMMMMMMM......MMMMMMMM........... RRRRRRRRRRRRRRR......RDDDDDDDDDDDDDD.....DDVVVV........VVVVV..
+//.FFFFFFFFFFFFFFFF....OOOOOOOOOOOOOOOO.....ORRRRRRRRRRRRRRRRR....RMMMMMMM......MMMMMMMM........... RRRRRRRRRRRRRRRRR....RDDDDDDDDDDDDDDD....DDVVVVV.......VVVVV..
+//.FFFFFFFFFFFFFFFF....OOOOOOOOOOOOOOOOO....ORRRRRRRRRRRRRRRRR....RMMMMMMM......MMMMMMMM........... RRRRRRRRRRRRRRRRR....RDDDDDDDDDDDDDDDD....DVVVVV......VVVVVV..
+//.FFFFFFFFFFFFFFFF...OOOOOOOOOOOOOOOOOO....ORRRRRRRRRRRRRRRRRR...RMMMMMMMM....MMMMMMMMM........... RRRRRRRRRRRRRRRRRR...RDDDDDDDDDDDDDDDDD...DVVVVV......VVVVVV..
+//.FFFFFFFFFFFFFFFF..FOOOOOOO....OOOOOOOO...ORRRRRRRRRRRRRRRRRR...RMMMMMMMM....MMMMMMMMM........... RRRRRRRRRRRRRRRRRR...RDDDDDDDDDDDDDDDDD...DVVVVVV.....VVVVVV..
+//.FFFFF.............FOOOOOO......OOOOOOO...ORRRRR.......RRRRRR...RMMMMMMMM....MMMMMMMMM........... RRRRR.......RRRRRR...RDDDDD......DDDDDDD...VVVVVV.....VVVVVV..
+//.FFFFF.............FOOOOO........OOOOOOO..ORRRRR.......RRRRRR...RMMMMMMMM....MMMMMMMMM........... RRRRR.......RRRRRR...RDDDDD.......DDDDDD...VVVVVV....VVVVVV...
+//.FFFFF............FFOOOOO........OOOOOOO..ORRRRR.......RRRRRR...RMMMMMMMM...MMMMMMMMMM........... RRRRR.......RRRRRR...RDDDDD.......DDDDDD...VVVVVV....VVVVVV...
+//.FFFFFFFFFFFFFFF..FFOOOO..........OOOOOO..ORRRRR.......RRRRRR...RMMMMMMMMM..MMMMMMMMMM........... RRRRR.......RRRRRR...RDDDDD.......DDDDDD....VVVVVV...VVVVVV...
+//.FFFFFFFFFFFFFFF..FFOOOO..........OOOOOO..ORRRRRRRRRRRRRRRRRR...RMMMMMMMMM..MMMMMMMMMM........... RRRRRRRRRRRRRRRRRR...RDDDDD.......DDDDDD....VVVVVV..VVVVVV....
+//.FFFFFFFFFFFFFFF..FFOOOO..........OOOOOO..ORRRRRRRRRRRRRRRRR....RMMMMMMMMM..MMMMMMMMMM........... RRRRRRRRRRRRRRRRR....RDDDDD.......DDDDDD....VVVVVV..VVVVVV....
+//.FFFFFFFFFFFFFFF..FFOOOO..........OOOOOO..ORRRRRRRRRRRRRRRR.....RMMMM.MMMM.MMMMMMMMMMM........... RRRRRRRRRRRRRRRR.....RDDDDD.......DDDDDD.....VVVVVV.VVVVVV....
+//.FFFFFFFFFFFFFFF..FFOOOO..........OOOOOO..ORRRRRRRRRRRRRRRRR....RMMMM.MMMMMMMMMMMMMMMM........... RRRRRRRRRRRRRRRRR....RDDDDD.......DDDDDD.....VVVVVV.VVVVV.....
+//.FFFFF............FFOOOO..........OOOOOO..ORRRRRRRRRRRRRRRRRR...RMMMM.MMMMMMMMMMMMMMMM........... RRRRRRRRRRRRRRRRRR...RDDDDD.......DDDDDD.....VVVVVVVVVVVV.....
+//.FFFFF............FFOOOOO........OOOOOOO..ORRRRR......RRRRRRR...RMMMM.MMMMMMMMMMMMMMMM........... RRRRR......RRRRRRR...RDDDDD.......DDDDDD......VVVVVVVVVVV.....
+//.FFFFF.............FOOOOO........OOOOOO...ORRRRR.......RRRRRR...RMMMM.MMMMMMMMM.MMMMMM........... RRRRR.......RRRRRR...RDDDDD......DDDDDDD......VVVVVVVVVV......
+//.FFFFF.............FOOOOOO......OOOOOOO...ORRRRR.......RRRRRR...RMMMM..MMMMMMMM.MMMMMM........... RRRRR.......RRRRRR...RDDDDD.....DDDDDDD.......VVVVVVVVVV......
+//.FFFFF.............FOOOOOOO....OOOOOOOO...ORRRRR.......RRRRRR...RMMMM..MMMMMMMM.MMMMMM........... RRRRR.......RRRRRR...RDDDDDDDDDDDDDDDDD........VVVVVVVVV......
+//.FFFFF..............OOOOOOOOOOOOOOOOOO....ORRRRR.......RRRRRR...RMMMM..MMMMMMMM.MMMMMM........... RRRRR.......RRRRRR...RDDDDDDDDDDDDDDDDD........VVVVVVVV.......
+//.FFFFF...............OOOOOOOOOOOOOOOO.....ORRRRR.......RRRRRR...RMMMM..MMMMMMM..MMMMMM........... RRRRR.......RRRRRR...RDDDDDDDDDDDDDDDD.........VVVVVVVV.......
+//.FFFFF...............OOOOOOOOOOOOOOOO.....ORRRRR.......RRRRRRR..RMMMM...MMMMMM..MMMMMM........... RRRRR.......RRRRRRR..RDDDDDDDDDDDDDDD...........VVVVVVV.......
+//.FFFFF.................OOOOOOOOOOOO.......ORRRRR.......RRRRRRR..RMMMM...MMMMMM..MMMMMM........... RRRRR.......RRRRRRR..RDDDDDDDDDDDDDD............VVVVVV........
+//.........................OOOOOOOO...............................................................................................................................
+//................................................................................................................................................................ */
+
+#rdv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  margin-top: 63px;
+}
+
+#rdv h1 {
+  margin-left: 30px;
+  width: auto;
+}
+
+#rdv h2 {
+  margin-left: 30px;
+  padding-top: 35px;
+}
+
+#rdv p {
+  width: auto;
+  text-align: justify;
+  margin-left: 30px;
+}
+
+.form-rdv {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-rdv button {
+  margin-top: 50px;
 }
