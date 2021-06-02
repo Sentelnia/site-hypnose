@@ -658,14 +658,19 @@ samp {
 
 @media (min-width: 1045px) {
 
+
+
+
+
   #temoignages {
     height: 385px;
     background: #D8EBFC;
     margin-top: 200px;
+    display: flex;
+    align-items: center;
   }
 
   .container-avis {
-
     width: 600px;
     display: flex;
     height: 366px;
@@ -674,6 +679,8 @@ samp {
     margin-right: auto;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-top: -17px;
+
 
   }
 
@@ -737,5 +744,66 @@ samp {
 
 
   }
+
+}
+
+
+/* PIED DE PAGE  */
+
+#global-footer {
+
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.links-footer {
+
+  display: flex;
+  width: 900px;
+  justify-content: space-around;
+
+}
+
+.links-footer>ul {
+
+  list-style: none;
+  line-height: 24px;
+
+}
+
+.links-footer li:first-child {
+  font-size: 18px;
+  line-height: 60px;
+  background: #F5E5B3;
+  display: inline;
+  padding: 10px;
+}
+
+.links-footer li {
+
+  font-size: 15px;
+  color: #707070;
+  letter-spacing: 0.5px;
+
+}
+
+.container-bottom {
+
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: space-evenly;
+  margin-right: 25px;
+  align-items: flex-end;
+
+}
+
+.container-bottom>img {
+
+  max-width: 90px;
+
 
 }
