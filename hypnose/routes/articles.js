@@ -4,6 +4,9 @@ const router = new Router();
 const Article = require("../models/Article.js");
 const fileUploader = require('../configs/cloudinary.config');
 
+// require slugify
+
+const slugify = require('slugify')
 
 
 ////////////LISTE DES ARTICLES////////////////////
@@ -11,6 +14,9 @@ const fileUploader = require('../configs/cloudinary.config');
 router.get('/articles', (req , res, next) => {
   Article.find()
   .then(allArticleFromDB => {
+    allArticleFromDB.forEach((article) => {
+      article.title2 = slugify(article.title)
+    })
     res.render('articles/All-articles', {articles : allArticleFromDB})
   })
   .catch(err => next(err))
@@ -72,18 +78,25 @@ router.post('/articles/:articleId/delete', (req, res, next) => {
 
 ////////////DETAIL POUR UN ARTICLE////////////////////
 
-router.get('/articles/:articleId', (req, res, next) => {
+router.get('/articles/:articleName/:articleId', (req, res, next) => {
   const { articleId } = req.params;
   
 
   Article.findById(articleId)
   .then(article => {
-    console.log(article)
     res.render('articles/article-details', {article : article})})
   
   .catch(err => next(err))
 })
 
+
+///////////////////////FONCTION POUR ENLEVER LES ESPACES DANS L'URL////////////////////
+
+// function slugify(str){
+//   // ex str : "test 2"
+//   let result = str.replace(' ', '-')
+//   return result
+// } 
 
 
 module.exports = router

@@ -1,0 +1,20 @@
+Coucou, je suis la page qui montre tous les témoignages
+
+<h2>Tous les témoignages : </h2>
+
+<div>
+<ul>
+  {{#each temoignages}}
+  <li>
+    <h3>{{this.type_seance}}</h3>
+    <p>{{this.message}}</p>
+    <p>{{this.signature}}</p>
+
+  </li>
+  <a href="/temoignages/{{id}}/edit">Edit</a>
+  <form action="/temoignages/{{id}}/delete" method="POST">
+  <button>Delete</button>
+  </form>
+  {{/each}}
+</ul>
+</div>
