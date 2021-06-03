@@ -32,10 +32,20 @@ router.get('/articles/create', (req, res) => {
 
 router.post('/articles/create', fileUploader.single('image'), (req, res, next) => {
   const { title, description, video } = req.body;
+  
 
-  Article.create({title, description, video, imageUrl: req.file.path })
+  // Condition sans image
+  if (req.file === undefined){
+    Article.create({title, description, video, like : 0 })
   .then(() => res.redirect('/articles'))
   .catch(err => next(err))
+  return
+  // Condition avec image
+  } else {
+    Article.create({title, description, video, imageUrl: req.file.path, like : 0})
+  .then(() => res.redirect('/articles'))
+  .catch(err => next(err))
+  }
 })
 
 
@@ -61,6 +71,17 @@ router.post('/articles/:articleId/edit', fileUploader.single('image'), (req, res
     .then(updatedArticle => res.redirect(`/articles/${updatedArticle.id}`))
     .catch(err => next(err))
 })
+
+
+
+////////////EDITER LES LIKES////////////////////
+
+
+router.post('/articles/:articleId/like', (req, res, next) => {
+  const { like } = req.body;
+  res.send(like)
+})
+
 
 
 

@@ -14,6 +14,11 @@ Coucou , je suis la page de détail d'un articles
 
 <p>{{article.description}}</p>
 
+{{!-- formulaire pour les likes --}}
+    <form action='/articles/{{id}}/like' method="POST">
+    <button id='like'>{{this.like}}</button>
+    </form>
+
 <a href="/articles/{{id}}/edit">Edit</a>
 <form action="/articles/{{id}}/delete" method="POST">
   <button>Delete</button>

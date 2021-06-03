@@ -5,7 +5,8 @@ const articleSchema = new Schema({
   title: String,
   imageUrl: String,
   video: String,
-  description: String
+  description: String,
+  like: Number
 }, {
   timestamps: true
 });
