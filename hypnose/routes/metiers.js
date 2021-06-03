@@ -1,4 +1,6 @@
-const { Router } = require("express");
+const {
+  Router
+} = require("express");
 const router = new Router();
 
 /////////////////////NODEMAILER///////////////////
@@ -10,11 +12,11 @@ const nodemailer = require('nodemailer');
 let transporter = nodemailer.createTransport({
   port: 1025,
   ignoreTLS: true,
-  },);
+}, );
 
 ////////////HYPNOTHERAPIE//////////////////
 
-router.get('/hypnotherapeute', (req, res) =>{
+router.get('/hypnotherapeute', (req, res) => {
   res.render('metiers/hypno')
 })
 
@@ -22,7 +24,7 @@ router.get('/hypnotherapeute', (req, res) =>{
 
 ////////////SOPHROLOGIE//////////////////
 
-router.get('/sophrologue', (req, res) =>{
+router.get('/sophrologue', (req, res) => {
   res.render('metiers/sophro')
 })
 
@@ -30,7 +32,7 @@ router.get('/sophrologue', (req, res) =>{
 
 ////////////MAGNETISME//////////////////
 
-router.get('/sophrologue', (req, res) =>{
+router.get('/magnetiseur', (req, res) => {
   res.render('metiers/magne')
 })
 
@@ -43,7 +45,9 @@ router.get("/prendre-rdv", (req, res) => {
     res.render("metiers/rdv");
     return;
   }
-  res.render("metiers/rdv", { user: req.user });
+  res.render("metiers/rdv", {
+    user: req.user
+  });
 });
 
 
@@ -51,13 +55,13 @@ router.get("/prendre-rdv", (req, res) => {
 
 router.post("/prendre-rdv", (req, res, next) => {
   transporter.sendMail({
-    from: req.body.email, // sender address
-    to: "alexandre.capaldi@hotmail.fr", // list of receivers
-    subject: req.body.type_seance, // Subject line
-    text: req.body.message
-  })
-  .then(()=> res.redirect('/'))
-  .catch( err => next(err))
+      from: req.body.email, // sender address
+      to: "alexandre.capaldi@hotmail.fr", // list of receivers
+      subject: req.body.type_seance, // Subject line
+      text: req.body.message
+    })
+    .then(() => res.redirect('/'))
+    .catch(err => next(err))
 })
 
 
