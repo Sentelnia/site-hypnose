@@ -146,7 +146,7 @@ samp {
 #mobile {
   border: 2px solid #cee4f7;
   position: absolute;
-  top: 86px;
+  top: 0px;
   display: flex;
   background: white;
   flex-direction: column;
@@ -154,7 +154,8 @@ samp {
   right: 0px;
   left: 0px;
   width: auto;
-  height: 500px;
+  height: 560px;
+  align-items: flex-start;
 }
 
 #mobile ul {
@@ -164,7 +165,7 @@ samp {
 }
 
 #mobile li:first-child {
-  margin-left: 80px;
+
   font-weight: bold;
   font-size: 25px;
   padding-top: 20px;
@@ -173,7 +174,7 @@ samp {
 }
 
 #mobile li {
-  margin-left: 112px;
+
   font-size: 20px;
   letter-spacing: 2.5px;
   line-height: 27px;
@@ -181,8 +182,8 @@ samp {
 
 .close {
   position: absolute;
-  right: 30px;
-  top: 10px;
+  right: 18px;
+  top: 27px;
   font-size: 30px;
 }
 
