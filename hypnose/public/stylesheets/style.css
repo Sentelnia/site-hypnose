@@ -985,3 +985,81 @@ select option {
 #form-avis {
   padding-top: 85px;
 }
+
+/* //...........................................................................................................................................................................
+//..iiiii..................................................................iiiii................................iiiii........................................................
+//.iiiiii..................................................................iiiiii...............................iiiii........................................................
+//.iiiiii..................................................................iiiiii.....................tttttt....iiiii........................................................
+//.iiiiii..................................................................iiiiii.....................tttttt....iiiii........................................................
+//.iiiiii..................................................................iiiiii.....................tttttt....iiiii........................................................
+//.iiiiii..................................................................iiiiii.....................tttttt....iiiii........................................................
+//.iiiiii...nnnnn.nnnnnnn........ssssssss.........cccccccc.....crrrrr.rrrr.iiiiii..ipppp.ppppppp....pptttttttt..iiiii......ooooooooo......onnnnn.nnnnnn........sssssssss.....
+//.iiiiii...nnnnnnnnnnnnnn.....ssssssssssss......ccccccccccc...crrrrrrrrrr.iiiiii..ippppppppppppp...pptttttttt..iiiii.....oooooooooooo....onnnnnnnnnnnnnn.....sssssssssss....
+//.iiiiii...nnnnnnnnnnnnnnn...ssssssssssssss...ccccccccccccc...crrrrrrrrrr.iiiiii..ipppppppppppppp..pptttttttt..iiiii....oooooooooooooo...onnnnnnnnnnnnnn....sssssssssssss...
+//.iiiiii...nnnnnnnnnnnnnnn...ssssssssssssss...cccccccccccccc..crrrrrrrrrr.iiiiii..ippppppppppppppp.pptttttttt..iiiii...ooooooooooooooo...onnnnnnnnnnnnnnn..nssssssssssssss..
+//.iiiiii...nnnnnnnnnnnnnnn...ssssss..ssssss..scccccccccccccc..crrrrrrrrrr.iiiiii..ippppppppppppppp.pptttttttt..iiiii...oooooooooooooooo..onnnnnnnnnnnnnnn..nssssss.sssssss..
+//.iiiiii...nnnnnn...nnnnnn...ssssss...sssss..scccccc..ccccccc.crrrrrrrr...iiiiii..ipppppp...ppppppp..tttttt....iiiii..ioooooo....oooooo..onnnnnn...nnnnnn..nsssss...ssssss..
+//.iiiiii...nnnnn.....nnnnn...ssssssssss......sccccc....cccccc.crrrrrr.....iiiiii..ippppp.....pppppp..tttttt....iiiii..iooooo.....oooooo..onnnnn....nnnnnn..nsssssssss.......
+//.iiiiii...nnnnn.....nnnnn...ssssssssssss....sccccc...........crrrrr......iiiiii..ippppp.....pppppp..tttttt....iiiii..iooooo......oooooo.onnnnn....nnnnnn..nssssssssssss....
+//.iiiiii...nnnnn.....nnnnn...ssssssssssssss..scccc............crrrrr......iiiiii..ippppp.....pppppp..tttttt....iiiii..iooooo......oooooo.onnnnn....nnnnnn...sssssssssssss...
+//.iiiiii...nnnnn.....nnnnn....sssssssssssss..scccc............crrrrr......iiiiii..ippppp.....pppppp..tttttt....iiiii..iooooo......oooooo.onnnnn....nnnnnn....sssssssssssss..
+//.iiiiii...nnnnn.....nnnnn......ssssssssssss.sccccc....ccccc..crrrrr......iiiiii..ippppp.....pppppp..tttttt....iiiii..iooooo......oooooo.onnnnn....nnnnnn.....ssssssssssss..
+//.iiiiii...nnnnn.....nnnnn..nsssss.sssssssss.sccccc....cccccc.crrrrr......iiiiii..ippppp.....pppppp..tttttt....iiiii..iooooo.....oooooo..onnnnn....nnnnnn..nssss..ssssssss..
+//.iiiiii...nnnnn.....nnnnn..nsssss....ssssss.scccccc..cccccc..crrrrr......iiiiii..ipppppp...pppppp...tttttt....iiiii...oooooo...ooooooo..onnnnn....nnnnnn..nsssss...ssssss..
+//.iiiiii...nnnnn.....nnnnn..nsssssssssssssss.scccccccccccccc..crrrrr......iiiiii..ippppppppppppppp...tttttttt..iiiii...oooooooooooooooo..onnnnn....nnnnnn..nssssssssssssss..
+//.iiiiii...nnnnn.....nnnnn...sssssssssssssss..cccccccccccccc..crrrrr......iiiiii..ippppppppppppppp...tttttttt..iiiii....oooooooooooooo...onnnnn....nnnnnn..nssssssssssssss..
+//.iiiiii...nnnnn.....nnnnn...ssssssssssssss...ccccccccccccc...crrrrr......iiiiii..ipppppppppppppp....tttttttt..iiiii....oooooooooooooo...onnnnn....nnnnnn...sssssssssssss...
+//.iiiiii...nnnnn.....nnnnn....ssssssssssss......cccccccccc....crrrrr......iiiiii..ippppppppppppp......ttttttt..iiiii.....ooooooooooo.....onnnnn....nnnnnn....ssssssssssss...
+//...............................ssssssss.........ccccccc..........................ippppp.ppppp..........ttttt..............oooooooo...........................sssssssss.....
+//.................................................................................ippppp....................................................................................
+//.................................................................................ippppp....................................................................................
+//.................................................................................ippppp....................................................................................
+//.................................................................................ippppp....................................................................................
+//.................................................................................ippppp....................................................................................
+//.................................................................................ippppp....................................................................................
+//........................................................................................................................................................................... */
+
+#signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  padding-top: 120px;
+}
+
+#signup h1 {
+  margin-left: 30px;
+  width: auto;
+}
+
+#signup h3 {
+  margin-left: 30px;
+  padding-top: 35px;
+}
+
+#signup p {
+  width: auto;
+  text-align: justify;
+  margin-left: 30px;
+}
+
+.signup-rdv {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-rdv button {
+  margin-top: 50px;
+}
+
+@media (min-width: 825px) {
+  #signup p {
+    width: 625px;
+  }
+
+  .signup-rdv {
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+  }
+}
