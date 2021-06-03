@@ -2,6 +2,7 @@ const { Router } = require("express");
 const router = new Router();
 
 const Article = require("../models/Article.js");
+const User = require("../models/User.js");
 const fileUploader = require('../configs/cloudinary.config');
 
 // require slugify
@@ -17,7 +18,12 @@ router.get('/articles', (req , res, next) => {
     allArticleFromDB.forEach((article) => {
       article.title2 = slugify(article.title)
     })
-    res.render('articles/All-articles', {articles : allArticleFromDB})
+    if (req.isAuthenticated() && req.user.role === 'ADMIN') {
+      res.render('articles/All-articles', {articles : allArticleFromDB, message:'admin'})
+      return
+      } else {
+        res.render('articles/All-articles', {articles : allArticleFromDB})
+      }
   })
   .catch(err => next(err))
 })
@@ -26,7 +32,7 @@ router.get('/articles', (req , res, next) => {
 
 ////////////CREER UN ARTICLE////////////////////
 
-router.get('/articles/create', (req, res) => {
+router.get('/articles/create', checkRoles('ADMIN'), (req, res) => {
   res.render('articles/create')
 })
 
@@ -52,8 +58,9 @@ router.post('/articles/create', fileUploader.single('image'), (req, res, next) =
 
 ////////////EDITER UN ARTICLE////////////////////
 
-router.get('/articles/:articleId/edit', (req, res) =>{
+router.get('/articles/:articleId/edit', checkRoles('ADMIN'), (req, res, next) =>{
   const { articleId } = req.params;
+
 
   Article.findById(articleId)
   .then(articleToEdit => {
@@ -90,26 +97,35 @@ router.post('/articles/:articleId/edit', fileUploader.single('image'), (req, res
 
 
 
-////////////EDITER LES LIKES////////////////////
-
-
-router.post('/articles/:articleId/like', (req, res, next) => {
-  const { like } = req.body;
-  res.send(like)
-})
-
-
-
 
 ////////////SUPPRIMER UN ARTICLE EN LISTE////////////////////
 
-router.post('/articles/:articleId/delete', (req, res, next) => {
+router.post('/articles/:articleId/delete', checkRoles('ADMIN'), (req, res, next) => {
   const { articleId } = req.params;
 
   Article.findByIdAndDelete(articleId)
     .then(() => res.redirect('/articles'))
     .catch(err => next(err))
 })
+
+
+////////////AJOUTE LES ARTICLES LIKES DANS LE PROFIL DU USER////////////////////
+
+// router.post("/articles/:articleId/like", (req, res, next) => {
+//   const { articleId } = req.params;
+
+//   if(req.isAuthenticated()){
+//     const { userId } = req.user
+//     User.findById(userId)
+//       .then((user) => {
+//         Article.findById(article.Id)
+//           .then((article) => {
+
+//           })
+//       })
+//   }
+// })
+
 
 
 ////////////DETAIL POUR UN ARTICLE////////////////////
@@ -128,7 +144,7 @@ router.get('/articles/:articleName/:articleId', (req, res, next) => {
 
 ////////////EDITER UN ARTICLE EN DETAIL////////////////////
 
-router.get('/articles/:articleName/:articleId/edit', (req, res) =>{
+router.get('/articles/:articleName/:articleId/edit', checkRoles('ADMIN'), (req, res) =>{
   const { articleId } = req.params;
 
   Article.findById(articleId)
@@ -143,7 +159,7 @@ router.get('/articles/:articleName/:articleId/edit', (req, res) =>{
 
 ////////////SUPPRIMER UN ARTICLE EN DETAIL////////////////////
 
-router.post('/articles/:articleName/:articleId/delete', (req, res, next) => {
+router.post('/articles/:articleName/:articleId/delete', checkRoles('ADMIN'), (req, res, next) => {
   const { articleId } = req.params;
 
   Article.findByIdAndDelete(articleId)
@@ -164,5 +180,17 @@ router.post('/articles/:articleName/:articleId/delete', (req, res, next) => {
 //   return result
 // } 
 
+
+///////////////////////FONCTION POUR LES ROLES////////////////////
+
+function checkRoles(role) {
+  return function (req, res, next) {
+    if (req.isAuthenticated() && req.user.role === 'ADMIN') {
+      return next();
+    } else {
+      res.redirect('/login');
+    }
+  };
+}
 
 module.exports = router
