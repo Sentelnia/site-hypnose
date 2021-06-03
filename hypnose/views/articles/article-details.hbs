@@ -19,7 +19,7 @@ Coucou , je suis la page de détail d'un articles
     <button id='like'>{{this.like}}</button>
     </form>
 
-<a href="/articles/{{id}}/edit">Edit</a>
-<form action="/articles/{{id}}/delete" method="POST">
+<a href="/articles/{{article.title}}/{{article.id}}/edit">Edit</a>
+<form action="/articles/{{article.title}}/{{article.id}}/delete" method="POST">
   <button>Delete</button>
 </form>
