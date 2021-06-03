@@ -21,8 +21,8 @@ router.post("/inscription", (req, res, next) => {
   const { name, last_name, email, tel, password } = req.body;
 
   //si pas de mail, pas de password , pas de name et pas last_name, on rend le formulaire d'inscription
-  if (!name || !last_name || !email || !tel || !password) {
-    res.render("auth/signup", {
+  if (!name || !last_name || !email || !password) {
+    res.render("auth/inscription", {
       errorMessage:
         "All fields are mandatory. Please provide your username, email and password.",
     });

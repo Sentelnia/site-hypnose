@@ -10,7 +10,12 @@ const Temoignage = require("../models/Temoignage.js");
 router.get('/temoignages', (req , res, next) => {
   Temoignage.find()
   .then(allTemoignagesFromDB => {
-    res.render('temoignages/All-temoignages', {temoignages : allTemoignagesFromDB})
+    if (req.isAuthenticated() && req.user.role === 'ADMIN') {
+      res.render('temoignages/All-temoignages', {temoignages : allTemoignagesFromDB , message:'admin'})
+    return
+    } else {
+      res.render('temoignages/All-temoignages', {temoignages : allTemoignagesFromDB})
+    }
   })
   .catch(err => next(err))
 })
@@ -19,7 +24,7 @@ router.get('/temoignages', (req , res, next) => {
 
 ////////////CREER UN TEMOIGNAGE////////////////////
 
-router.get('/temoignages/create', (req, res) => {
+router.get('/temoignages/create', checkRoles('ADMIN'), (req, res) => {
   res.render('temoignages/create')
 })
 
@@ -35,7 +40,7 @@ router.post('/temoignages/create', (req, res, next) => {
 
 ////////////EDITER UN TEMOIGNAGE////////////////////
 
-router.get('/temoignages/:temoignageId/edit', (req, res) =>{
+router.get('/temoignages/:temoignageId/edit', checkRoles('ADMIN'), (req, res) =>{
   const { temoignageId } = req.params;
 
   Temoignage.findById(temoignageId)
@@ -61,7 +66,7 @@ router.post('/temoignages/:temoignageId/edit', (req, res,next) =>{
 
 ////////////SUPPRIMER UN TEMOIGNAGE////////////////////
 
-router.post('/temoignages/:temoignageId/delete', (req, res, next) => {
+router.post('/temoignages/:temoignageId/delete', checkRoles('ADMIN'), (req, res, next) => {
   const { temoignageId } = req.params;
 
   Temoignage.findByIdAndDelete(temoignageId)
@@ -70,6 +75,16 @@ router.post('/temoignages/:temoignageId/delete', (req, res, next) => {
 })
 
 
+///////////////////////FONCTION POUR LES ROLES////////////////////
 
+function checkRoles(role) {
+  return function (req, res, next) {
+    if (req.isAuthenticated() && req.user.role === 'ADMIN') {
+      return next();
+    } else {
+      res.redirect('/login');
+    }
+  };
+}
 
 module.exports = router
