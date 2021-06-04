@@ -139,7 +139,55 @@ samp {
   margin-right: 100px;
 }
 
+/* ACCOUNT MENU  */
 
+#mobile-account.active {
+  display: none;
+}
+
+#mobile-account {
+  border: 2px solid #cee4f7;
+  position: absolute;
+  top: 0px;
+  display: flex;
+  background: white;
+  flex-direction: column;
+  justify-content: center;
+  right: 0px;
+  left: 0px;
+  width: auto;
+  height: 560px;
+  align-items: flex-start;
+}
+
+#mobile-account ul {
+
+  list-style: none;
+
+}
+
+#mobile-account li:first-child {
+
+  font-weight: bold;
+  font-size: 25px;
+  padding-top: 20px;
+  line-height: 45px;
+  letter-spacing: 0.5px;
+}
+
+#mobile-account li {
+
+  font-size: 20px;
+  letter-spacing: 2.5px;
+  line-height: 27px;
+}
+
+.close {
+  position: absolute;
+  right: 18px;
+  top: 27px;
+  font-size: 30px;
+}
 
 
 /* Menu  */
