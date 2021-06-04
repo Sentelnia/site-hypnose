@@ -21,6 +21,7 @@ router.get('/articles', (req, res, next) => {
         article.title2 = slugify(article.title)
       })
       if (req.isAuthenticated() && req.user.role === 'ADMIN') {
+<<<<<<< HEAD
         res.render('articles/All-articles', {articles : allArticleFromDB, message:'admin'})
         return
         } else {
@@ -29,7 +30,21 @@ router.get('/articles', (req, res, next) => {
     })
     .catch(err => next(err))
   })
-
+=======
+        res.render('articles/All-articles', {
+          articles: allArticleFromDB,
+          message: 'admin'
+        })
+        return
+      } else {
+        res.render('articles/All-articles', {
+          articles: allArticleFromDB
+        })
+      }
+    })
+    .catch(err => next(err))
+})
+>>>>>>> cf774cf57542dff1f97c6ccfb1ae9359c67262b7
 
 
 ////////////CREER UN ARTICLE////////////////////
@@ -75,8 +90,15 @@ router.post('/articles/create', fileUploader.single('image'), (req, res, next) =
 
 ////////////EDITER UN ARTICLE////////////////////
 
+<<<<<<< HEAD
 router.get('/articles/:articleId/edit', checkRoles('ADMIN'), (req, res, next) =>{
   const { articleId } = req.params;
+=======
+router.get('/articles/:articleId/edit', checkRoles('ADMIN'), (req, res, next) => {
+  const {
+    articleId
+  } = req.params;
+>>>>>>> cf774cf57542dff1f97c6ccfb1ae9359c67262b7
 
 
   Article.findById(articleId)
@@ -139,7 +161,13 @@ router.post('/articles/:articleId/edit', fileUploader.single('image'), (req, res
 ////////////SUPPRIMER UN ARTICLE EN LISTE////////////////////
 
 router.post('/articles/:articleId/delete', checkRoles('ADMIN'), (req, res, next) => {
+<<<<<<< HEAD
   const { articleId } = req.params;
+=======
+  const {
+    articleId
+  } = req.params;
+>>>>>>> cf774cf57542dff1f97c6ccfb1ae9359c67262b7
 
   Article.findByIdAndDelete(articleId)
     .then(() => res.redirect('/articles'))
@@ -194,8 +222,15 @@ router.get('/articles/:articleName/:articleId', (req, res, next) => {
 
 ////////////EDITER UN ARTICLE EN DETAIL////////////////////
 
+<<<<<<< HEAD
 router.get('/articles/:articleName/:articleId/edit', checkRoles('ADMIN'), (req, res) =>{
   const { articleId } = req.params;
+=======
+router.get('/articles/:articleName/:articleId/edit', checkRoles('ADMIN'), (req, res) => {
+  const {
+    articleId
+  } = req.params;
+>>>>>>> cf774cf57542dff1f97c6ccfb1ae9359c67262b7
 
   Article.findById(articleId)
     .then(articleToEdit => {
@@ -212,7 +247,13 @@ router.get('/articles/:articleName/:articleId/edit', checkRoles('ADMIN'), (req, 
 ////////////SUPPRIMER UN ARTICLE EN DETAIL////////////////////
 
 router.post('/articles/:articleName/:articleId/delete', checkRoles('ADMIN'), (req, res, next) => {
+<<<<<<< HEAD
   const { articleId } = req.params;
+=======
+  const {
+    articleId
+  } = req.params;
+>>>>>>> cf774cf57542dff1f97c6ccfb1ae9359c67262b7
 
   Article.findByIdAndDelete(articleId)
     .then(() => res.redirect('/articles'))
