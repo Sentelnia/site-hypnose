@@ -149,20 +149,27 @@ router.post('/articles/:articleId/delete', checkRoles('ADMIN'), (req, res, next)
 
 ////////////AJOUTE LES ARTICLES LIKES DANS LE PROFIL DU USER////////////////////
 
-// router.post("/articles/:articleId/like", (req, res, next) => {
-//   const { articleId } = req.params;
+router.post("/articles/:articleId/like", (req, res, next) => {
+  const { articleId } = req.params;
 
-//   if(req.isAuthenticated()){
-//     const { userId } = req.user
-//     User.findById(userId)
-//       .then((user) => {
-//         Article.findById(article.Id)
-//           .then((article) => {
-
-//           })
-//       })
-//   }
-// })
+  if(req.isAuthenticated()){
+    const { articles_like } = req.user
+    
+    Article.findById(articleId)
+      .then((article) => {
+        article.title2 = slugify(article.title)
+        articles_like.push(article)
+        User.findByIdAndUpdate(req.user.id, {articles_like})
+          .then(()=> {
+            User.populate('articles_like')
+            res.redirect(`/articles/${article.title2}/${article.id}`)
+          })
+          .catch(err => next(err))
+      })
+      .catch(err => next(err))
+  return
+  }
+})
 
 
 
