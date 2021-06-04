@@ -21,6 +21,16 @@ router.get('/articles', (req, res, next) => {
         article.title2 = slugify(article.title)
       })
       if (req.isAuthenticated() && req.user.role === 'ADMIN') {
+<<<<<<< HEAD
+        res.render('articles/All-articles', {articles : allArticleFromDB, message:'admin'})
+        return
+        } else {
+          res.render('articles/All-articles', {articles : allArticleFromDB})
+        }
+    })
+    .catch(err => next(err))
+  })
+=======
         res.render('articles/All-articles', {
           articles: allArticleFromDB,
           message: 'admin'
@@ -34,6 +44,7 @@ router.get('/articles', (req, res, next) => {
     })
     .catch(err => next(err))
 })
+>>>>>>> cf774cf57542dff1f97c6ccfb1ae9359c67262b7
 
 
 ////////////CREER UN ARTICLE////////////////////
@@ -79,10 +90,15 @@ router.post('/articles/create', fileUploader.single('image'), (req, res, next) =
 
 ////////////EDITER UN ARTICLE////////////////////
 
+<<<<<<< HEAD
+router.get('/articles/:articleId/edit', checkRoles('ADMIN'), (req, res, next) =>{
+  const { articleId } = req.params;
+=======
 router.get('/articles/:articleId/edit', checkRoles('ADMIN'), (req, res, next) => {
   const {
     articleId
   } = req.params;
+>>>>>>> cf774cf57542dff1f97c6ccfb1ae9359c67262b7
 
 
   Article.findById(articleId)
@@ -145,9 +161,13 @@ router.post('/articles/:articleId/edit', fileUploader.single('image'), (req, res
 ////////////SUPPRIMER UN ARTICLE EN LISTE////////////////////
 
 router.post('/articles/:articleId/delete', checkRoles('ADMIN'), (req, res, next) => {
+<<<<<<< HEAD
+  const { articleId } = req.params;
+=======
   const {
     articleId
   } = req.params;
+>>>>>>> cf774cf57542dff1f97c6ccfb1ae9359c67262b7
 
   Article.findByIdAndDelete(articleId)
     .then(() => res.redirect('/articles'))
@@ -157,20 +177,27 @@ router.post('/articles/:articleId/delete', checkRoles('ADMIN'), (req, res, next)
 
 ////////////AJOUTE LES ARTICLES LIKES DANS LE PROFIL DU USER////////////////////
 
-// router.post("/articles/:articleId/like", (req, res, next) => {
-//   const { articleId } = req.params;
+router.post("/articles/:articleId/like", (req, res, next) => {
+  const { articleId } = req.params;
 
-//   if(req.isAuthenticated()){
-//     const { userId } = req.user
-//     User.findById(userId)
-//       .then((user) => {
-//         Article.findById(article.Id)
-//           .then((article) => {
-
-//           })
-//       })
-//   }
-// })
+  if(req.isAuthenticated()){
+    const { articles_like } = req.user
+    
+    Article.findById(articleId)
+      .then((article) => {
+        article.title2 = slugify(article.title)
+        articles_like.push(article)
+        User.findByIdAndUpdate(req.user.id, {articles_like})
+          .then(()=> {
+            User.populate('articles_like')
+            res.redirect(`/articles/${article.title2}/${article.id}`)
+          })
+          .catch(err => next(err))
+      })
+      .catch(err => next(err))
+  return
+  }
+})
 
 
 
@@ -195,10 +222,15 @@ router.get('/articles/:articleName/:articleId', (req, res, next) => {
 
 ////////////EDITER UN ARTICLE EN DETAIL////////////////////
 
+<<<<<<< HEAD
+router.get('/articles/:articleName/:articleId/edit', checkRoles('ADMIN'), (req, res) =>{
+  const { articleId } = req.params;
+=======
 router.get('/articles/:articleName/:articleId/edit', checkRoles('ADMIN'), (req, res) => {
   const {
     articleId
   } = req.params;
+>>>>>>> cf774cf57542dff1f97c6ccfb1ae9359c67262b7
 
   Article.findById(articleId)
     .then(articleToEdit => {
@@ -215,9 +247,13 @@ router.get('/articles/:articleName/:articleId/edit', checkRoles('ADMIN'), (req, 
 ////////////SUPPRIMER UN ARTICLE EN DETAIL////////////////////
 
 router.post('/articles/:articleName/:articleId/delete', checkRoles('ADMIN'), (req, res, next) => {
+<<<<<<< HEAD
+  const { articleId } = req.params;
+=======
   const {
     articleId
   } = req.params;
+>>>>>>> cf774cf57542dff1f97c6ccfb1ae9359c67262b7
 
   Article.findByIdAndDelete(articleId)
     .then(() => res.redirect('/articles'))
