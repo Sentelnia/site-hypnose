@@ -157,7 +157,8 @@ router.post('/articles/:articleId/delete', checkRoles('ADMIN'), (req, res, next)
 
 router.post("/articles/:articleId/like", (req, res, next) => {
   const { articleId } = req.params;
-
+  
+  console.log(req.body.like)
   if(req.isAuthenticated()){
     const { articles_like } = req.user
     

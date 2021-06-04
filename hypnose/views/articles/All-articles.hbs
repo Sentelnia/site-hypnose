@@ -16,9 +16,14 @@
     <img src = '{{this.imageUrl}}' width='100px'/>
     <p>{{this.video}}</p>
     <p>{{this.description}}</p>
+    
 
-    <form action="/articles/{{id}}/like" method="POST">
-  <button>LIKE</button>
+  <form action="/articles/{{this.id}}/like" method="POST">
+  <input  id="like" type='number' value="{{this.like}}" readonly>
+  <button >LIKE</button>
+  </form>
+  
+  
     
 
   </li>
@@ -32,13 +37,13 @@
 </ul>
 </div>
 
-{{/if}}
 
 
+{{else}}
 
 {{!-- Si simple user ou visiteur --}}
 
- Coucou, je suis la page qui montre tous les articles
+Coucou, je suis la page qui montre tous les articles
 
 <h2>Tous les articles : </h2>
 
@@ -51,6 +56,14 @@
     <p>{{this.video}}</p>
     <p>{{this.description}}</p>
     <p>{{this.like}}</p>
+
+    <form action="/articles/{{id}}/like" method="POST">
+  <button>LIKE</button>
+  </form>
+    
+  </li> 
   {{/each}}
 </ul>
 </div>
+
+{{/if}}

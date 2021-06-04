@@ -29,3 +29,4 @@ $button.addEventListener("click", () => {
   $edit.appendChild($buttonValid)
   $editProfilDiv.removeChild($button)
 })
+let test = 'ceci est un test'
