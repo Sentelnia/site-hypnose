@@ -95,6 +95,7 @@ samp {
 
 #logo-desktop {
   margin-left: 35px;
+  border-radius: 50%;
 }
 
 .btn-rdv-desktop {
@@ -280,28 +281,36 @@ samp {
     position: absolute;
     width: 100%;
     z-index: 1000;
+    margin-left: -40px;
   }
 
   .menu-desktop>ul li:hover .sous {
     display: flex;
     flex-flow: column wrap;
+    width: 400px;
+
   }
 
   .sous li {
     flex: 1 1 auto;
     text-align: left;
+
   }
 
   .sous a {
-    padding: 20px;
+    /* padding: 20px; */
     border-bottom: none;
     letter-spacing: 0.7px;
     text-align: left;
+    width: auto;
+
   }
 
   .sous a:hover {
     border-bottom: none;
     background-color: RGBa(200, 200, 200, 0.1);
+
+    width: 400px;
 
   }
 
