@@ -5,7 +5,15 @@
     <h2>Mes articles favoris</h2>
     <ul>
       {{#each user.articles_like}}
-      <li>{{this}}</li>
+      <li>
+        {{this.title}}
+        <img src='{{this.imageUrl}}' width=200px/>
+        {{this.description}}
+
+        <form action="/articles/{{id}}/dislike" method="POST">
+        <button>Enlever des articles favoris</button>
+      </li>
+      
       {{/each}}
     </ul>
   </div>
