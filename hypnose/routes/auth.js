@@ -90,7 +90,12 @@ router.get("/dashboard", (req, res) => {
     });
     return;
   }
-  res.render("auth/dashboard", { user: req.user });
+  User.findOne({_id: req.user.id})
+  .populate('articles_like')
+  .then((user) => {
+    console.log(user.articles_like)
+    res.render("auth/dashboard", { user: user })})
+  .catch(err => next(err))
 });
 
 //---------edit infos perso-------------//
@@ -118,6 +123,10 @@ router.post("/dashboard", (req, res, next) => {
     res.render("auth/dashboard", { errorMessage: 'Mot de passe non valide', user: req.user })
   }
 });
+
+
+
+
 
 
 
