@@ -1,40 +1,38 @@
+{{!-- Si user ou visiteur co --}}
+
+<section id="all-avis">
+  <h1>Tous les témoignages </h1>
+
+  {{#each temoignages}}
+  <div class="avis">
+    <h3>{{this.type_seance}}</h3>
+    <p class="paragraph">{{this.message}}</p>
+    <p class="signature">{{this.signature}}</p>
+
+  </div>
+  {{/each}}
+
+</section>
 
 
 {{!-- Si Admin co --}}
 
 {{#if message}}
 <section>
-  <h1>Tous les témoignages : </h1>
-  <ul>
-    {{#each temoignages}}
-    <li>
-      <h3>{{this.type_seance}}</h3>
-      <p>{{this.message}}</p>
-      <p>{{this.signature}}</p>
+  <h1>Modifier les témoignages - ADMIN</h1>
 
-    </li>
-    <a href="/temoignages/{{id}}/edit">Edit</a>
-    <form action="/temoignages/{{id}}/delete" method="POST">
-      <button>Delete</button>
-    </form>
-    {{/each}}
-  </ul>
+  {{#each temoignages}}
+  <div class="avis">
+    <h3>{{this.type_seance}}</h3>
+    <p class="paragraph">{{this.message}}</p>
+    <p class="signature">{{this.signature}}</p>
+  </div>
+
+  <a href="/temoignages/{{id}}/edit">Edit</a>
+  <form action="/temoignages/{{id}}/delete" method="POST">
+    <button>Delete</button>
+  </form>
+  {{/each}}
+
 </section>
 {{/if}}
-
-
-{{!-- Si user ou visiteur co --}}
-
-<section>
-  <h1>Tous les témoignages : </h1>
-  <ul>
-    {{#each temoignages}}
-    <li>
-      <h3>{{this.type_seance}}</h3>
-      <p>{{this.message}}</p>
-      <p>{{this.signature}}</p>
-
-    </li>
-    {{/each}}
-  </ul>
-</section>

@@ -1,5 +1,6 @@
 let $mobile = document.querySelector("#mobile")
-let $burger = 
+let $menu = document.querySelector("#menu-mobile")
+let $burger = document.querySelector(".open-menu")
 
 function burgerMenu() {
 
@@ -14,6 +15,18 @@ function closeMenu() {
 }
 
 
-document.getElementById("myBtn").addEventListener("click", function() {
-    alert("Hello World!");
-  });
+$burger.addEventListener("click", function () {
+
+    burgerMenu()
+
+
+
+});
+
+// $mobile.onclick = function (e) {
+//     if (e.target != $mobile) {
+//         $mobile.classList.toggle("active");
+//     } else {
+
+//     }
+// }
