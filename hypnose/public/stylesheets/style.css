@@ -187,6 +187,14 @@ samp {
   font-size: 30px;
 }
 
+#video-hp>video {
+  right: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 547px;
+  position: absolute;
+}
+
 @media (min-width: 1045px) {
   .navbar .menu-mobile {
     display: none;
@@ -215,6 +223,12 @@ samp {
 
   #video-hp {
     height: 800px;
+  }
+
+  #video-hp>video {
+
+    height: 793px;
+
   }
 
   .youtube-iphrame {
