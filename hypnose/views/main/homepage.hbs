@@ -33,9 +33,9 @@
 
 <section class="quote">
     <div class="guillemet-left"><img src="images/quote-left.png" alt="guillemet gauche"></div>
-    <blockquote class="text-quote">Ceci est une citation mamène, merci de m'en lire et d'inspirer ta vie</blockquote>
+    <blockquote class="text-quote">Il n’y a rien de plus réellement artistique que d’aimer les gens</blockquote>
     <div class="guillemet-right"><img src="images/quote-right.png" alt="guillemet droite"></div>
-    <div class="author-quote">Mathew Kindman</div>
+    <div class="author-quote">Van GOGH</div>
 
 </section>
 
@@ -94,14 +94,26 @@
 <section id="temoignages">
 
 
-    {{#each temoignages}}
-    <div class="container-avis">
-        <h3 class="title-avis">{{this.type_seance}}</h3>
-        <blockquote> <p>{{this.message}}</p>
-        </blockquote>
-        <div class="author-avis">{{this.signature}}</div>
-    </div>
+    <div id="slider">
+        {{#each temoignages}}
+        <div class="container-avis">
+            <h3 class="title-avis">{{this.type_seance}}</h3>
+            <blockquote> <p>{{this.message}}</p>
+            </blockquote>
+            <div class="author-avis">{{this.signature}}</div>
+        </div>
     {{/each}}
+
+    </div>
+
+
+
+
+
+
+
+
+
 
 </section>
 

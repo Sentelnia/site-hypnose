@@ -1,14 +1,12 @@
-
 {{!-- Si l'admin est co --}}
 
-  {{#if message}}
-  {{message}}
-
-  Coucou, je suis la page qui montre tous les articles
+{{#if message}}
+{{message}}
 
 <h2>Tous les articles : </h2>
 
 <div>
+<<<<<<< HEAD
 <ul>
   {{#each articles}}
   <li>
@@ -35,6 +33,29 @@
   
   {{/each}}
 </ul>
+=======
+  <ul>
+    {{#each articles}}
+    <li>
+      <h3>{{this.title}}</h3>
+      <img src='{{this.imageUrl}}' width='100px' />
+      <p>{{this.video}}</p>
+      <p>{{this.description}}</p>
+
+      <form action="/articles/{{id}}/like" method="POST">
+        <button>LIKE</button>
+
+
+    </li>
+    <a href="/articles/{{title2}}/{{id}}">En savoir plus</a>
+    <a href="/articles/{{id}}/edit">Edit</a>
+    <form action="/articles/{{id}}/delete" method="POST">
+      <button>Delete</button>
+    </form>
+
+    {{/each}}
+  </ul>
+>>>>>>> 0e724d1153fb5d11dec1c8a3d1662751c27caaf2
 </div>
 
 
@@ -43,6 +64,7 @@
 
 {{!-- Si simple user ou visiteur --}}
 
+<<<<<<< HEAD
 Coucou, je suis la page qui montre tous les articles
 
 <h2>Tous les articles : </h2>
@@ -67,3 +89,19 @@ Coucou, je suis la page qui montre tous les articles
 </div>
 
 {{/if}}
+=======
+<h2>Tous les articles : </h2>
+
+<div>
+  <ul>
+    {{#each articles}}
+    <li>
+      <h3>{{this.title}}</h3>
+      <img src='{{this.imageUrl}}' width='100px' />
+      <p>{{this.video}}</p>
+      <p>{{this.description}}</p>
+      <p>{{this.like}}</p>
+      {{/each}}
+  </ul>
+</div>
+>>>>>>> 0e724d1153fb5d11dec1c8a3d1662751c27caaf2

@@ -22,16 +22,21 @@ router.get('/articles', (req, res, next) => {
       })
       if (req.isAuthenticated() && req.user.role === 'ADMIN') {
 
-        res.render('articles/All-articles', {articles : allArticleFromDB, message:'admin'})
+        res.render('articles/All-articles', {
+          articles: allArticleFromDB,
+          message: 'admin'
+        })
         return
-        } else {
-          res.render('articles/All-articles', {articles : allArticleFromDB})
-        }
+      } else {
+        res.render('articles/All-articles', {
+          articles: allArticleFromDB
+        })
+      }
     })
     .catch(err => next(err))
-  })
+})
 
-      
+
 
 
 ////////////CREER UN ARTICLE////////////////////
@@ -156,24 +161,38 @@ router.post('/articles/:articleId/delete', checkRoles('ADMIN'), (req, res, next)
 ////////////AJOUTE UN ARTICLE LIKE DANS LE PROFIL DU USER////////////////////
 
 router.post("/articles/:articleId/like", (req, res, next) => {
+<<<<<<< HEAD
   const { articleId } = req.params;
   
   console.log(req.body.like)
   if(req.isAuthenticated()){
     const { articles_like } = req.user
     
+=======
+  const {
+    articleId
+  } = req.params;
+
+  if (req.isAuthenticated()) {
+    const {
+      articles_like
+    } = req.user
+
+>>>>>>> 0e724d1153fb5d11dec1c8a3d1662751c27caaf2
     Article.findById(articleId)
       .then((article) => {
         article.title2 = slugify(article.title)
         articles_like.push(article)
-        User.findByIdAndUpdate(req.user.id, {articles_like})
-          .then(()=> {
+        User.findByIdAndUpdate(req.user.id, {
+            articles_like
+          })
+          .then(() => {
             res.redirect(`/articles`)
           })
           .catch(err => next(err))
       })
       .catch(err => next(err))
-  return
+    return
   }
 })
 
@@ -181,23 +200,29 @@ router.post("/articles/:articleId/like", (req, res, next) => {
 ////////////SUPPRIME UN ARTICLE LIKE DANS LE PROFIL DU USER////////////////////
 
 router.post('/articles/:articleId/dislike', (req, res, next) => {
-  const { articleId } = req.params;
+  const {
+    articleId
+  } = req.params;
 
-  if(req.isAuthenticated()){
-    const { articles_like } = req.user
-    
+  if (req.isAuthenticated()) {
+    const {
+      articles_like
+    } = req.user
+
     Article.findById(articleId)
       .then((article) => {
         article.title2 = slugify(article.title)
         articles_like.splice(articles_like.indexOf(article), 1)
-        User.findByIdAndUpdate(req.user.id, {articles_like})
-          .then(()=> {
+        User.findByIdAndUpdate(req.user.id, {
+            articles_like
+          })
+          .then(() => {
             res.redirect(`/dashboard`)
           })
           .catch(err => next(err))
       })
       .catch(err => next(err))
-  return
+    return
   }
 })
 
