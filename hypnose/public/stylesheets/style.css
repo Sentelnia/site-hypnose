@@ -296,7 +296,7 @@ samp {
   }
 
 
-  .menu-desktop ul {
+  .menu-desktop>ul {
     list-style-type: none;
 
   }
@@ -317,6 +317,12 @@ samp {
   }
 
   .menu-desktop a:hover {
+
+    color: orange;
+    border-bottom: 2px solid gold;
+  }
+
+  .menu-desktop a:first-child:hover {
 
     color: orange;
     border-bottom: 2px solid gold;
