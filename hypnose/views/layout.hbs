@@ -54,6 +54,7 @@
 
 
       <div id="mobile-account" class="active">
+        {{#if user}}
 
         <ul>
           <li><a href="">Dashboard</a> </li>
@@ -63,13 +64,15 @@
           <li> <a href="/logout">- Se deconnecter -</a> </li>
         </ul>
 
-        {{!-- <ul>
+        {{else}}
+        <ul>
           <li><a href="">Dashboard</a> </li>
-          <li> <a href="">- Mes rendes-vous -</a> </li>
-          <li> <a href="/dashboard">- Mes articles -</a> </li>
-          <li> <a href="/dashboard#profil">- Mon profil -</a> </li>
-          <li> <a href="/logout">- Se deconnecter -</a> </li>
-        </ul> --}}
+          <li> <a href="/login">- Se connecter -</a> </li>
+          <li> <a href="/inscription">- S'inscrire -</a> </li>
+
+        </ul>
+
+        {{/if}}
 
         <a href="">
           <img class="close" onclick="accountMenu()" src="/images/cross.png" alt="">
@@ -115,6 +118,8 @@
           <li class="deroulant">
             <div class="btn-account-desktop"><img class="img-icon-menu" src="/images/account.png" alt="account">
               <a href="javascript:void 0;">MON COMPTE</a></div>
+
+            {{#if user}}
             <ul class="sous">
               <li> <a href="/dashboard">Dashboard</a> </li>
               <li> <a href="/prendre-rdv">Mes rendez-vous </a> </li>
@@ -122,6 +127,15 @@
               <li> <a href="/dashboard#edit_profil">Mon profil</a> </li>
               <li> <a href="/logout">Se deconnecter</a> </li>
             </ul>
+
+            {{else}}
+            <ul class="sous">
+              <li> <a href="/dashboard">Dashboard</a> </li>
+              <li> <a href="/login">Se connecter</a> </li>
+              <li> <a href="/inscription">S'inscrire </a> </li>
+
+            </ul>
+            {{/if}}
           </li>
         </ul>
 
