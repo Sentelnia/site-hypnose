@@ -65,7 +65,6 @@ passport.use(new LocalStrategy({
         email
       })
       .then(user => {
-        console.log(user)
         if (!user) {
           return done(null, false, {
             message: 'Email incorrect'
@@ -94,6 +93,19 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
+
+
+app.use(function (req, res, next) {
+  //verifiersi user connécté
+  //si oui definir le res.locals pour toute les vues
+  if(req.isAuthenticated()){
+    res.locals.user = req.user
+  } else {
+    // res.locals.user = undefined
+    delete res.locals.user
+  }
+  next()
+})
 
 // Express View engine setup
 

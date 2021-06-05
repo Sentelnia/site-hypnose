@@ -16,22 +16,23 @@
 
       <form action="/articles/{{id}}/like" method="POST">
         <button>LIKE</button>
-
+      </form>
+      <a href="/articles/{{title2}}/{{id}}">En savoir plus</a>
+      <a href="/articles/{{id}}/edit">Edit</a>
+      <form action="/articles/{{id}}/delete" method="POST">
+        <button>Delete</button>
+      </form>
 
     </li>
-    <a href="/articles/{{title2}}/{{id}}">En savoir plus</a>
-    <a href="/articles/{{id}}/edit">Edit</a>
-    <form action="/articles/{{id}}/delete" method="POST">
-      <button>Delete</button>
-    </form>
+    
 
     {{/each}}
   </ul>
 </div>
 
-{{/if}}
 
 
+{{else}}
 
 {{!-- Si simple user ou visiteur --}}
 
@@ -46,6 +47,8 @@
       <p>{{this.video}}</p>
       <p>{{this.description}}</p>
       <p>{{this.like}}</p>
-      {{/each}}
+    </li>
+    {{/each}}
   </ul>
 </div>
+{{/if}}
