@@ -93,7 +93,6 @@ router.get("/dashboard", (req, res) => {
   User.findOne({_id: req.user.id})
   .populate('articles_like')
   .then((user) => {
-    console.log(user.articles_like)
     res.render("auth/dashboard", { user: user })})
   .catch(err => next(err))
 });

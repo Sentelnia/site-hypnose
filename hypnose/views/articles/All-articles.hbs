@@ -13,10 +13,12 @@
       <img src='{{this.imageUrl}}' width='100px' />
       <p>{{this.video}}</p>
       <p>{{this.description}}</p>
+      <p>{{this.like}}</p>
 
       <form action="/articles/{{id}}/like" method="POST">
         <button>LIKE</button>
       </form>
+      
       <a href="/articles/{{title2}}/{{id}}">En savoir plus</a>
       <a href="/articles/{{id}}/edit">Edit</a>
       <form action="/articles/{{id}}/delete" method="POST">
@@ -47,6 +49,10 @@
       <p>{{this.video}}</p>
       <p>{{this.description}}</p>
       <p>{{this.like}}</p>
+
+      <form action="/articles/{{id}}/like" method="POST">
+        <button>LIKE</button>
+      </form>
     </li>
     {{/each}}
   </ul>
