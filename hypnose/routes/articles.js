@@ -12,7 +12,7 @@ const slugify = require("slugify");
 ////////////LISTE DES ARTICLES////////////////////
 
 router.get("/articles", (req, res, next) => {
-  Article.find()
+  Article.find().sort({createdAt : -1})
     .then((allArticleFromDB) => {
       allArticleFromDB.forEach((article) => {
         article.title2 = slugify(article.title);
@@ -162,27 +162,39 @@ router.post(
   }
 );
 
-////////////AJOUTE UN ARTICLE LIKE DANS LE PROFIL DU USER////////////////////
+////////////AJOUTE UN ARTICLE LIKE DANS LE PROFIL DU USER ET INCREMENTE LE LIKE////////////////////
 
 router.post("/articles/:articleId/like", (req, res, next) => {
   const { articleId } = req.params;
 
   if (!req.isAuthenticated()) {
-    res.redirect("/login");
-    return;
+    Article.findById(articleId)
+      .then((article) => {
+        article.like += 1
+        console.log(article.like)
+        Article.findByIdAndUpdate(articleId, {like : article.like})
+          .then(()=>res.redirect(`/articles`))
+          .catch(err => next(err))
+      })
+      .catch(err => next(err))
+      return;
+
   } else {
     const { articles_like } = req.user;
 
     Article.findById(articleId)
       .then((article) => {
-        User.findById(req.user.id)
+        article.like += 1
+        Article.findByIdAndUpdate(articleId, {like : article.like})
+          .then((article)=>{
+            User.findById(req.user.id)
           .then((user) => {
             if (user.articles_like.includes(article._id)) {
               res.redirect(`/articles`);
               return;
             } else {
               article.title2 = slugify(article.title);
-              articles_like.push(article);
+              articles_like.unshift(article);
               User.findByIdAndUpdate(req.user.id, {
                 articles_like,
               })
@@ -193,6 +205,7 @@ router.post("/articles/:articleId/like", (req, res, next) => {
             }
           })
           .catch((err) => next(err));
+          })
       })
       .catch((err) => next(err));
     return;
@@ -212,7 +225,6 @@ router.post("/articles/:articleId/dislike", (req, res, next) => {
 
     Article.findById(articleId)
       .then((article) => {
-        console.log(`article cliqué : ${article}`);
         article.title2 = slugify(article.title);
         articles_like.splice((articles_like.indexOf(article._id)), 1);
         User.findByIdAndUpdate(req.user.id, {
