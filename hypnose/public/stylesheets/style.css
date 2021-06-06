@@ -337,16 +337,17 @@ samp {
     box-shadow: 0px 1px 2px #CCC;
     background-color: white;
     position: absolute;
-    width: 100%;
+
     z-index: 1000;
-    margin-left: -40px;
+
   }
 
   .menu-desktop>ul li:hover .sous {
     display: flex;
-    flex-flow: column wrap;
-    width: 360px;
+    flex-direction: column;
+    width: 100vw;
 
+    padding-left: 40px
   }
 
   .sous li {
@@ -356,11 +357,11 @@ samp {
   }
 
   .sous a {
-    /* padding: 20px; */
+    padding: 40px;
     border-bottom: none;
     letter-spacing: 0.7px;
     text-align: left;
-    width: auto;
+
 
   }
 
@@ -368,7 +369,7 @@ samp {
     border-bottom: none;
     background-color: RGBa(200, 200, 200, 0.1);
 
-    width: 400px;
+
 
   }
 
@@ -853,6 +854,11 @@ slider-temoignage  */
   margin-left: 25px;
 }
 
+#all-avis>p {
+  margin-left: 35px;
+  width: 475px;
+  padding-bottom: 70px;
+}
 
 
 
