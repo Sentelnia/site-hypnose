@@ -1548,6 +1548,7 @@ select option {
   flex-direction: column;
   align-items: center;
   background: #cee4f7;
+  height: 225px;
 
 }
 
