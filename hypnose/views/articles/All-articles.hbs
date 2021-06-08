@@ -5,7 +5,7 @@
 
 <h2>Tous les articles : </h2>
 
-<div>
+<section id="all-articles">
   <ul>
     {{#each articles}}
     <li>
@@ -13,12 +13,12 @@
       <img src='{{this.imageUrl}}' width='100px' />
       <p>{{this.video}}</p>
       <p>{{this.description}}</p>
-      <p>{{this.like}}</p>
+
 
       <form action="/articles/{{id}}/like" method="POST">
-        <button>LIKE</button>
+        <button><span>{{this.like}} ♡ LIKE</span> </button>
       </form>
-      
+
       <a href="/articles/{{title2}}/{{id}}">En savoir plus</a>
       <a href="/articles/{{id}}/edit">Edit</a>
       <form action="/articles/{{id}}/delete" method="POST">
@@ -26,11 +26,11 @@
       </form>
 
     </li>
-    
+
 
     {{/each}}
   </ul>
-</div>
+</section>
 
 
 {{else}}

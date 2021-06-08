@@ -5,18 +5,18 @@ Coucou je suis le formulaire d'édition d'un article
   <form action="/articles/{{article.id}}/edit" method="POST" enctype="multipart/form-data">
     <label>
       Titre
-      <input type="text" name="title" value="{{article.title}}"/>
+      <input type="text" name="title" value="{{article.title}}" />
     </label>
 
     <label>
       Image
-      <img src='{{article.imageUrl}}' width ='100px'/>
-      <input type="file" name="image"/>
+      <img src='{{article.imageUrl}}' width='100px' />
+      <input type="file" name="image" />
     </label>
 
     <label>
       Vidéo
-      <input type="text" name="video" value="{{article.video}}"/>
+      <input type="text" name="video" value="{{article.video}}" />
     </label>
 
     <label>
