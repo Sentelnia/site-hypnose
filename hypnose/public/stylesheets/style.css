@@ -36,7 +36,7 @@ p {
   line-height: 22px;
   letter-spacing: 1.5px;
   color: #707070;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* fixer une largeur maximale de 100% aux éléments potentiellement problématiques */
@@ -102,10 +102,12 @@ samp {
   display: flex;
   align-items: center;
   width: 267px;
-  justify-content: center;
+  justify-content: space-evenly;
   background-color: #cee4f7;
   height: 50px;
-  border-radius: 22px;
+  border-radius: 12px;
+  padding-left: 21px;
+  padding-right: 21px;
 }
 
 .btn-account-desktop {
@@ -161,13 +163,30 @@ samp {
 }
 
 #mobile-account ul {
-
   list-style: none;
+}
 
+#mobile-account a {
+  font-weight: lighter;
+  color: #707070;
+}
+
+#mobile a {
+  font-weight: lighter;
+  color: #707070;
+}
+
+#mobile a:hover {
+  color: orange;
+  border-bottom: 2px solid gold;
+}
+
+#mobile-account a:hover {
+  color: orange;
+  border-bottom: 2px solid gold;
 }
 
 #mobile-account li:first-child {
-
   font-weight: bold;
   font-size: 25px;
   padding-top: 20px;
@@ -176,10 +195,22 @@ samp {
 }
 
 #mobile-account li {
-
   font-size: 20px;
   letter-spacing: 2.5px;
   line-height: 27px;
+  padding: 12px;
+}
+
+#mobile-account li:hover {
+  background-color: RGBa(200, 200, 200, 0.1);
+}
+
+#mobile li {
+  padding: 5px;
+}
+
+#mobile li:hover {
+  background-color: RGBa(200, 200, 200, 0.1);
 }
 
 .close {
@@ -188,7 +219,6 @@ samp {
   top: 27px;
   font-size: 30px;
 }
-
 
 /* Menu  */
 
@@ -212,13 +242,10 @@ samp {
 }
 
 #mobile ul {
-
   list-style: none;
-
 }
 
 #mobile li:first-child {
-
   font-weight: bold;
   font-size: 25px;
   padding-top: 20px;
@@ -227,7 +254,6 @@ samp {
 }
 
 #mobile li {
-
   font-size: 20px;
   letter-spacing: 2.5px;
   line-height: 27px;
@@ -248,7 +274,7 @@ samp {
   position: absolute;
 }
 
-@media (min-width: 1045px) {
+@media (min-width: 1415px) {
   .navbar .menu-mobile {
     display: none;
   }
@@ -281,9 +307,7 @@ samp {
   }
 
   #video-hp>video {
-
     height: 793px;
-
   }
 
   .youtube-iphrame {
@@ -297,10 +321,8 @@ samp {
     width: 1px;
   }
 
-
   .menu-desktop>ul {
     list-style-type: none;
-
   }
 
   .menu-desktop ul li {
@@ -321,25 +343,17 @@ samp {
   }
 
   .menu-desktop a:hover {
-
-    color: orange;
-    border-bottom: 2px solid gold;
-  }
-
-  .menu-desktop a:first-child:hover {
-
     color: orange;
     border-bottom: 2px solid gold;
   }
 
   .sous {
     display: none;
-    box-shadow: 0px 1px 2px #CCC;
+    box-shadow: 0px 1px 2px #ccc;
     background-color: white;
     position: absolute;
 
     z-index: 1000;
-
   }
 
   .menu-desktop>ul li:hover .sous {
@@ -347,13 +361,12 @@ samp {
     flex-direction: column;
     width: 100vw;
 
-    padding-left: 40px
+    padding-left: 40px;
   }
 
   .sous li {
     flex: 1 1 auto;
     text-align: left;
-
   }
 
   .sous a {
@@ -361,25 +374,17 @@ samp {
     border-bottom: none;
     letter-spacing: 0.7px;
     text-align: left;
-
-
   }
 
   .sous a:hover {
     border-bottom: none;
     background-color: RGBa(200, 200, 200, 0.1);
-
-
-
   }
 
   .deroulant>a::after {
     content: " ▼";
     font-size: 12px;
   }
-
-
-
 }
 
 /* ICONS MENU  */
@@ -431,7 +436,7 @@ samp {
 /* CONTAINER PUSH A PROPOS */
 
 #container-push-about-hp {
-  height: 832px;
+  height: 1008px;
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -467,6 +472,7 @@ samp {
 }
 
 .container-presentation {
+  margin-top: 88px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -701,7 +707,6 @@ samp {
   .container-article-hp>img {
     position: absolute;
     left: 220px;
-
   }
 
   .container-article-hp>h3 {
@@ -812,9 +817,7 @@ slider-temoignage  */
   flex-direction: column;
 }
 
-
 /* temoignages all temoignages */
-
 
 .avis {
   background: #f5e5b3;
@@ -823,7 +826,6 @@ slider-temoignage  */
   justify-content: space-between;
   height: auto;
   border-bottom: 50px solid white;
-
 }
 
 .signature {
@@ -831,26 +833,19 @@ slider-temoignage  */
 }
 
 .paragraph {
-
   margin-left: 35px;
   width: auto;
 }
 
 .avis h3 {
-
-
   margin-left: 35px;
 }
 
-
-
 #all-avis {
-
-  padding-top: 80px
+  padding-top: 80px;
 }
 
 #all-avis h1 {
-
   margin-left: 25px;
 }
 
@@ -859,11 +854,6 @@ slider-temoignage  */
   width: 475px;
   padding-bottom: 70px;
 }
-
-
-
-
-
 
 /* 
 
@@ -1001,7 +991,6 @@ ul {
   -moz-animation-play-state: paused;
   -webkit-animation-play-state: paused;
 } */
-
 
 /* FOOTER MAP */
 
@@ -1223,7 +1212,6 @@ select option {
   width: 100vw;
 
   border: 2px solid #cee4f7;
-
 }
 
 @media (min-width: 825px) {
@@ -1480,7 +1468,6 @@ select option {
   }
 }
 
-
 /* //...........................................................................................................................................................
 //.............ddddd....................................hhhhhh............bbbbbb......................................................................ddddd..
 //.............ddddd....................................hhhhhh............bbbbbb......................................................................ddddd..
@@ -1507,7 +1494,6 @@ select option {
 //......ddddd...........aaaaaa............ssssssss...............................bbbbb...........ooooooo.........aaaaa.........................ddddd.........
 //........................................................................................................................................................... */
 
-
 #dashboard {
   padding-top: 80px;
 }
@@ -1517,7 +1503,7 @@ select option {
   flex-direction: column;
   height: 670px;
   justify-content: space-between;
-
+  align-items: center;
 }
 
 #dashboard h1 {
@@ -1533,42 +1519,35 @@ select option {
 }
 
 #dashboard header {
-
   background: #cee4f7;
   height: 300px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-
 }
 
 .articles-favoris {
-
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #cee4f7;
-  height: 225px;
-
+  height: auto;
+  margin-top: 37px;
 }
 
 .articles-favoris p {
-
   width: 445px;
-
 }
 
-
-
-
 .articles-favoris li {
-
   list-style: none;
+}
 
+.container-article {
+  height: auto;
 }
 
 @media (min-width: 825px) {
-
   .articles-favoris {
     display: flex;
     flex-direction: row;
@@ -1576,6 +1555,300 @@ select option {
     margin-top: 70px;
     margin-bottom: 75px;
     justify-content: space-between;
-
+    height: 250px;
   }
+}
+
+/* HYPNOSE PAGE METIERS  */
+
+#hypnose-container {
+  padding-top: 80px;
+}
+
+#hypnose-container h1 {
+  margin-left: 35px;
+}
+
+#hypnose-container span {
+  text-align: center;
+  width: 600px;
+  display: block;
+  padding: 13px;
+  margin-top: 44px;
+  border: 2px solid #f5e5b3;
+}
+
+#hypnose-container p {
+  margin-left: 35px;
+  width: 100vw;
+}
+
+#hypnose-container h2 {
+  margin-left: 35px;
+}
+
+#hypnose-container header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hypnose-sub-container img {
+  width: 100vw;
+  height: 600px;
+  margin-bottom: 93px;
+  margin-top: 60px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/images/wind.jpg);
+}
+
+.hypnose-sub-container .img2 {
+  width: 100vw;
+  height: 600px;
+  margin-bottom: 93px;
+  margin-top: 60px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/images/montains-dream.jpg);
+}
+
+.container-bottom-txt {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.container-top-txt {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.soin-hypnose {
+  width: 700px;
+}
+
+@media (min-width: 825px) {
+  #hypnose-container p {
+    max-width: 808px;
+  }
+
+  .container-bottom-txt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .container-top-txt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 400px;
+  }
+}
+
+.accordion {
+  overflow: hidden;
+  border-radius: 0px;
+}
+
+.acchead {
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+  text-align: left;
+  font-family: Sans-serif;
+  font-size: 17px;
+  color: #858585;
+  background: #fafafa;
+  text-decoration: none;
+  font-weight: 400;
+  font-style: normal;
+  border: none;
+  padding: 10px 15px;
+}
+
+.accpanel {
+  font-family: Sans-serif;
+  font-size: 16px;
+  color: #636363;
+  background: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+  font-style: normal;
+  padding: 22px 50px;
+  overflow: hidden;
+  display: none;
+}
+
+.accpanel p {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* SOPHRO METIERS  */
+
+#sophro-container {
+  padding-top: 80px;
+}
+
+#sophro-container h1 {
+  margin-left: 35px;
+}
+
+#sophro-container span {
+  text-align: center;
+  width: 600px;
+  display: block;
+  padding: 13px;
+  margin-top: 44px;
+  border: 2px solid #f5e5b3;
+}
+
+#sophro-container p {
+  margin-left: 35px;
+  width: 100vw;
+}
+
+#sophro-container h2 {
+  margin-left: 35px;
+}
+
+#sophro-container header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sophro-sub-container img {
+  width: 100vw;
+  height: 600px;
+  margin-bottom: 93px;
+  margin-top: 60px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/images/wind.jpg);
+}
+
+.sophro-sub-container .img2 {
+  width: 100vw;
+  height: 600px;
+  margin-bottom: 93px;
+  margin-top: 60px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/images/montains-dream.jpg);
+}
+
+.soin-sophro {
+  width: 700px;
+}
+
+@media (min-width: 825px) {
+  #sophro-container p {
+    max-width: 808px;
+  }
+
+  .container-bottom-txt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .container-top-txt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 400px;
+  }
+}
+
+/* Magnétisme métiers  */
+
+#magne-container {
+  padding-top: 80px;
+}
+
+#magne-container h1 {
+  margin-left: 35px;
+}
+
+#magne-container span {
+  text-align: center;
+  width: 600px;
+  display: block;
+  padding: 13px;
+  margin-top: 44px;
+  border: 2px solid #f5e5b3;
+}
+
+#magne-container p {
+  margin-left: 35px;
+  width: 100vw;
+}
+
+#magne-container h2 {
+  margin-left: 35px;
+}
+
+#magne-container header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.magne-sub-container img {
+  width: 100vw;
+  height: 600px;
+  margin-bottom: 93px;
+  margin-top: 60px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/images/wind.jpg);
+}
+
+.magne-sub-container .img2 {
+  width: 100vw;
+  height: 600px;
+  margin-bottom: 93px;
+  margin-top: 60px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/images/montains-dream.jpg);
+}
+
+.soin-magne {
+  border: 1px solid red;
+  width: 700px;
+}
+
+@media (min-width: 825px) {
+  #magne-container p {
+    max-width: 808px;
+  }
+
+  .container-bottom-txt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .container-top-txt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 400px;
+  }
+}
+
+/* ALL ARTICLES */
+
+#all-articles button {
+  background: #f06969;
+  width: 267px;
+  border-radius: 88px;
+  box-shadow: 2px 3px 12px #8f8484;
+  color: white;
+  padding: 5px;
 }
