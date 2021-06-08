@@ -65,6 +65,7 @@ passport.use(new LocalStrategy({
         email
       })
       .then(user => {
+
         if (!user) {
           return done(null, false, {
             message: 'Email incorrect'

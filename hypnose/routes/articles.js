@@ -172,7 +172,7 @@ router.post("/articles/:articleId/like", (req, res, next) => {
       .then((article) => {
         article.like += 1
         console.log(article.like)
-        Article.findByIdAndUpdate(articleId, {like : article.like})
+        article.save()
           .then(()=>res.redirect(`/articles`))
           .catch(err => next(err))
       })
@@ -185,7 +185,7 @@ router.post("/articles/:articleId/like", (req, res, next) => {
     Article.findById(articleId)
       .then((article) => {
         article.like += 1
-        Article.findByIdAndUpdate(articleId, {like : article.like})
+        article.save()
           .then((article)=>{
             User.findById(req.user.id)
           .then((user) => {

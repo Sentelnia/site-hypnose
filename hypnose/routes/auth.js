@@ -19,6 +19,7 @@ router.get("/inscription", (req, res) => res.render("auth/inscription"));
 
 //-----------1. validation mdp (créer un nouveau champs) ----------------//
 router.post("/inscription", (req, res, next) => {
+  
   const { name, last_name, email, tel, password } = req.body;
 
   //si pas de mail, pas de password , pas de name et pas last_name, on rend le formulaire d'inscription
@@ -30,13 +31,15 @@ router.post("/inscription", (req, res, next) => {
     return;
   }
 
+  let newMail = email.toLowerCase()
+  console.log(newMail)
   const hashedPassword = bcrypt.hashSync(password, salt);
   console.log(`Password hash: ${hashedPassword}`);
 
   User.create({
     name: name,
     last_name: last_name,
-    email: email,
+    email: newMail,
     tel: tel,
     password: hashedPassword,
   })
@@ -53,7 +56,7 @@ router.post("/inscription", (req, res, next) => {
 ////////////LOGIN//////////////////////
 
 router.get("/login", (req, res, next) => {
-  res.render("auth/login", { errorMessage: req.flash("error") }); // !!!
+  res.render("auth/login", { errorMessage: req.flash("error") }); 
 });
 
 //-----------1. attention mail en minuscule à configurer -------------//
@@ -65,8 +68,6 @@ router.post(
     failureFlash: true,
   })
 );
-
-
 
 
 
@@ -86,7 +87,7 @@ router.get("/logout", (req, res) => {
 router.get("/dashboard", (req, res) => {
   if (!req.user) {
     res.render("auth/login", {
-      errorMessage: "vous devez vous identifier pour acceder à ce contenu",
+      errorMessage: "vous devez vous identifier pour acceder à ce contenu", 
     });
     return;
   }
