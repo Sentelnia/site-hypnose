@@ -1,21 +1,16 @@
-Coucou , je suis la page de détail d'un articles
-
 <h2>{{article.title}}</h2>
 
-{{#if article.imageUrl}} 
-<img src='{{article.imageUrl}}' width ='100px'/>
+{{#if article.imageUrl}}
+<img src='{{article.imageUrl}}' width='100px' />
 {{/if}}
 
-{{#if article.video}} 
+{{#if article.video}}
 <video controls>
   <source src="{{article.video}}" type="">
 </video>
 {{/if}}
 
 <p>{{article.description}}</p>
-
-
-
 
 
 <a href="/articles/{{article.title2}}/{{article.id}}/edit">Edit</a>

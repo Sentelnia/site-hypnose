@@ -72,14 +72,13 @@
 <section id="article-du-moment">
 
     <div class="container-article-hp">
-        <h3>BIEN-ETRE ET HYPNOSE</h3>
-        <img src="images/bal-masque.png" alt="">
-        <p>lorem ipsumHtml By Mehedi Islam Ripon on Feb 25 2021 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam
-            blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rer</p>
+        {{#each article}}
+        <h3>{{this.title}}</h3>
+        <img src="{{this.imageUrl}}" alt="">
+        <p>{{this.description}}</p>
         <a href="/fabienne-ilic">EN SAVOIR PLUS <img class="arrow-link" src="images/arrow-right.png"
                 alt="arrow-link"></a>
-
+        {{/each}}
     </div>
 
 </section>
@@ -102,7 +101,7 @@
             </blockquote>
             <div class="author-avis">{{this.signature}}</div>
         </div>
-    {{/each}}
+        {{/each}}
 
     </div>
 

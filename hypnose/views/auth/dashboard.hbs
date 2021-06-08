@@ -1,23 +1,33 @@
 <section id="dashboard">
-  <h1>Bienvenue sur le Dashboard {{user.name}}</h1>
 
-  <div>
-    <h2>Mes articles favoris</h2>
-    <ul>
-      {{#each user.articles_like}}
-      <li>
-        {{this.title}}
-        <img src='{{this.imageUrl}}' width=200px/>
-        {{this.description}}
+  <header>
+    <h1>Bienvenue sur le Dashboard {{user.name}}</h1>
+  </header>
+  <h2>Mes articles favoris</h2>
 
-        <form action="/articles/{{id}}/dislike" method="POST">
-        <button>Enlever des articles favoris</button>
-      </li>
-      
-      {{/each}}
-    </ul>
+
+  <div class="container-article">
+
+    {{#each user.articles_like}}
+
+
+    <div class="articles-favoris">
+      <img src='{{this.imageUrl}}' width="200px" />
+
+      <h3>{{this.title}}</h3>
+
+      <p> {{this.description}}</p>
+
+      <form action="/articles/{{id}}/dislike" method="POST">
+        <button>Enlever des articles favoris</button> </form>
+    </div>
+
+
+
+    {{/each}}
+
+
   </div>
-
 
   <div id="edit_profil">
     <h2>Mes informations personnels</h2>

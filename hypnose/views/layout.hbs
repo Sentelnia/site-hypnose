@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap">
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
@@ -54,6 +56,7 @@
 
 
       <div id="mobile-account" class="active">
+        {{#if user}}
 
         <ul>
           <li><a href="">Dashboard</a> </li>
@@ -62,6 +65,16 @@
           <li> <a href="/dashboard#profil">- Mon profil -</a> </li>
           <li> <a href="/logout">- Se deconnecter -</a> </li>
         </ul>
+
+        {{else}}
+        <ul>
+          <li><a href="">Dashboard</a> </li>
+          <li> <a href="/login">- Se connecter -</a> </li>
+          <li> <a href="/inscription">- S'inscrire -</a> </li>
+
+        </ul>
+
+        {{/if}}
 
         <a href="">
           <img class="close" onclick="accountMenu()" src="/images/cross.png" alt="">
@@ -107,6 +120,8 @@
           <li class="deroulant">
             <div class="btn-account-desktop"><img class="img-icon-menu" src="/images/account.png" alt="account">
               <a href="javascript:void 0;">MON COMPTE</a></div>
+
+            {{#if user}}
             <ul class="sous">
               <li> <a href="/dashboard">Dashboard</a> </li>
               <li> <a href="/prendre-rdv">Mes rendez-vous </a> </li>
@@ -114,6 +129,15 @@
               <li> <a href="/dashboard#edit_profil">Mon profil</a> </li>
               <li> <a href="/logout">Se deconnecter</a> </li>
             </ul>
+
+            {{else}}
+            <ul class="sous">
+              <li> <a href="/dashboard">Dashboard</a> </li>
+              <li> <a href="/login">Se connecter</a> </li>
+              <li> <a href="/inscription">S'inscrire </a> </li>
+
+            </ul>
+            {{/if}}
           </li>
         </ul>
 
