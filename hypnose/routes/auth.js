@@ -30,9 +30,16 @@ router.post("/inscription", (req, res, next) => {
     });
     return;
   }
-
   let newMail = email.toLowerCase()
-  console.log(newMail)
+
+  const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+  if (!regex.test(password)) {
+    res
+      .status(500)
+      .render('auth/inscription', { errorMessage: 'Le mot de passe doit contenir au moins 6 charactères, au moins 1 chiffre et au moins une minuscule et une majuscule.' });
+    return;
+  }
+ 
   const hashedPassword = bcrypt.hashSync(password, salt);
   console.log(`Password hash: ${hashedPassword}`);
 
@@ -77,7 +84,6 @@ router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/login");
 });
-
 
 
 

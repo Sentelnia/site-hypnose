@@ -37,4 +37,8 @@
     <button>Créer un compte</button>
 
   </form>
+
+  {{#if errorMessage}}
+        <div class="error-message">{{errorMessage}}</div>
+  {{/if}}
 </section>
