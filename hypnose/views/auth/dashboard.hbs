@@ -56,6 +56,10 @@
     <button id='buttonEdit'>Editer mes infos perso</button>
   </div>
 
+<form action="/dashboard/{{user._id}}/delete" method="POST">
+  <button>Delete</button>
+</form>
+
 
   {{#if errorMessage}}
   <div class="error-message">{{errorMessage}}</div>

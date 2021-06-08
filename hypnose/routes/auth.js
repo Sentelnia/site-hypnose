@@ -59,7 +59,7 @@ router.get("/login", (req, res, next) => {
   res.render("auth/login", { errorMessage: req.flash("error") }); 
 });
 
-//-----------1. attention mail en minuscule à configurer -------------//
+
 router.post(
   "/login",
   passport.authenticate("local", {
@@ -126,7 +126,20 @@ router.post("/dashboard", (req, res, next) => {
 
 
 
+////////////SUPRESSION DE COMPTE//////////////////////
 
+router.post("/dashboard/:userId/delete", (req, res, next) => {
+  const { userId } =  req.params
+  console.log(userId)
+  if (!req.isAuthenticated()) {
+    res.redirect("/login");
+    return;
+  } else {
+    User.findByIdAndDelete(userId)
+      .then(() => res.render('main/homepage', {deleteMessage : 'Votre compte abien été supprimé'}))
+      .catch(err => next(err))
+  }
+})
 
 
 
