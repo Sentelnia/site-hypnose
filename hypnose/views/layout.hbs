@@ -207,40 +207,7 @@
     </div>
 
   </footer>
-  <script>
 
-    var accHead = document.getElementsByClassName("acchead");
-    var panels = document.getElementsByClassName("accpanel");
-
-    for (i = 0; i < accHead.length; i++) {
-
-
-
-      accHead[i].addEventListener("click", function () {
-
-
-        for (i = 0; i < panels.length; i++) {
-          panels[i].style.display = "none";
-        }
-
-        this.classList.toggle("active");
-        var accPanel = this.nextElementSibling;
-        if (accPanel.style.display === "block") {
-          accPanel.style.display = "none";
-        } else {
-          accPanel.style.display = "block";
-        }
-
-
-
-
-        // Desactiver toutes les elements ouvertes 
-        // -> Fermeture des elements ouverts 
-
-      });
-    }
-
-  </script>
   <script src="/javascripts/homepage.js"></script>
   <script src="/javascripts/script.js"></script>
 </body>

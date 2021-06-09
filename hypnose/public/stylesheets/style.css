@@ -4,6 +4,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 a {
@@ -91,7 +93,8 @@ samp {
   z-index: 99999;
 }
 
-#logo-mobile {}
+#logo-mobile {
+}
 
 #logo-desktop {
   margin-left: 35px;
@@ -266,7 +269,7 @@ samp {
   font-size: 30px;
 }
 
-#video-hp>video {
+#video-hp > video {
   right: 0px;
   left: 0px;
   width: 100vw;
@@ -306,7 +309,7 @@ samp {
     height: 800px;
   }
 
-  #video-hp>video {
+  #video-hp > video {
     height: 793px;
   }
 
@@ -321,7 +324,7 @@ samp {
     width: 1px;
   }
 
-  .menu-desktop>ul {
+  .menu-desktop > ul {
     list-style-type: none;
   }
 
@@ -356,7 +359,7 @@ samp {
     z-index: 1000;
   }
 
-  .menu-desktop>ul li:hover .sous {
+  .menu-desktop > ul li:hover .sous {
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -381,7 +384,7 @@ samp {
     background-color: RGBa(200, 200, 200, 0.1);
   }
 
-  .deroulant>a::after {
+  .deroulant > a::after {
     content: " ▼";
     font-size: 12px;
   }
@@ -502,11 +505,11 @@ samp {
     flex-direction: column;
   }
 
-  .size-image-practicien>img {
+  .size-image-practicien > img {
     max-width: 410px;
   }
 
-  .container-presentation>h1 {
+  .container-presentation > h1 {
     margin-right: 308px;
   }
 }
@@ -515,7 +518,7 @@ samp {
   padding-top: 35px;
 }
 
-.size-image-practicien>img {
+.size-image-practicien > img {
   height: 320px;
   width: 100%;
   height: auto;
@@ -527,7 +530,8 @@ samp {
   }
 }
 
-@media (max-width: 1455px) {}
+@media (max-width: 1455px) {
+}
 
 /* MODULE CITATION */
 
@@ -562,7 +566,7 @@ samp {
   left: 10px;
 }
 
-.guillemet-left>img {
+.guillemet-left > img {
   height: 50px;
 }
 
@@ -572,13 +576,14 @@ samp {
   right: 0px;
 }
 
-.guillemet-right>img {
+.guillemet-right > img {
   height: 50px;
 }
 
 /* LES SEANCES */
 
-#seances {}
+#seances {
+}
 
 .container-seance {
   height: 120px;
@@ -588,7 +593,7 @@ samp {
   align-items: center;
 }
 
-.container-seance>h3 {
+.container-seance > h3 {
   margin-left: 27px;
   width: 128px;
 }
@@ -600,7 +605,7 @@ samp {
   justify-content: space-evenly;
 }
 
-#container-seances>h2 {
+#container-seances > h2 {
   margin-left: auto;
   margin-right: auto;
 }
@@ -627,7 +632,7 @@ samp {
     margin-top: 265px;
   }
 
-  #container-seances>h2 {
+  #container-seances > h2 {
     position: absolute;
     top: -233px;
     left: 31px;
@@ -668,21 +673,21 @@ samp {
   justify-content: space-around;
 }
 
-.container-article-hp>img {
+.container-article-hp > img {
   max-width: 100%;
-  height: 500px;
+  height: 108px;
 }
 
-.container-article-hp>a {
+.container-article-hp > a {
   margin-left: auto;
   margin-right: 20px;
 }
 
-.container-article-hp>p {
+.container-article-hp > p {
   max-width: 755px;
 }
 
-.container-article-hp>h3 {
+.container-article-hp > h3 {
   color: #78b8ec;
   font-size: 25px;
 }
@@ -692,6 +697,22 @@ samp {
   padding-top: 60px;
 }
 
+.container-slider {
+  display: flex;
+
+  width: 100vw;
+  overflow: hidden;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.container-infos {
+  display: flex;
+  flex-direction: column;
+  margin-left: 955px;
+  width: 464px;
+}
+
 @media (min-width: 1450px) {
   .title-article {
     position: absolute;
@@ -699,32 +720,34 @@ samp {
     padding-top: 60px;
   }
 
-  .container-article-hp>a {
+  .container-article-hp > a {
     margin-left: auto;
     margin-right: 20px;
   }
 
-  .container-article-hp>img {
+  .container-article-hp > img {
     position: absolute;
-    left: 220px;
+    height: 400px;
+    left: 400px;
   }
 
-  .container-article-hp>h3 {
+  .container-article-hp > h3 {
     margin-right: auto;
   }
 
   .container-article-hp {
     margin-top: 54px;
-    margin-left: 673px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 800px;
+    width: 1718px;
     align-items: center;
     justify-content: center;
+    padding-right: 428px;
   }
 
-  #article-du-moment>h2 {
+  #article-du-moment > h2 {
     top: -87px;
     position: absolute;
     left: 25px;
@@ -734,8 +757,57 @@ samp {
     margin-top: 162px;
   }
 
-  .container-article-hp>p {
+  .container-article-hp > p {
     max-width: 600px;
+  }
+
+  .container-slider {
+    display: flex;
+
+    width: 100vw;
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+  }
+
+  .container-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .container-infos {
+    display: flex;
+    flex-direction: column;
+    margin-left: 955px;
+    width: 464px;
+  }
+
+  .container-infos a {
+    margin-left: auto;
+  }
+
+  .arr-left {
+    position: absolute;
+    left: 200px;
+    top: 400px;
+    cursor: pointer;
+  }
+
+  .arr-right {
+    position: absolute;
+    left: 1544px;
+    top: 400px;
+    cursor: pointer;
+  }
+  #slider1 > img {
+    display: block;
+  }
+
+  #slider2 > img {
+    display: none;
+  }
+
+  #slider3 > img {
+    display: none;
   }
 }
 
@@ -745,7 +817,7 @@ samp {
   margin-top: 9px;
 }
 
-.link-articles>a {
+.link-articles > a {
   font-size: 18px;
 }
 
@@ -849,7 +921,7 @@ slider-temoignage  */
   margin-left: 25px;
 }
 
-#all-avis>p {
+#all-avis > p {
   margin-left: 35px;
   width: 475px;
   padding-bottom: 70px;
@@ -1004,7 +1076,7 @@ ul {
   justify-content: space-around;
 }
 
-#map>img {
+#map > img {
   order: 2;
   margin-top: 20px;
 }
@@ -1014,13 +1086,13 @@ ul {
   margin-left: 0px;
 }
 
-.localise>h3 {
+.localise > h3 {
   color: #78b8ec;
   font-size: 25px;
   margin-left: 25px;
 }
 
-.localise>p {
+.localise > p {
   margin-left: 25px;
 }
 
@@ -1031,7 +1103,7 @@ ul {
     margin-top: 0px;
   }
 
-  #map>img {
+  #map > img {
     max-width: 610px;
     order: 1;
   }
@@ -1057,7 +1129,7 @@ ul {
   margin-top: 45px;
 }
 
-.links-footer>ul {
+.links-footer > ul {
   list-style: none;
   line-height: 24px;
 }
@@ -1085,7 +1157,7 @@ ul {
   align-items: flex-end;
 }
 
-.container-bottom>img {
+.container-bottom > img {
   max-width: 90px;
 }
 
@@ -1098,7 +1170,7 @@ ul {
   padding-left: 0px;
 }
 
-.container-bottom>span {
+.container-bottom > span {
   margin-top: 0px;
 }
 
@@ -1132,12 +1204,12 @@ ul {
     padding-left: 35px;
   }
 
-  .container-bottom>img {
+  .container-bottom > img {
     max-width: 90px;
     margin-top: 134px;
   }
 
-  .container-bottom>span {
+  .container-bottom > span {
     margin-top: auto;
     margin-bottom: 15px;
   }
@@ -1259,7 +1331,7 @@ select option {
   margin-left: 30px;
 }
 
-.form-login>div button {
+.form-login > div button {
   margin-left: auto;
   margin-right: auto;
   background: #f5e5b3;

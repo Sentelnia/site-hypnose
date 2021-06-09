@@ -10,14 +10,17 @@ router.get('/', (req, res, next) => {
 
   Temoignage.find()
     .then(allTemoignagesFromDB => {
-      Article.find().sort({createdAt : -1}).limit(1)
-      .then((article)=>{
-        console.log(article)
-        res.render('main/homepage', {
-          temoignages: allTemoignagesFromDB, article : article
+      Article.find().sort({
+          createdAt: -1
+        }).limit(3)
+        .then((article) => {
+          console.log(article)
+          res.render('main/homepage', {
+            temoignages: allTemoignagesFromDB,
+            article: article
+          })
         })
-      })
-      .catch(err => next(err))
+        .catch(err => next(err))
     })
     .catch(err => next(err))
 });

@@ -71,15 +71,28 @@
 </section>
 <h2 class="title-article">ARTICLE DU MOMENT</h2>
 <section id="article-du-moment">
+    <div class="arr-left"> <img src="images/arrow-left-slider.png" alt=""></div>
+    <div class="arr-right"> <img src="images/arrow-right-slider.png" alt=""> </div>
 
-    <div class="container-article-hp">
+    <div class="container-slider">
+
+
         {{#each article}}
-        <h3>{{this.title}}</h3>
-        <img src="{{this.imageUrl}}" alt="">
-        <p>{{this.description}}</p>
-        <a href="/fabienne-ilic">EN SAVOIR PLUS <img class="arrow-link" src="images/arrow-right.png"
-                alt="arrow-link"></a>
+        <div class="container-article-hp">
+
+            <img src="{{this.imageUrl}}" alt="">
+
+            <div class="container-infos">
+                <h3>{{this.title}}</h3>
+                <span id="article-date">{{this.createdAt}}</span>
+                <p>{{this.description}}</p>
+                <a href="/fabienne-ilic">EN SAVOIR PLUS <img class="arrow-link" src="images/arrow-right.png"
+                        alt="arrow-link"></a>
+            </div>
+        </div>
         {{/each}}
+
+
     </div>
 
 </section>
