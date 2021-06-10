@@ -1623,6 +1623,7 @@ select option {
 
 #dashboard h3 {
   margin-left: 30px;
+  width: 200px;
 }
 
 #dashboard header {
@@ -1981,6 +1982,7 @@ select option {
   background: #cee4f7;
   height: auto;
   margin-top: 37px;
+  padding: 30px 0px 30px 0px;
 }
 
 .container-article-main p {
@@ -2006,4 +2008,10 @@ select option {
   .container-article-main h3 {
     width: 200px;
   }
+}
+
+/* Page create article  */
+
+#create-article {
+  padding-top: 80px;
 }
