@@ -100,7 +100,14 @@ router.get("/dashboard", (req, res) => {
   User.findOne({_id: req.user.id})
   .populate('articles_like')
   .then((user) => {
-    res.render("auth/dashboard", { user: user })})
+    if (req.isAuthenticated() && req.user.role === "ADMIN"){
+      res.render('auth/dashboard', { user: user, admin : "admin" })
+      return;
+    }else{
+      res.render("auth/dashboard", { user: user })
+    }
+    })
+    
   .catch(err => next(err))
 });
 

@@ -9,13 +9,18 @@ const fileUploader = require("../configs/cloudinary.config");
 
 const slugify = require("slugify");
 
+
+
 ////////////LISTE DES ARTICLES////////////////////
 
 router.get("/articles", (req, res, next) => {
+  
+
   Article.find().sort({createdAt : -1})
     .then((allArticleFromDB) => {
       allArticleFromDB.forEach((article) => {
-        article.title2 = slugify(article.title);
+      article.title2 = slugify(article.title);
+      article.createdAt2 = formatDate(article.createdAt)
       });
       if (!req.isAuthenticated()) {
         res.render("articles/All-articles", {
@@ -25,7 +30,7 @@ router.get("/articles", (req, res, next) => {
       } else if (req.isAuthenticated() && req.user.role === "ADMIN") {
         res.render("articles/All-articles", {
           articles: allArticleFromDB,
-          message: "admin",
+          admin : "admin",
         });
         return;
       }
@@ -317,5 +322,25 @@ function checkRoles(role) {
     }
   };
 }
+
+
+///////////////////////FONCTION POUR LES DATES////////////////////
+
+function formatDate(date){
+
+  //1.recuperer createdat en parametre puis le couper sur les 10 premiers caractères
+  let strDate = JSON.stringify(date)
+  let cutDate = strDate.slice(1,11)
+  
+  //2.inverse l'année et le jour
+  let arrDate = cutDate.split('-')
+  arrDate.reverse()
+  //----------------Version 2.0  switch les mois------------------
+  //3. on remplace les '-' par des '/'
+  return arrDate.join('/')
+  
+  
+}
+
 
 module.exports = router;
