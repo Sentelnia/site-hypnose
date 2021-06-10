@@ -302,7 +302,8 @@ samp {
     font-weight: lighter;
     color: #707070;
     padding-left: 20px;
-    width: auto;
+
+    width: 391px;
   }
 
   #video-hp {
@@ -328,7 +329,7 @@ samp {
     list-style-type: none;
   }
 
-  .menu-desktop ul li {
+  .menu-desktop > ul li {
     flex: 1 1 auto;
     text-align: center;
     position: relative;
@@ -346,8 +347,21 @@ samp {
   }
 
   .menu-desktop a:hover {
-    color: orange;
-    border-bottom: 2px solid gold;
+    color: #ffbc41;
+    border-bottom: 2px solid #ffbc41;
+  }
+
+  .menu-desktop a:first-child:hover {
+    border-bottom: none;
+  }
+
+  .btn-rdv-desktop a:hover {
+    color: black;
+  }
+
+  .menu-desktop li:hover {
+    color: #ffbc41;
+    border-bottom: 2px solid #ffbc41;
   }
 
   .sous {
@@ -355,14 +369,14 @@ samp {
     box-shadow: 0px 1px 2px #ccc;
     background-color: white;
     position: absolute;
-
+    width: 400px;
     z-index: 1000;
   }
 
   .menu-desktop > ul li:hover .sous {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    /* width: 100%; */
 
     padding-left: 40px;
   }
@@ -373,7 +387,7 @@ samp {
   }
 
   .sous a {
-    padding: 40px;
+    padding: 30px;
     border-bottom: none;
     letter-spacing: 0.7px;
     text-align: left;

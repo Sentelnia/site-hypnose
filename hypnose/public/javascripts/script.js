@@ -17,13 +17,13 @@ const $champMdp = document.createElement('input');
 const $buttonValid = document.createElement('button');
 
 $buttonValid.setAttribute("id", "confirm-button")
-$buttonValid.required = true;
+$champMdp.required = true;
 
 
 $champMdp.name = 'password'
 $champMdp.type = 'password'
 $h2.innerHTML = 'Mot de passe'
-$p.innerHTML = 'Veuillez tapez votre Mot de passe pour éditer vos infos perso'
+$p.innerHTML = 'Veuillez entrer votre mot de passe pour enregistrer vos modifications'
 $buttonValid.innerHTML = 'Confirmer les modifications'
 
 

@@ -91,7 +91,7 @@ for (let i = 0; i < imgs.length; i++) {
 let $arrLeft = document.querySelector(".arr-left");
 let $arrRight = document.querySelector(".arr-right");
 
-document.getElementById("slider1").scrollIntoView();
+// document.getElementById("slider1").scrollIntoView();
 let n = 1;
 let m = 1;
 

@@ -3,7 +3,7 @@
 {{#if message}}
 {{message}}
 
-<h2>Tous les articles : </h2>
+<h2>Tous les articles</h2>
 
 <section id="all-articles">
   <ul>
@@ -37,7 +37,7 @@
 
 {{!-- Si simple user ou visiteur --}}
 
-<h2>Tous les articles : </h2>
+<h2>Tous les articles</h2>
 
 <div>
   <ul>
@@ -47,10 +47,9 @@
       <img src='{{this.imageUrl}}' width='100px' />
       <p>{{this.video}}</p>
       <p>{{this.description}}</p>
-      <p>{{this.like}}</p>
 
       <form action="/articles/{{id}}/like" method="POST">
-        <button>LIKE</button>
+        <button><span>{{this.like}} ♡ LIKE</span></button>
       </form>
     </li>
     {{/each}}
