@@ -916,6 +916,8 @@ slider-temoignage  */
 
 .signature {
   margin-left: auto;
+  margin-right: 30px;
+  font-size: 20px;
 }
 
 .paragraph {
@@ -1640,6 +1642,11 @@ select option {
   margin-top: 37px;
 }
 
+.articles-favoris img {
+  height: 250px;
+  width: auto;
+}
+
 .articles-favoris p {
   width: 445px;
 }
@@ -1956,4 +1963,47 @@ select option {
   box-shadow: 2px 3px 12px #8f8484;
   color: white;
   padding: 5px;
+}
+
+#global-head-articles {
+  padding-top: 80px;
+  background: #cee4f7;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container-article-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #cee4f7;
+  height: auto;
+  margin-top: 37px;
+}
+
+.container-article-main p {
+  width: 421px;
+}
+
+@media (min-width: 825px) {
+  .container-article-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 75px;
+    justify-content: space-evenly;
+    height: 250px;
+  }
+
+  .container-article-main img {
+    height: 250px;
+    width: auto;
+  }
+
+  .container-article-main h3 {
+    width: 200px;
+  }
 }

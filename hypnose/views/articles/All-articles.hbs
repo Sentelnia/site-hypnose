@@ -1,20 +1,29 @@
+<header id="global-head-articles">
+  <h1>Tous les articles</h1>
+</header>
 {{!-- Si l'admin est co --}}
 
-{{#if message}}
-{{message}}
 
-<h2>Tous les articles</h2>
+{{#if message}}
+
+
+<ul>
+  <h3>ADMIN</h3>
+  <li> <a href="/articles/create"> Créer un article</a></li>
+  <li> <a href="/temoignages/create">Ajouter un témoignage</a> </li>
+</ul>
 
 <section id="all-articles">
-  <ul>
-    {{#each articles}}
-    <li>
-      <h3>{{this.title}}</h3>
-      <img src='{{this.imageUrl}}' width='100px' />
-      <p>{{this.video}}</p>
-      <p>{{this.description}}</p>
 
+  {{#each articles}}
+  <div class="container-article-main">
+    <img src='{{this.imageUrl}}' width='100px' />
+    <h3>{{this.title}}</h3>
 
+    {{!-- <p>{{this.video}}</p> --}}
+    <p>{{this.description}}</p>
+
+    <div class="buttons-articles">
       <form action="/articles/{{id}}/like" method="POST">
         <button><span>{{this.like}} ♡ LIKE</span> </button>
       </form>
@@ -24,12 +33,13 @@
       <form action="/articles/{{id}}/delete" method="POST">
         <button>Delete</button>
       </form>
+    </div>
 
-    </li>
+  </div>
 
 
-    {{/each}}
-  </ul>
+  {{/each}}
+
 </section>
 
 
@@ -37,22 +47,28 @@
 
 {{!-- Si simple user ou visiteur --}}
 
-<h2>Tous les articles</h2>
 
-<div>
-  <ul>
-    {{#each articles}}
-    <li>
-      <h3>{{this.title}}</h3>
-      <img src='{{this.imageUrl}}' width='100px' />
-      <p>{{this.video}}</p>
-      <p>{{this.description}}</p>
 
+<section id="all-articles">
+  {{!-- <h2>Tous les articles</h2> --}}
+  {{#each articles}}
+  <div class="container-article-main">
+
+
+    <h3>{{this.title}}</h3>
+    <img src='{{this.imageUrl}}' width='100px' />
+    {{!-- <p>{{this.video}}</p> --}}
+    <p>{{this.description}}</p>
+
+    <div class="buttons-articles">
       <form action="/articles/{{id}}/like" method="POST">
         <button><span>{{this.like}} ♡ LIKE</span></button>
       </form>
-    </li>
-    {{/each}}
-  </ul>
-</div>
-{{/if}}
+      <a href="/articles/{{title2}}/{{id}}">Lire l'article</a>
+    </div>
+
+
+  </div>
+  {{/each}}
+  {{/if}}
+</section>
