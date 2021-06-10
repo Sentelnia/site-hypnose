@@ -11,22 +11,28 @@ const $editProfilDiv = document.querySelector('#edit_profil')
 const $button = document.querySelector('#buttonEdit')
 const $edit = document.querySelector("#edit")
 const $confirmMdp = document.createElement('label');
+const $h2 = document.createElement('h2');
+const $p = document.createElement('p');
 const $champMdp = document.createElement('input');
 const $buttonValid = document.createElement('button');
 
+$buttonValid.setAttribute("id", "confirm-button")
+$buttonValid.required = true;
 
 
 $champMdp.name = 'password'
 $champMdp.type = 'password'
-$confirmMdp.innerHTML = 'Veuillez tapez votre Mot de passe pour éditer vos infos perso'
-$buttonValid.innerHTML = 'Editer mes infos perso'
+$h2.innerHTML = 'Mot de passe'
+$p.innerHTML = 'Veuillez tapez votre Mot de passe pour éditer vos infos perso'
+$buttonValid.innerHTML = 'Confirmer les modifications'
 
 
 // ajout du label mdp dans le form, ajout du boutton dans le form pour valider le changement des infos perso
 $button.addEventListener("click", () => {
   $edit.appendChild($confirmMdp)
+  $confirmMdp.appendChild($h2)
+  $confirmMdp.appendChild($p)
   $confirmMdp.appendChild($champMdp)
   $edit.appendChild($buttonValid)
   $editProfilDiv.removeChild($button)
 })
-let test = 'ceci est un test'

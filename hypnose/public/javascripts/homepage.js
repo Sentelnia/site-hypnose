@@ -5,23 +5,23 @@ let $account = document.querySelector("#mobile-account");
 let $iconAccount = document.querySelector(".open-account");
 
 function burgerMenu() {
-  $mobile.classList.toggle("active");
+    $mobile.classList.toggle("active");
 }
 
 function closeMenu() {
-  $mobile.classList.toggle("active");
+    $mobile.classList.toggle("active");
 }
 
 function openAccount() {
-  $account.classList.toggle("active");
+    $account.classList.toggle("active");
 }
 
 $burger.addEventListener("click", function () {
-  burgerMenu();
+    burgerMenu();
 });
 
 $iconAccount.addEventListener("click", function () {
-  openAccount();
+    openAccount();
 });
 
 // $mobile.onclick = function (e) {
@@ -36,30 +36,30 @@ var accHead = document.getElementsByClassName("acchead");
 var panels = document.getElementsByClassName("accpanel");
 
 for (i = 0; i < accHead.length; i++) {
-  accHead[i].addEventListener("click", function () {
-    for (i = 0; i < panels.length; i++) {
-      panels[i].style.display = "none";
-    }
+    accHead[i].addEventListener("click", function () {
+        for (i = 0; i < panels.length; i++) {
+            panels[i].style.display = "none";
+        }
 
-    this.classList.toggle("active");
-    var accPanel = this.nextElementSibling;
-    if (accPanel.style.display === "block") {
-      accPanel.style.display = "none";
-    } else {
-      accPanel.style.display = "block";
-    }
+        this.classList.toggle("active");
+        var accPanel = this.nextElementSibling;
+        if (accPanel.style.display === "block") {
+            accPanel.style.display = "none";
+        } else {
+            accPanel.style.display = "block";
+        }
 
-    // Desactiver toutes les elements ouvertes
-    // -> Fermeture des elements ouverts
-  });
+        // Desactiver toutes les elements ouvertes
+        // -> Fermeture des elements ouverts
+    });
 }
 
 // Référence: http://www.html5rocks.com/en/tutorials/speed/animations/
 
 window.addEventListener("scroll", (event) => {
-  var element = document.querySelector(".container-slider");
-  let scroll = this.scrollX;
-  console.log(scroll);
+    var element = document.querySelector(".container-slider");
+    let scroll = this.scrollX;
+    console.log(scroll);
 });
 
 var element = document.querySelector(".container-slider");
@@ -71,9 +71,9 @@ element.scrollTo(4000, 0);
 let container = document.querySelectorAll(".container-article-hp");
 // let n = 0;
 for (let i = 0; i < container.length; i++) {
-  console.log(container[i]);
+    console.log(container[i]);
 
-  container[i].setAttribute("id", `slider${[i + 1]}`);
+    container[i].setAttribute("id", `slider${[i + 1]}`);
 }
 
 // ADD ID TO IMAGES
@@ -81,9 +81,9 @@ for (let i = 0; i < container.length; i++) {
 let imgs = document.querySelectorAll(".container-article-hp>img");
 // let n = 0;
 for (let i = 0; i < imgs.length; i++) {
-  console.log(imgs[i]);
+    console.log(imgs[i]);
 
-  imgs[i].setAttribute("id", `img${[i + 1]}`);
+    imgs[i].setAttribute("id", `img${[i + 1]}`);
 }
 
 // INITIALISATION SLIDER 1 - FONCTIONNEMENT
@@ -96,49 +96,49 @@ let n = 1;
 let m = 1;
 
 $arrLeft.onclick = function moveSliderLeft() {
-  if (n === 1) {
-    document.getElementById(`slider3`).scrollIntoView();
-    n = 3;
-    document.getElementById(`img1`).style.display = "none";
-    document.getElementById(`img3`).style.display = "block";
-  } else if (n === 2) {
-    document.getElementById(`slider1`).scrollIntoView();
+    if (n === 1) {
+        document.getElementById(`slider3`).scrollIntoView();
+        n = 3;
+        document.getElementById(`img1`).style.display = "none";
+        document.getElementById(`img3`).style.display = "block";
+    } else if (n === 2) {
+        document.getElementById(`slider1`).scrollIntoView();
 
-    document.getElementById(`img2`).style.display = "none";
-    document.getElementById(`img1`).style.display = "block";
-    n = 1;
-  } else if (n === 3) {
-    document.getElementById(`slider2`).scrollIntoView();
-    n = 2;
-    document.getElementById(`img3`).style.display = "none";
-    document.getElementById(`img2`).style.display = "block";
-  }
+        document.getElementById(`img2`).style.display = "none";
+        document.getElementById(`img1`).style.display = "block";
+        n = 1;
+    } else if (n === 3) {
+        document.getElementById(`slider2`).scrollIntoView();
+        n = 2;
+        document.getElementById(`img3`).style.display = "none";
+        document.getElementById(`img2`).style.display = "block";
+    }
 };
 
 $arrRight.onclick = function moveSliderRight() {
-  if (m === 1) {
-    document.getElementById(`slider2`).scrollIntoView();
-    m = 2;
-    document.getElementById(`img1`).style.display = "none";
-    document.getElementById(`img2`).style.display = "block";
-  } else if (m === 2) {
-    document.getElementById(`slider3`).scrollIntoView();
-    m = 3;
-    document.getElementById(`img2`).style.display = "none";
-    document.getElementById(`img3`).style.display = "block";
-  } else if (m === 3) {
-    document.getElementById(`slider1`).scrollIntoView();
-    m = 1;
-    document.getElementById(`img3`).style.display = "none";
-    document.getElementById(`img1`).style.display = "block";
-  } else if (m === 4) {
-    document.getElementById(`slider1`).scrollIntoView();
-    m = 1;
-    document.getElementById(`img3`).style.display = "none";
-    document.getElementById(`img1`).style.display = "block";
-  }
+    if (m === 1) {
+        document.getElementById(`slider2`).scrollIntoView();
+        m = 2;
+        document.getElementById(`img1`).style.display = "none";
+        document.getElementById(`img2`).style.display = "block";
+    } else if (m === 2) {
+        document.getElementById(`slider3`).scrollIntoView();
+        m = 3;
+        document.getElementById(`img2`).style.display = "none";
+        document.getElementById(`img3`).style.display = "block";
+    } else if (m === 3) {
+        document.getElementById(`slider1`).scrollIntoView();
+        m = 1;
+        document.getElementById(`img3`).style.display = "none";
+        document.getElementById(`img1`).style.display = "block";
+    } else if (m === 4) {
+        document.getElementById(`slider1`).scrollIntoView();
+        m = 1;
+        document.getElementById(`img3`).style.display = "none";
+        document.getElementById(`img1`).style.display = "block";
+    }
 
-  //   document.getElementById(`slider${[n + 1]}`).scrollIntoView();
+    //   document.getElementById(`slider${[n + 1]}`).scrollIntoView();
 };
 
 let datesDom = document.querySelectorAll("#article-date");
@@ -147,11 +147,11 @@ var dayjs = require("dayjs");
 dayjs().format();
 
 for (let i = 0; i < datesDom.length; i++) {
-  let dateDom = datesDom[i].innerHTML;
-  let newDate = dayjs(dateDom);
-  //   console.log(datesDom[i]);
-  console.log("coucou", newDate);
-  datesDom[i].innerHTML = newDate;
+    let dateDom = datesDom[i].innerHTML;
+    let newDate = dayjs(dateDom);
+    //   console.log(datesDom[i]);
+    console.log("coucou", newDate);
+    datesDom[i].innerHTML = newDate;
 }
 
 console.log(dayjs("2018-04-04T16:00:00.000Z"));
@@ -168,3 +168,6 @@ console.log(dayjs("2018-04-04T16:00:00.000Z"));
 // let result = datejs(date);
 
 // document.getElementById("article-date").innerText = result;
+
+
+// AJAX TESTS 

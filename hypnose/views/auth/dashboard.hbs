@@ -54,16 +54,18 @@
 
     </form>
     <button id='buttonEdit'>Editer mes infos perso</button>
+    {{#if errorMessage}}
+    <div class="error-message">{{errorMessage}}</div>
+    {{/if}}
+    <form action="/dashboard/{{user._id}}/delete" method="POST">
+      <button class="delete-compte">Supprimer mon compte</button>
+    </form>
   </div>
 
-  <form action="/dashboard/{{user._id}}/delete" method="POST">
-    <button>Delete</button>
-  </form>
 
 
-  {{#if errorMessage}}
-  <div class="error-message">{{errorMessage}}</div>
-  {{/if}}
+
+
 
 
 

@@ -1573,9 +1573,28 @@ select option {
 #edit_profil {
   display: flex;
   flex-direction: column;
-  height: 670px;
+
   justify-content: space-between;
   align-items: center;
+  height: auto;
+}
+
+#edit p {
+  margin-left: 35px;
+}
+
+.delete-compte {
+  margin-top: 129px;
+
+  background: #c4c1b8;
+}
+
+#buttonEdit {
+  margin-top: 50px;
+}
+
+#confirm-button {
+  margin-left: 30px;
 }
 
 #dashboard h1 {
