@@ -142,7 +142,7 @@ router.post("/dashboard/:userId/delete", (req, res, next) => {
     return;
   } else {
     User.findByIdAndDelete(userId)
-      .then(() => res.render('main/homepage', {deleteMessage : 'Votre compte abien été supprimé'}))
+      .then(() => res.render('main/homepage', {deleteMessage : 'Votre compte a bien été supprimé'}))
       .catch(err => next(err))
   }
 })

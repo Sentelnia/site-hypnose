@@ -18,10 +18,10 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const User = require('./models/User.js')
-
+const mongoUri = process.env.MONGO_URI
 
 mongoose
-  .connect('mongodb://localhost/hypnose', {
+  .connect(mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
