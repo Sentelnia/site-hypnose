@@ -1,25 +1,25 @@
-Coucou je suis le formulaire d'édition d'un article
-
 <div id="temoignage-edit">
-  <h2>Editer le témoignage</h2>
+  <h1>Editer le témoignage</h1>
   <form method="POST" action="/temoignages/{{temoignage.id}}/edit">
     <label>
-      Type de séance
+      <h2> Type de séance</h2>
+
       <select name="type_seance" multiple>
-        <option >Hypnotherapie</option>
-        <option >Sophrologie</option>
-        <option >Magnétisme</option>
+        <option>Hypnotherapie</option>
+        <option>Sophrologie</option>
+        <option>Magnétisme</option>
       </select>
     </label>
 
     <label>
-      Message
+      <h2> Message</h2>
+
       <textarea type="text" name="message">{{temoignage.message}}</textarea>
     </label>
 
     <label>
-      Signature
-      <input type="text" name="signature" value="{{temoignage.signature}}"/>
+      <h2>Signature</h2>
+      <input type="text" name="signature" value="{{temoignage.signature}}" />
     </label>
 
     <button>Editer le temoignage</button>

@@ -2015,3 +2015,22 @@ select option {
 #create-article {
   padding-top: 80px;
 }
+
+/* EDIT ARTICLE & temoignages  */
+
+#article-edit {
+  padding-top: 80px;
+}
+
+#article-edit h1,
+h2 {
+  margin-left: 35px;
+}
+
+/* #article-edit h1 {
+  margin-left: 35px;
+} */
+
+#temoignage-edit {
+  padding-top: 80px;
+}
