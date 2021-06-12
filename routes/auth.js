@@ -100,7 +100,14 @@ router.get("/dashboard", (req, res) => {
   User.findOne({_id: req.user.id})
   .populate('articles_like')
   .then((user) => {
-    res.render("auth/dashboard", { user: user })})
+    if (req.isAuthenticated() && req.user.role === "ADMIN"){
+      res.render('auth/dashboard', { user: user, admin : "admin" })
+      return;
+    }else{
+      res.render("auth/dashboard", { user: user })
+    }
+    })
+    
   .catch(err => next(err))
 });
 
@@ -142,7 +149,7 @@ router.post("/dashboard/:userId/delete", (req, res, next) => {
     return;
   } else {
     User.findByIdAndDelete(userId)
-      .then(() => res.render('main/homepage', {deleteMessage : 'Votre compte abien été supprimé'}))
+      .then(() => res.render('main/homepage', {deleteMessage : 'Votre compte a bien été supprimé'}))
       .catch(err => next(err))
   }
 })

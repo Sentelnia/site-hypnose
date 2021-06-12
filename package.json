@@ -21,6 +21,7 @@
     "express-recaptcha": "^4.1.1",
     "express-session": "^1.17.2",
     "hbs": "^4.0.1",
+    "i": "^0.3.6",
     "mongoose": "^5.2.10",
     "morgan": "^1.9.0",
     "multer": "^1.4.2",
@@ -30,7 +31,8 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "serve-favicon": "^2.5.0",
-    "slugify": "^1.5.3"
+    "slugify": "^1.5.3",
+    "strftime": "^0.10.0"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"

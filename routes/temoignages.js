@@ -11,7 +11,7 @@ router.get("/temoignages", (req, res, next) => {
       if (req.isAuthenticated() && req.user.role === "ADMIN") {
         res.render("temoignages/All-temoignages", {
           temoignages: allTemoignagesFromDB,
-          message: "admin",
+          admin : "admin",
         });
         return;
       } else {

@@ -22,14 +22,20 @@
 <section id="video-hp">
 
 
-    <video loop autoplay>
-        <source src="" type="video/mp4">
-        {{!-- <source src="movie.ogg" type="video/ogg"> --}}
-        Your browser does not support the video tag.
-        <!-- Text to be shown incase browser doesnt support html5 -->
-    </video>
 
 
+    <iframe class="ytb-video"
+        src="https://www.youtube.com/embed/mIeX-2vLubo?controls=0&showinfo=0&modestbranding=1&autoplay=1">
+
+    </iframe>
+
+
+    {{!-- <video src="">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/mIeX-2vLubo" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </video> --}}
 
 </section>
 <section class="quote">
@@ -77,17 +83,17 @@
     <div class="container-slider">
 
 
-        {{#each article}}
+        {{#each articles}}
         <div class="container-article-hp">
 
             <img src="{{this.imageUrl}}" alt="">
 
             <div class="container-infos">
                 <h3>{{this.title}}</h3>
-                <span id="article-date">{{this.createdAt}}</span>
+                <span id="article-date">{{this.createdAt2}}</span>
                 <p>{{this.description}}</p>
-                <a href="/fabienne-ilic">EN SAVOIR PLUS <img class="arrow-link" src="images/arrow-right.png"
-                        alt="arrow-link"></a>
+                <a href="/articles/{{title2}}/{{id}}">EN SAVOIR PLUS <img class="arrow-link"
+                        src="images/arrow-right.png" alt="arrow-link"></a>
             </div>
         </div>
         {{/each}}
@@ -118,6 +124,7 @@
         {{/each}}
 
     </div>
+
 
 
 
