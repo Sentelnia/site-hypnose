@@ -33,6 +33,10 @@ router.get("/articles", (req, res, next) => {
           admin : "admin",
         });
         return;
+      } else {
+        res.render("articles/All-articles", {
+          articles: allArticleFromDB,
+        });
       }
     })
     .catch((err) => next(err));
