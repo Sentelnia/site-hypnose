@@ -9,10 +9,14 @@ const nodemailer = require('nodemailer');
 
 
 //---------transformer avec un if (pour prod ou mail dev)------------
-let transporter = nodemailer.createTransport({
-  port: 1025,
-  ignoreTLS: true,
-}, );
+// let transporter = nodemailer.createTransport({
+//   port: 1025,
+//   ignoreTLS: true,
+// }, );
+
+let transporter = nodemailer.createTransport(process.env.SMTP_URI)
+
+
 
 ////////////HYPNOTHERAPIE//////////////////
 
