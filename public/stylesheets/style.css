@@ -1487,6 +1487,10 @@ select option {
   margin-top: 50px;
 }
 
+.img-rdv {
+  display: none;
+}
+
 @media (min-width: 825px) {
   #rdv p {
     width: 625px;
@@ -1496,6 +1500,20 @@ select option {
     display: flex;
     flex-direction: column;
     margin-left: 70px;
+  }
+
+
+}
+
+@media (min-width: 1415px) {
+
+
+  .img-rdv {
+    width: 451px;
+    position: absolute;
+    right: 269px;
+    top: 0px;
+    display: block;
   }
 }
 
@@ -1874,7 +1892,7 @@ select option {
   display: block;
   padding: 13px;
   margin-top: 44px;
-  border: 2px solid #f5e5b3;
+  border: 2px solid #f5b3cb;
 }
 
 #sophro-container p {
@@ -1899,7 +1917,7 @@ select option {
   margin-top: 60px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(/images/wind.jpg);
+  background-image: url(/images/montain.jpg);
 }
 
 .sophro-sub-container .img2 {
@@ -1951,7 +1969,7 @@ select option {
   display: block;
   padding: 13px;
   margin-top: 44px;
-  border: 2px solid #f5e5b3;
+  border: 2px solid #b3f5c7;
 }
 
 #magne-container p {
@@ -2091,4 +2109,32 @@ h2 {
 
 #temoignage-edit {
   padding-top: 80px;
+}
+
+/* PAGE A PROPOS */
+
+#about {
+
+  padding-top: 80px;
+}
+
+
+#about h1 {
+
+  margin-left: 35px;
+}
+
+#about p {
+
+  margin-left: 35px;
+}
+
+@media (min-width:900px) {
+
+  #about p {
+
+    width: 900px
+  }
+
+
 }

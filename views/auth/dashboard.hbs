@@ -64,10 +64,15 @@
     {{#if errorMessage}}
     <div class="error-message">{{errorMessage}}</div>
     {{/if}}
+    {{#if subscribed}}
+    <div class="subscribed">{{subscribed}}</div>
+    {{/if}}
+
     <form action="/dashboard/{{user._id}}/delete" method="POST">
       <button class="delete-compte">Supprimer mon compte</button>
     </form>
   </div>
+
 
 
 

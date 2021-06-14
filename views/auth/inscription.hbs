@@ -2,23 +2,23 @@
 
   <header class="container-form">
     <h1>Inscription</h1>
-    <p>lorem ipsum lorem lorem lorem ipsum tadam tadam lorem ipsum lorem lorem lorem ipsum tadam tadamlorem ipsum lorem
-      lorem lorem ipsum tadam tadam</p>
+    <p>Veuillez remplir les champs obligatoires du formulaire ci-dessous afin de créer votre compte et profiter
+      d'articles exclusifs et de nombreuses fonctionnalités à venir !</p>
   </header>
 
   <form class="signup-rdv" action="/inscription" method="POST">
     <label>
-      <h3>Prénom</h3>
+      <h3>Prénom*</h3>
       <input type="text" name="name" placeholder="Nom" required />
     </label>
 
     <label>
-      <h3>Nom de Famille </h3>
+      <h3>Nom de Famille*</h3>
       <input type="text" name="last_name" placeholder="Nom de famille" required />
     </label>
 
     <label>
-      <h3>Email</h3>
+      <h3>Email*</h3>
       <input type="email" name="email" placeholder="Email" required />
     </label>
 
@@ -28,7 +28,7 @@
     </label>
 
     <label>
-      <h3>Mot de Passe</h3>
+      <h3>Mot de Passe*</h3>
       <input type="password" name="password" id="input-password" placeholder="********" required />
     </label>
 
@@ -39,6 +39,6 @@
   </form>
 
   {{#if errorMessage}}
-        <div class="error-message">{{errorMessage}}</div>
+  <div class="error-message">{{errorMessage}}</div>
   {{/if}}
 </section>

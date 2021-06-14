@@ -1,4 +1,6 @@
-const { Router } = require("express");
+const {
+  Router
+} = require("express");
 const router = new Router();
 const User = require("../models/User.js");
 const Article = require("../models/Article.js");
@@ -19,14 +21,19 @@ router.get("/inscription", (req, res) => res.render("auth/inscription"));
 
 //-----------1. validation mdp (créer un nouveau champs) ----------------//
 router.post("/inscription", (req, res, next) => {
-  
-  const { name, last_name, email, tel, password } = req.body;
+
+  const {
+    name,
+    last_name,
+    email,
+    tel,
+    password
+  } = req.body;
 
   //si pas de mail, pas de password , pas de name et pas last_name, on rend le formulaire d'inscription
   if (!name || !last_name || !email || !password) {
     res.render("auth/inscription", {
-      errorMessage:
-        "All fields are mandatory. Please provide your username, email and password.",
+      errorMessage: "All fields are mandatory. Please provide your username, email and password.",
     });
     return;
   }
@@ -36,23 +43,28 @@ router.post("/inscription", (req, res, next) => {
   if (!regex.test(password)) {
     res
       .status(500)
-      .render('auth/inscription', { errorMessage: 'Le mot de passe doit contenir au moins 6 charactères, au moins 1 chiffre et au moins une minuscule et une majuscule.' });
+      .render('auth/inscription', {
+        errorMessage: 'Le mot de passe doit contenir au moins 6 charactères, au moins 1 chiffre et au moins une minuscule et une majuscule.'
+      });
     return;
   }
- 
+
   const hashedPassword = bcrypt.hashSync(password, salt);
   console.log(`Password hash: ${hashedPassword}`);
 
   User.create({
-    name: name,
-    last_name: last_name,
-    email: newMail,
-    tel: tel,
-    password: hashedPassword,
-  })
+      name: name,
+      last_name: last_name,
+      email: newMail,
+      tel: tel,
+      password: hashedPassword,
+    })
     .then((userFromDB) => {
       console.log("Newly created user is: ", userFromDB);
+      req.flash('subscribed', 'Votre compte a bien été crée ! Bienvenu')
       res.redirect("/");
+
+
     })
     .catch((error) => next(error));
 });
@@ -63,7 +75,9 @@ router.post("/inscription", (req, res, next) => {
 ////////////LOGIN//////////////////////
 
 router.get("/login", (req, res, next) => {
-  res.render("auth/login", { errorMessage: req.flash("error") }); 
+  res.render("auth/login", {
+    errorMessage: req.flash("error")
+  });
 });
 
 
@@ -93,22 +107,29 @@ router.get("/logout", (req, res) => {
 router.get("/dashboard", (req, res) => {
   if (!req.user) {
     res.render("auth/login", {
-      errorMessage: "vous devez vous identifier pour acceder à ce contenu", 
+      errorMessage: "Vous devez vous identifier pour acceder à ce contenu",
     });
     return;
   }
-  User.findOne({_id: req.user.id})
-  .populate('articles_like')
-  .then((user) => {
-    if (req.isAuthenticated() && req.user.role === "ADMIN"){
-      res.render('auth/dashboard', { user: user, admin : "admin" })
-      return;
-    }else{
-      res.render("auth/dashboard", { user: user })
-    }
+  User.findOne({
+      _id: req.user.id
     })
-    
-  .catch(err => next(err))
+    .populate('articles_like')
+    .then((user) => {
+      if (req.isAuthenticated() && req.user.role === "ADMIN") {
+        res.render('auth/dashboard', {
+          user: user,
+          admin: "admin"
+        })
+        return;
+      } else {
+        res.render("auth/dashboard", {
+          user: user
+        })
+      }
+    })
+
+    .catch(err => next(err))
 });
 
 //---------edit infos perso-------------//
@@ -117,23 +138,25 @@ router.post("/dashboard", (req, res, next) => {
 
   //si le mdp est ok
   if (bcrypt.compareSync(password, req.user.password)) {
-    User.update(
-      { _id: req.user.id },
-      {
+    User.update({
+        _id: req.user.id
+      }, {
         $set: {
           name: req.body.name,
           last_name: req.body.last_name,
           email: req.body.email,
           tel: req.body.tel,
         },
-      }
-    )
+      })
       .then(() => res.redirect("/dashboard"))
       .catch((err) => next(err));
 
-  //si mot de passe pas ok
+    //si mot de passe pas ok
   } else {
-    res.render("auth/dashboard", { errorMessage: 'Mot de passe non valide', user: req.user })
+    res.render("auth/dashboard", {
+      errorMessage: 'Mot de passe non valide',
+      user: req.user
+    })
   }
 });
 
@@ -142,14 +165,18 @@ router.post("/dashboard", (req, res, next) => {
 ////////////SUPRESSION DE COMPTE//////////////////////
 
 router.post("/dashboard/:userId/delete", (req, res, next) => {
-  const { userId } =  req.params
+  const {
+    userId
+  } = req.params
   console.log(userId)
   if (!req.isAuthenticated()) {
     res.redirect("/login");
     return;
   } else {
     User.findByIdAndDelete(userId)
-      .then(() => res.render('main/homepage', {deleteMessage : 'Votre compte a bien été supprimé'}))
+      .then(() => res.render('main/homepage', {
+        deleteMessage: 'Votre compte a bien été supprimé'
+      }))
       .catch(err => next(err))
   }
 })

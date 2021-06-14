@@ -17,6 +17,7 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
+
 const User = require('./models/User.js')
 const mongoUri = process.env.MONGO_URI
 
@@ -35,7 +36,9 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
-app.use(flash())
+app.use(flash());
+
+
 //session
 app.use(
   session({
@@ -99,7 +102,7 @@ app.use(cookieParser());
 app.use(function (req, res, next) {
   //verifiersi user connécté
   //si oui definir le res.locals pour toute les vues
-  if(req.isAuthenticated()){
+  if (req.isAuthenticated()) {
     res.locals.user = req.user
   } else {
     // res.locals.user = undefined

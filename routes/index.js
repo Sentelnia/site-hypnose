@@ -19,12 +19,13 @@ router.get('/', (req, res, next) => {
         }).limit(3)
         .then((allArticleFromDB) => {
           allArticleFromDB.forEach((article) => {
-          article.title2 = slugify(article.title);
-          article.createdAt2 = formatDate(article.createdAt)
+            article.title2 = slugify(article.title);
+            article.createdAt2 = formatDate(article.createdAt)
           });
           res.render('main/homepage', {
             temoignages: allTemoignagesFromDB,
-            articles: allArticleFromDB
+            articles: allArticleFromDB,
+            succesNotif: req.flash('subscribed')
           })
         })
         .catch(err => next(err))
@@ -41,18 +42,18 @@ router.get('/fabienne-ilic', (req, res, next) => {
 
 
 
-function formatDate(date){
+function formatDate(date) {
 
   //1.recuperer createdat en parametre puis le couper sur les 10 premiers caractères
   let strDate = JSON.stringify(date)
-  let cutDate = strDate.slice(1,11)
-  
+  let cutDate = strDate.slice(1, 11)
+
   //2.inverse l'année et le jour
   let arrDate = cutDate.split('-')
   arrDate.reverse()
   //3. on remplace les '-' par des '/'
   return arrDate.join('/')
-  
+
   //4.switch les mois
 }
 
