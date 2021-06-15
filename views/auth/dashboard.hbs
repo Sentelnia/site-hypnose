@@ -38,7 +38,7 @@
       <div class="buttons-dash-articles">
 
 
-        <a class="btn-read-article" href="/articles/{{title2}}/{{id}}">Lire l'article <img class="arrow-link"
+        <a class="btn-read-article" href="/articles/{{title}}/{{id}}">Lire l'article <img class="arrow-link"
             src="images/arrow-right.png" alt="arrow-link"></a>
         <form action="/articles/{{id}}/dislike" method="POST">
 
@@ -80,7 +80,7 @@
       </label>
 
     </form>
-    <button id='buttonEdit'>Enregistrer</button>
+    <button id='buttonEdit'>Enregistrer mes modifications</button>
     {{#if errorMessage}}
     <div class="error">{{errorMessage}}</div>
     {{/if}}
