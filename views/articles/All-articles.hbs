@@ -13,7 +13,6 @@
 </ul>
 
 <section id="all-articles">
-
   {{#each articles}}
   <div class="container-article-main">
     <img src='{{this.imageUrl}}' width='100px' />
@@ -27,7 +26,7 @@
         <button><span>{{this.like}} ♡ LIKE</span> </button>
       </form>
 
-      <a href="/articles/{{title2}}/{{id}}">En savoir plus</a>
+      <a class="btn-read-article" href="/articles/{{title2}}/{{id}}">Lire l'article</a>
       <a href="/articles/{{id}}/edit">Edit</a>
       <form action="/articles/{{id}}/delete" method="POST">
         <button>Delete</button>
@@ -63,7 +62,7 @@
       <form action="/articles/{{id}}/like" method="POST">
         <button><span>{{this.like}} ♡ LIKE</span></button>
       </form>
-      <a href="/articles/{{title2}}/{{id}}">Lire l'article</a>
+      <a class="btn-read-article" href="/articles/{{title2}}/{{id}}">Lire l'article</a>
     </div>
 
 

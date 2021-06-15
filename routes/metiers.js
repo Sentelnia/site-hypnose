@@ -9,12 +9,12 @@ const nodemailer = require('nodemailer');
 
 
 //---------transformer avec un if (pour prod ou mail dev)------------
-// let transporter = nodemailer.createTransport({
-//   port: 1025,
-//   ignoreTLS: true,
-// }, );
+let transporter = nodemailer.createTransport({
+  port: 1025,
+  ignoreTLS: true,
+}, );
 
-let transporter = nodemailer.createTransport(process.env.SMTP_URI)
+// let transporter = nodemailer.createTransport(process.env.SMTP_URI)
 
 
 
@@ -64,7 +64,10 @@ router.post("/prendre-rdv", (req, res, next) => {
       subject: req.body.type_seance, // Subject line
       text: req.body.message
     })
-    .then(() => res.redirect('/'))
+    .then(() => {
+      req.flash('rdv', 'Votre demande de rendez-vous a été transmise à la practicienne')
+      res.redirect('/')
+    })
     .catch(err => next(err))
 })
 

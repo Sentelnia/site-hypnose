@@ -1,19 +1,44 @@
-<h2>{{article.title}}</h2>
+<section class="article-details">
+  <h1>{{article.title}}</h1>
 
-{{#if article.imageUrl}}
-<img src='{{article.imageUrl}}' width='100px' />
-{{/if}}
+  <p>{{article.description}}</p>
 
-{{#if article.video}}
-<video controls>
-  <source src="{{article.video}}" type="">
-</video>
-{{/if}}
+  {{#if article.imageUrl}}
+  <img src='{{article.imageUrl}}' width='100px' />
+  {{/if}}
 
-<p>{{article.description}}</p>
+  {{#if article.video}}
+  <video controls>
+    <source src="{{article.video}}" type="">
+  </video>
+  {{/if}}
+
+  <div>
+    <h2>Apprendre à vivre</h2>
+    <p>Lorem ipsum ipsum lorem Lorem ipsum ipsum lorem Lorem ipsum ipsum loremLorem ipsum ipsum lorem</p>
+    <p>Lorem ipsum ipsum loremLorem ipsum ipsum lorem Lorem ipsum ipsum lorem Lorem ipsum ipsum lorem Lorem ipsum ipsum
+      lorem</p>
+  </div>
 
 
-<a href="/articles/{{article.title2}}/{{article.id}}/edit">Edit</a>
-<form action="/articles/{{article.title}}/{{article.id}}/delete" method="POST">
-  <button>Delete</button>
-</form>
+  <div>
+    <h2>Apprendre à vivre</h2>
+    <p>Lorem ipsum ipsum lorem Lorem ipsum ipsum lorem Lorem ipsum ipsum loremLorem ipsum ipsum lorem</p>
+    <p>Lorem ipsum ipsum loremLorem ipsum ipsum lorem Lorem ipsum ipsum lorem Lorem ipsum ipsum lorem Lorem ipsum ipsum
+      lorem</p>
+  </div>
+
+
+  <div>
+    <h2>Apprendre à vivre</h2>
+    <p>Lorem ipsum ipsum lorem Lorem ipsum ipsum lorem Lorem ipsum ipsum loremLorem ipsum ipsum lorem</p>
+    <p>Lorem ipsum ipsum loremLorem ipsum ipsum lorem Lorem ipsum ipsum lorem Lorem ipsum ipsum lorem Lorem ipsum ipsum
+      lorem</p>
+  </div>
+
+
+  <a class="btn-edit-article" href="/articles/{{article.title2}}/{{article.id}}/edit">Edit</a>
+  <form action="/articles/{{article.title}}/{{article.id}}/delete" method="POST">
+    <button>Delete</button>
+  </form>
+</section>

@@ -141,20 +141,34 @@ $arrRight.onclick = function moveSliderRight() {
     //   document.getElementById(`slider${[n + 1]}`).scrollIntoView();
 };
 
-let datesDom = document.querySelectorAll("#article-date");
-var dayjs = require("dayjs");
-//import dayjs from 'dayjs' // ES 2015
-dayjs().format();
 
-for (let i = 0; i < datesDom.length; i++) {
-    let dateDom = datesDom[i].innerHTML;
-    let newDate = dayjs(dateDom);
-    //   console.log(datesDom[i]);
-    console.log("coucou", newDate);
-    datesDom[i].innerHTML = newDate;
+// TEMOIGNAGES SLIDER 
+
+let slides = document.querySelectorAll(".container-avis");
+// let n = 0;
+for (let i = 0; i < slides.length; i++) {
+    console.log(slides[i]);
+
+    slides[i].setAttribute("id", `slide${[i + 1]}`);
 }
 
-console.log(dayjs("2018-04-04T16:00:00.000Z"));
+
+
+
+// let datesDom = document.querySelectorAll("#article-date");
+// var dayjs = require("dayjs");
+//import dayjs from 'dayjs' // ES 2015
+// dayjs().format();
+
+// for (let i = 0; i < datesDom.length; i++) {
+//     let dateDom = datesDom[i].innerHTML;
+//     let newDate = dayjs(dateDom);
+//     //   console.log(datesDom[i]);
+//     console.log("coucou", newDate);
+//     datesDom[i].innerHTML = newDate;
+// }
+
+// console.log(dayjs("2018-04-04T16:00:00.000Z"));
 
 // $arrRight.addEventListener("click", function () {
 //     let n = 0;
@@ -170,4 +184,13 @@ console.log(dayjs("2018-04-04T16:00:00.000Z"));
 // document.getElementById("article-date").innerText = result;
 
 
-// AJAX TESTS 
+// NOTIFICATION LIKE - ARTICLES 
+
+// $likeButton = document.querySelector("button")
+// $notifBox = document.querySelector("like-notif")
+
+// $likeButton.onclick = function () {
+
+//     $notifBox.setAttribute("class", "notif-display")
+
+// }

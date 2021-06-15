@@ -1,9 +1,15 @@
 <section id="container-push-about-hp">
-    <div class="push">
-        {{#if succesNotif}}
-        <span> {{succesNotif}}</span>
+    {{#if succesNotif}}
+    <span class="success-subscribed-notif"> {{succesNotif}}</span>
 
-        {{/if}}
+    {{/if}}
+
+    {{#if rdvMessage}}
+    <span class="success-subscribed-notif"> {{rdvMessage}}</span>
+
+    {{/if}}
+    <div class="push">
+
         <div class="container-presentation">
             <h1>FABIENNE ILIC</h1>
             <article>
@@ -27,8 +33,7 @@
 
 
 
-    <iframe class="ytb-video"
-        src="https://www.youtube.com/embed/mIeX-2vLubo?controls=0&showinfo=0&modestbranding=1&autoplay=1">
+    <iframe class="ytb-video" src="https://www.youtube.com/embed/mIeX-2vLubo?controls=0&showinfo=0&modestbranding=1">
 
     </iframe>
 
@@ -57,21 +62,21 @@
             <h3>SEANCE D'HYPNOSE</h3>
             <div class="container-links">
                 <div> <a href="/prendre-rdv">PRENDRE RDV</a> </div>
-                <div> <a href="/hypnose">EN SAVOIR PLUS</a> </div>
+                <div> <a href="/hypnotherapeute">EN SAVOIR PLUS</a> </div>
             </div>
         </div>
         <div class="container-seance">
             <h3>SEANCE DE SOPHROLOGIE</h3>
             <div class="container-links">
                 <div> <a href="/prendre-rdv">PRENDRE RDV</a> </div>
-                <div> <a href="/sophrologie">EN SAVOIR PLUS</a> </div>
+                <div> <a href="/sophrologue">EN SAVOIR PLUS</a> </div>
             </div>
         </div>
         <div class="container-seance">
             <h3>SEANCE DE MAGNETISME</h3>
             <div class="container-links">
                 <div> <a href="/prendre-rdv">PRENDRE RDV</a> </div>
-                <div> <a href="/magnetisme">EN SAVOIR PLUS</a> </div>
+                <div> <a href="/magnetiseur">EN SAVOIR PLUS</a> </div>
             </div>
         </div>
     </div>

@@ -1,5 +1,8 @@
 <section id="dashboard">
+  {{#if logged}}
+  <span class="success-subscribed-notif"> {{logged}}</span>
 
+  {{/if}}
   <header>
     <h1>Bienvenue sur le Dashboard {{user.name}}</h1>
   </header>
@@ -21,12 +24,23 @@
     <div class="articles-favoris">
       <img src='{{this.imageUrl}}' width="200px" />
 
-      <h3>{{this.title}}</h3>
+      <div>
+        <h3>{{this.title}}</h3>
 
-      <p> {{this.description}}</p>
+        <p> {{this.description}}</p>
+      </div>
 
-      <form action="/articles/{{id}}/dislike" method="POST">
-        <button>Enlever des articles favoris</button> </form>
+      <div class="buttons-dash-articles">
+
+
+        <a class="btn-read-article" href="/articles/{{title2}}/{{id}}">Lire l'article</a>
+        <form action="/articles/{{id}}/dislike" method="POST">
+
+          <button>Enlever des articles favoris</button> </form>
+      </div>
+
+
+
     </div>
 
 

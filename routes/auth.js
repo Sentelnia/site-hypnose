@@ -61,7 +61,7 @@ router.post("/inscription", (req, res, next) => {
     })
     .then((userFromDB) => {
       console.log("Newly created user is: ", userFromDB);
-      req.flash('subscribed', 'Votre compte a bien été crée ! Bienvenu')
+      req.flash('subscribed', 'Votre compte a bien été crée !')
       res.redirect("/");
 
 
@@ -84,6 +84,7 @@ router.get("/login", (req, res, next) => {
 router.post(
   "/login",
   passport.authenticate("local", {
+    // logged: req.flash('logged', 'Vous êtes désormais connectés'),
     successRedirect: "/dashboard",
     failureRedirect: "/login",
     failureFlash: true,
@@ -119,12 +120,15 @@ router.get("/dashboard", (req, res) => {
       if (req.isAuthenticated() && req.user.role === "ADMIN") {
         res.render('auth/dashboard', {
           user: user,
-          admin: "admin"
+          admin: "admin",
+          logged: "Vous êtes connectés"
         })
         return;
       } else {
         res.render("auth/dashboard", {
-          user: user
+          user: user,
+          logged: "Vous êtes connectés"
+          // connected: req.flash('logged')
         })
       }
     })

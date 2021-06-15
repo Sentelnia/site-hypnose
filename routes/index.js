@@ -25,7 +25,8 @@ router.get('/', (req, res, next) => {
           res.render('main/homepage', {
             temoignages: allTemoignagesFromDB,
             articles: allArticleFromDB,
-            succesNotif: req.flash('subscribed')
+            succesNotif: req.flash('subscribed'),
+            rdvMessage: req.flash('rdv')
           })
         })
         .catch(err => next(err))
