@@ -6,12 +6,13 @@
 
 {{#if admin}}
 
-
-<ul>
-  <h3>ADMIN</h3>
-  <li> <a href="/articles/create"> Créer un
-      article <img class="arrow-link" src="images/arrow-right.png" alt="arrow-link"></a></li>
-</ul>
+<div class="menu-admin">
+  <ul>
+    <h3>ADMIN</h3>
+    <li> <a href="/articles/create"> Créer un
+        article <img class="arrow-link" src="images/arrow-right.png" alt="arrow-link"></a></li>
+  </ul>
+</div>
 
 <section id="all-articles">
   {{#each articles}}
@@ -26,13 +27,13 @@
 
     <div class="buttons-articles">
       <form action="/articles/{{id}}/like" method="POST">
-        <button><span>{{this.like}} ♡ LIKE</span> </button>
+        <button class="like-btn"><span>{{this.like}} ♡ LIKE</span> </button>
       </form>
       <div class="buttons-botom"><a class="btn-read-article" href="/articles/{{title2}}/{{id}}">Lire l'article <img
             class="arrow-link" src="images/arrow-right.png" alt="arrow-link"></a>
         <a class="btn-edit" href="/articles/{{id}}/edit">Edit</a>
         <form action="/articles/{{id}}/delete" method="POST">
-          <button>Delete</button>
+          <button class="btn-delete">Delete</button>
         </form>
       </div>
 

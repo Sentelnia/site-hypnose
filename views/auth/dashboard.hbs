@@ -9,13 +9,16 @@
   <h2>Mes articles favoris</h2>
 
   {{#if admin}}
-  <ul>
-    <h3>ADMIN</h3>
-    <li> <a href="/articles/create"> Créer un article <img class="arrow-link" src="images/arrow-right.png"
-          alt="arrow-link"></a></li>
-    <li> <a href="/temoignages/create">Ajouter un témoignage<img class="arrow-link" src="images/arrow-right.png"
-          alt="arrow-link"></a> </li>
-  </ul>
+
+  <div class="menu-admin">
+    <ul>
+      <h3>ADMIN</h3>
+      <li> <a href="/articles/create"> Créer un article <img class="arrow-link" src="images/arrow-right.png"
+            alt="arrow-link"></a></li>
+      <li> <a href="/temoignages/create">Ajouter un témoignage<img class="arrow-link" src="images/arrow-right.png"
+            alt="arrow-link"></a> </li>
+    </ul>
+  </div>
   {{/if}}
 
   <div class="container-article">
@@ -79,7 +82,7 @@
     </form>
     <button id='buttonEdit'>Enregistrer</button>
     {{#if errorMessage}}
-    <div class="error-message">{{errorMessage}}</div>
+    <div class="error">{{errorMessage}}</div>
     {{/if}}
     {{#if subscribed}}
     <div class="subscribed">{{subscribed}}</div>

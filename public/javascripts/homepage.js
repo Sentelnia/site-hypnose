@@ -95,6 +95,7 @@ let $arrRight = document.querySelector(".arr-right");
 let n = 1;
 let m = 1;
 
+
 $arrLeft.onclick = function moveSliderLeft() {
     if (n === 1) {
         document.getElementById(`slider3`).scrollIntoView();
@@ -140,6 +141,10 @@ $arrRight.onclick = function moveSliderRight() {
 
     //   document.getElementById(`slider${[n + 1]}`).scrollIntoView();
 };
+
+
+
+
 
 
 // TEMOIGNAGES SLIDER 

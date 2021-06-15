@@ -12,11 +12,12 @@
     <p class="paragraph">{{this.message}}</p>
     <p class="signature">{{this.signature}}</p>
   </div>
-
-  <a href="/temoignages/{{id}}/edit">Edit</a>
-  <form action="/temoignages/{{id}}/delete" method="POST">
-    <button>Delete</button>
-  </form>
+  <div class="buttons-temoignages">
+    <a class="btn-edit" href="/temoignages/{{id}}/edit">Edit</a>
+    <form action="/temoignages/{{id}}/delete" method="POST">
+      <button class="btn-delete">Delete</button>
+    </form>
+  </div>
   {{/each}}
 
 </section>
