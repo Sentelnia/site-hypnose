@@ -94,13 +94,13 @@ samp {
 }
 
 #logo-mobile {
-  width: 90px;
+  width: 80px;
   margin-top: 4px;
 }
 
 #logo-desktop {
   margin-left: 35px;
-  width: 100px;
+  width: 80px;
   margin-top: 5px;
 }
 
@@ -1731,7 +1731,7 @@ select option {
 }
 
 
-.articles-favoris img {
+.articles-favoris>img {
   height: 250px;
   width: auto;
   margin-left: 115px;
@@ -1853,7 +1853,11 @@ select option {
 }
 
 .soin-hypnose {
-  width: 700px;
+  width: 100vw;
+  display: flex;
+  padding-top: 58px;
+  padding-bottom: 58px;
+  justify-content: space-around;
 }
 
 @media (min-width: 825px) {
@@ -2046,7 +2050,7 @@ select option {
 }
 
 .soin-magne {
-  border: 1px solid red;
+  
   width: 700px;
 }
 
@@ -2112,6 +2116,12 @@ select option {
 
 }
 
+.btn-edit {
+  background: antiquewhite;
+  padding: 10px;
+  border-radius: 7px;
+}
+
 .buttons-articles {
   height: 156px;
   display: flex;
@@ -2120,7 +2130,11 @@ select option {
   justify-content: space-around;
 }
 
-.container-article-main img {
+.buttons-botom button {
+  margin-top: 20px;
+}
+
+.container-article-main>img {
   width: 300px
 }
 
@@ -2136,8 +2150,8 @@ select option {
     position: relative;
   }
 
-  .container-article-main img {
-    height: 250px;
+  .container-article-main>img {
+    height: 310px;
     width: auto;
   }
 
@@ -2232,6 +2246,15 @@ h2 {
 
 }
 
+.parcours-fab ul {
+  width: auto;
+  margin-left: 30px;
+}
+
+.parcours-fab li {
+  padding-top: 20px
+}
+
 .header-about img {
   width: 600px;
 
@@ -2257,6 +2280,11 @@ h2 {
   .header-about img {
 
     margin-left: 30px;
+  }
+
+  .parcours-fab ul {
+    width: 900px;
+
   }
 }
 

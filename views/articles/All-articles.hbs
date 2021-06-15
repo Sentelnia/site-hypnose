@@ -9,28 +9,34 @@
 
 <ul>
   <h3>ADMIN</h3>
-  <li> <a href="/articles/create"> Créer un article</a></li>
+  <li> <a href="/articles/create"> Créer un
+      article <img class="arrow-link" src="images/arrow-right.png" alt="arrow-link"></a></li>
 </ul>
 
 <section id="all-articles">
   {{#each articles}}
   <div class="container-article-main">
     <img src='{{this.imageUrl}}' width='100px' />
-    <h3>{{this.title}}</h3>
-
-    {{!-- <p>{{this.video}}</p> --}}
-    <p>{{this.description}}</p>
+    <div>
+      <h3>{{this.title}}</h3>
+      <span id="article-date">{{this.createdAt2}}</span>
+      {{!-- <p>{{this.video}}</p> --}}
+      <p>{{this.description}}</p>
+    </div>
 
     <div class="buttons-articles">
       <form action="/articles/{{id}}/like" method="POST">
         <button><span>{{this.like}} ♡ LIKE</span> </button>
       </form>
+      <div class="buttons-botom"><a class="btn-read-article" href="/articles/{{title2}}/{{id}}">Lire l'article <img
+            class="arrow-link" src="images/arrow-right.png" alt="arrow-link"></a>
+        <a class="btn-edit" href="/articles/{{id}}/edit">Edit</a>
+        <form action="/articles/{{id}}/delete" method="POST">
+          <button>Delete</button>
+        </form>
+      </div>
 
-      <a class="btn-read-article" href="/articles/{{title2}}/{{id}}">Lire l'article</a>
-      <a href="/articles/{{id}}/edit">Edit</a>
-      <form action="/articles/{{id}}/delete" method="POST">
-        <button>Delete</button>
-      </form>
+
     </div>
 
   </div>
@@ -52,17 +58,22 @@
   {{#each articles}}
   <div class="container-article-main">
 
-
-    <h3>{{this.title}}</h3>
     <img src='{{this.imageUrl}}' width='100px' />
-    {{!-- <p>{{this.video}}</p> --}}
-    <p>{{this.description}}</p>
+
+    <div>
+      <h3>{{this.title}}</h3>
+      <span id="article-date">{{this.createdAt2}}</span>
+      {{!-- <p>{{this.video}}</p> --}}
+      <p>{{this.description}}</p>
+    </div>
+
 
     <div class="buttons-articles">
       <form action="/articles/{{id}}/like" method="POST">
         <button><span>{{this.like}} ♡ LIKE</span></button>
       </form>
-      <a class="btn-read-article" href="/articles/{{title2}}/{{id}}">Lire l'article</a>
+      <a class="btn-read-article" href="/articles/{{title2}}/{{id}}">Lire l'article <img class="arrow-link"
+          src="images/arrow-right.png" alt="arrow-link"></a>
     </div>
 
 

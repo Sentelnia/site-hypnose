@@ -290,6 +290,7 @@ router.get("/articles/:articleName/:articleId", (req, res, next) => {
 
   Article.findById(articleId)
     .then((article) => {
+
       res.render("articles/article-details", {
         article: article,
       });

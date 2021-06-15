@@ -1,5 +1,6 @@
 <section class="article-details">
   <h1>{{article.title}}</h1>
+  {{!-- <span id="article-date">{{this.createdAt2}}</span> --}}
 
   <p>{{article.description}}</p>
 
@@ -37,8 +38,8 @@
   </div>
 
 
-  <a class="btn-edit-article" href="/articles/{{article.title2}}/{{article.id}}/edit">Edit</a>
+  {{!-- <a class="btn-edit-article" href="/articles/{{article.title2}}/{{article.id}}/edit">Edit</a>
   <form action="/articles/{{article.title}}/{{article.id}}/delete" method="POST">
     <button>Delete</button>
-  </form>
+  </form> --}}
 </section>

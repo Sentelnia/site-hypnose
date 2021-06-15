@@ -11,8 +11,10 @@
   {{#if admin}}
   <ul>
     <h3>ADMIN</h3>
-    <li> <a href="/articles/create"> Créer un article</a></li>
-    <li> <a href="/temoignages/create">Ajouter un témoignage</a> </li>
+    <li> <a href="/articles/create"> Créer un article <img class="arrow-link" src="images/arrow-right.png"
+          alt="arrow-link"></a></li>
+    <li> <a href="/temoignages/create">Ajouter un témoignage<img class="arrow-link" src="images/arrow-right.png"
+          alt="arrow-link"></a> </li>
   </ul>
   {{/if}}
 
@@ -33,7 +35,8 @@
       <div class="buttons-dash-articles">
 
 
-        <a class="btn-read-article" href="/articles/{{title2}}/{{id}}">Lire l'article</a>
+        <a class="btn-read-article" href="/articles/{{title2}}/{{id}}">Lire l'article <img class="arrow-link"
+            src="images/arrow-right.png" alt="arrow-link"></a>
         <form action="/articles/{{id}}/dislike" method="POST">
 
           <button>Enlever des articles favoris</button> </form>
