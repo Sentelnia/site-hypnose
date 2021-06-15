@@ -865,15 +865,22 @@ samp {
   }
 
   #slider1>img {
+
     display: block;
+    width: 400px;
+    height: auto;
   }
 
   #slider2>img {
-    display: none;
+    display: block;
+    width: 400px;
+    height: auto;
   }
 
   #slider3>img {
     display: none;
+    width: 400px;
+    height: auto;
   }
 }
 
@@ -2050,7 +2057,7 @@ select option {
 }
 
 .soin-magne {
-  
+
   width: 700px;
 }
 
